@@ -36,7 +36,7 @@ class DatabaseHelper extends Container
     public function isTableExist(string $tableName): bool
     {
         global $wpdb;
-        
+
         return ($wpdb->get_var($wpdb->prepare("show tables like %s", $tableName)) != $tableName);
     }
 
@@ -104,42 +104,35 @@ class DatabaseHelper extends Container
 
         global $wpdb;
 
-        $table_name = $this->getPrefix() . $tableName;
+        if($tableName === 'keywords') {
+            $query = "SELECT * FROM {$wpdb->prefix}wprt_keywords";
+        } else {
+            $query = "SELECT * FROM {$wpdb->prefix}wprt_ranks";
+        }
 
-        $query = "SELECT $columns FROM $table_name";
-
-        $placeholders = [];
         if ($parameters) {
-            $where_clause = join(' AND ', array_map(
-                fn($key) =>
-                "`$key` = %s",
-                array_keys($parameters)
-            ));
-            $query .= " WHERE $where_clause";
-
-            $placeholders = array_merge($placeholders, array_values($parameters));
+            foreach ($parameters as $key => $value) {
+                // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders.UnquotedComplexPlaceholder
+                $query .= $wpdb->prepare(" WHERE `%1s` = %s", $key, $value);
+            }
         }
 
         if ($orderBy) {
-            $order_clause = join(', ', array_map(
-                fn($key, $value) => "$key $value",
-                array_keys($orderBy),
-                $orderBy
-            ));
-            $query .= " ORDER BY $order_clause";
+            foreach ($orderBy as $key => $value) {
+                // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders.UnquotedComplexPlaceholder
+                $query .= $wpdb->prepare(" ORDER BY `%1s` %s", $key, $value);
+            }
         }
 
         if ($limit) {
-            $query .= " LIMIT $limit";
+            $query .= $wpdb->prepare(" LIMIT %s", $limit);
         }
 
-        $prepare = $query;
-        
-        if ($placeholders) {
-            $prepare = $wpdb->prepare($query, $placeholders);
-        }
-
-        return $wpdb->get_results($prepare);
+        /**
+         * Ignored unprepared because it is already dynamic query that is already prepared in each step
+         * Ref: https://github.com/WordPress/WordPress-Coding-Standards/issues/508
+         */
+        return $wpdb->get_results($query); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
     }
 
     public function truncateTable(string $tableName): void
@@ -147,7 +140,7 @@ class DatabaseHelper extends Container
         global $wpdb;
 
         $tableName = $this->getPrefix() . $tableName;
-        
+
         $wpdb->query($wpdb->prepare("TRUNCATE TABLE %s", $tableName));
     }
 }

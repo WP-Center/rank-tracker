@@ -15,7 +15,7 @@ const BundleAnalyzerPlugin =
 module.exports = {
     entry: ['./resources/js/app.js', './resources/css/app.scss'],
     output: {
-        filename: './build/js/app.min.js',
+        filename: './dist/js/app.min.js',
         path: path.resolve(__dirname),
         publicPath: '/'
     },
@@ -53,20 +53,20 @@ module.exports = {
     plugins: [
         // extract css into dedicated file
         new MiniCssExtractPlugin({
-            filename: './build/css/app.min.css'
+            filename: './dist/css/app.min.css'
         }),
         new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: ['./build/js/*', './build/css/*']
+            cleanOnceBeforeBuildPatterns: ['./dist/js/*', './dist/css/*']
         }),
         new CopyWebpackPlugin(
             {
                 patterns: [
-                    {from: './resources/images', to: './build/images'},
-                    {from: './resources/css/fonts', to: './build/fonts'},
+                    {from: './resources/images', to: './dist/images'},
+                    {from: './resources/css/fonts', to: './dist/fonts'},
                 ]
             }
         ),
-        new BundleAnalyzerPlugin()
+        //new BundleAnalyzerPlugin()
     ],
     optimization: {
         minimizer: [

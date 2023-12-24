@@ -25,8 +25,8 @@ class MenuController extends Container
     public function registerAdminMenu(): void
     {
         add_menu_page(
-            esc_html__('WP Rank Tracker', WPRT_TRANSLATE),
-            esc_html__('WP Rank Tracker', WPRT_TRANSLATE),
+            esc_html__('Rank Tracker', WPRT_TRANSLATE),
+            esc_html__('Rank Tracker', WPRT_TRANSLATE),
             'manage_options',
             'wp-rank-tracker',
             [
@@ -144,6 +144,7 @@ class MenuController extends Container
     {
         $userTypeHelper = wprtContainer('UserTypeHelper');
         
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         $page = sanitize_text_field(wp_unslash($_GET['page'] ?? ''));
         $rules = is_admin() && ( $page === 'wp-rank-tracker-support' ) && $userTypeHelper->isPremium();
 
@@ -162,7 +163,8 @@ class MenuController extends Container
     public function handlePremiumRedirect(): void
     {
         $userTypeHelper = wprtContainer('UserTypeHelper');
-
+        
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         $page = sanitize_text_field(wp_unslash($_GET['page'] ?? ''));
         $rules = is_admin() && ( $page === 'wp-rank-tracker-premium' ) && $userTypeHelper->isPremium();
 
@@ -218,6 +220,7 @@ class MenuController extends Container
 
     public function hideNotices()
     {
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         $page = sanitize_text_field(wp_unslash($_GET['page'] ?? ''));
         $rules = is_admin() && ( $page === 'wp-rank-tracker' || $page === 'wp-rank-tracker-support' || $page === 'wp-rank-tracker-settings' || $page === 'wp-rank-tracker-premium');
 

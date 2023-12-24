@@ -24,9 +24,9 @@ class AssetsController extends Container
 
         wp_enqueue_script(
             'wprt_script',
-            WPRT_PLUGIN_URL . '/build/js/app.min.js',
+            WPRT_PLUGIN_URL . '/dist/js/app.min.js',
             ['jquery'],
-            filemtime(WPRT_PLUGIN_DIR_PATH . '/build/js/app.min.js')
+            filemtime(WPRT_PLUGIN_DIR_PATH . '/dist/js/app.min.js')
         );
         wp_localize_script(
             'wprt_script',
@@ -47,9 +47,9 @@ class AssetsController extends Container
     {
         wp_enqueue_style(
             'wprt_style',
-            WPRT_PLUGIN_URL . '/build/css/app.min.css',
+            WPRT_PLUGIN_URL . '/dist/css/app.min.css',
             [],
-            filemtime(WPRT_PLUGIN_DIR_PATH . '/build/css/app.min.css')
+            filemtime(WPRT_PLUGIN_DIR_PATH . '/dist/css/app.min.css')
         );
     }
 }

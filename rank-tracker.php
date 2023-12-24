@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Plugin Name: WP Rank Tracker
- * Plugin URI: https://github.com/wp-center
+ * Plugin Name: Rank Tracker
+ * Plugin URI: https://wpranktracker.com
  * Description: It is easy to track your position on Google now in WordPress Dashboard
- * Version: 1.0
- * Author: WP Rank Tracker
- * Author URI: https://wpranktracker.com/
+ * Version: 1.0.0
+ * Author: WPCenter
+ * Author URI: https://wpcenter.io/
  * License: MIT
  */
 
@@ -27,7 +27,7 @@ if (defined('WP_INSTALLING') && WP_INSTALLING) {
 define('WPRT_TRANSLATE', 'wp-rank-tracker');
 
 if (defined('WPRT_VERSION')) {
-    wp_die(esc_html__('Plugin conflict with WP Rank Tracker', WPRT_TRANSLATE));
+    wp_die(esc_html__('Plugin conflict with Rank Tracker', WPRT_TRANSLATE));
 }
 
 define('WPRT_VERSION', '1.0.0');

@@ -15,7 +15,7 @@ $iconHelper = wprtContainer('IconHelper');
                 <img src="<?php echo esc_url($iconHelper->getIconUrl('license-page-icon.png')) ?>">
             </div>
             <div class="wprt_activation_license_title">
-                <?php echo wp_kses(__('Enter your license key to activate <br> WP Rank Tracker Premium', WPRT_TRANSLATE), ['br' => []]); ?>
+                <?php echo wp_kses(__('Enter your license key to activate <br> Rank Tracker Premium', WPRT_TRANSLATE), ['br' => []]); ?>
             </div>
 
             <form class="wprt_activation_license_form" method="post">

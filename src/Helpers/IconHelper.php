@@ -15,12 +15,12 @@ class IconHelper extends Container
      */
     public function getIcon(string $icon): void
     {
-        include WPRT_PLUGIN_DIR_PATH . 'build/images/icons/' . $icon;
+        include WPRT_PLUGIN_DIR_PATH . 'dist/images/icons/' . $icon;
     }
 
     public function getIconUrl(string $icon): string
     {
-        return WPRT_PLUGIN_URL . 'build/images/icons/' . $icon;
+        return WPRT_PLUGIN_URL . 'dist/images/icons/' . $icon;
     }
     
     public function getCountryListWithFlags() 

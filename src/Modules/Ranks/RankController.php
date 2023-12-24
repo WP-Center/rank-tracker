@@ -190,11 +190,11 @@ class RankController extends Container
 
         if ($dateFrom && $dateTo) {
             $rankRows = $this->getKeywordToRanksColumn($keywordId, $dateFrom, $dateTo, true);
-        } elseif (isset($_GET['dateFrom']) && isset($_GET['dateTo'])) {
+        } elseif (isset($_GET['dateFrom']) && isset($_GET['dateTo'])) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             $rankRows = $this->getKeywordToRanksColumn(
                 $keywordId,
-                sanitize_text_field(wp_unslash($_GET['dateFrom'] ?? '')),
-                sanitize_text_field(wp_unslash($_GET['dateTo'] ?? '')),
+                sanitize_text_field(wp_unslash($_GET['dateFrom'] ?? '')), // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+                sanitize_text_field(wp_unslash($_GET['dateTo'] ?? '')), // phpcs:ignore WordPress.Security.NonceVerification.Recommended
                 true
             );
         } else {

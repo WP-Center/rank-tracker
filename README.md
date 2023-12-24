@@ -1,5 +1,5 @@
 
-## WP Rank Tracker
+## Rank Tracker
 
 This is a WordPress plugin. This plugin gets ranking value for spesific keyword and url from our wp rank tracker api. And render these rank values in wp-admin.
 

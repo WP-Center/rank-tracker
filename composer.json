@@ -1,6 +1,6 @@
 {
-  "name": "wpcenter/wp-rank-tracker",
-  "description": "WP Rank Tracker",
+  "name": "wpcenter/rank-tracker",
+  "description": "Rank Tracker",
   "license": "MIT",
   "autoload": {
     "psr-4": {
