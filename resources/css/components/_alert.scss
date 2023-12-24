@@ -1,0 +1,88 @@
+.wprt_alert {
+  display: flex;
+  align-items: center;
+  padding: $x-sm-padding*3;
+  border-radius: 5px;
+  background-color: $white-color;
+  z-index: 99;
+  width: 100%;
+  box-sizing: border-box;
+  grid-gap: $md-padding;
+  position: relative;
+
+  &_container {
+    display: grid;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 0 $md-padding*4 $md-padding*2 0 ;
+    max-width: 320px;
+    width: 100%;
+    grid-gap: $md-padding*2;
+    z-index: 1;
+  }
+
+  &_title {
+    @include normal-bold;
+    margin-bottom: $x-sm-padding;
+    text-transform: capitalize;
+  }
+  
+  &_icon {
+    order: -1;
+    width: $md-padding*4;
+    height: $md-padding*4;
+    background-repeat: no-repeat;
+
+    &--close {
+      background-image: url("../images/icons/close.svg");
+      width: $x-sm-padding*3;
+      height: $x-sm-padding*3;
+      background-repeat: no-repeat;
+      position: absolute;
+      right: $sm-padding*2;
+      top: $sm-padding*2;
+      cursor: pointer;
+    }
+  }
+
+  &_message {
+    max-width: 200px;
+    @include small;
+  }
+
+  &--success {
+    border: 1px solid $secondary-dark-color;
+    box-shadow: 0 2px 26px rgba(82,215,0,0.1);
+
+    .wprt_alert_icon {
+      background-image: url("../images/icons/check.svg");
+    }
+  }
+
+  &--info {
+    border: 1px solid $primary-color;
+
+    .wprt_alert_icon {
+      background-image: url("../images/icons/info.svg");
+    }
+  }
+
+  &--warning {
+    border: 1px solid $warning-color;
+    box-shadow: 0 2px 26px rgba(242,201,76,0.1);
+
+    .wprt_alert_icon {
+      background-image: url("../images/icons/warning.svg");
+    }
+  }
+
+  &--error {
+    border: 1px solid $error-color;
+    box-shadow: 0 2px 26px rgba(215,0,0,0.1);
+
+    .wprt_alert_icon {
+      background-image: url("../images/icons/error.svg");
+    }
+  }
+}

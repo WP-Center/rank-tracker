@@ -1,0 +1,58 @@
+.wprt_settings {
+  &_page {
+    padding: 20px;
+    border: 2px solid #E9E9E9;
+    border-radius: 7px;
+  }
+  
+  &_informations {
+    display: flex;
+  }
+  
+  &_labels {
+    @include type(18, 30);
+    @include semi-bold;
+    color: $title-color;
+    background: #F8F8F8;
+    border-radius: 7px 0 0 7px;
+    
+    &_item {
+      margin: 5px 0;
+      padding: 10px 25px;
+      border-top: 1px solid #E9E9E9;
+      
+      &:first-child {
+        border-top: unset;
+      }
+    }
+  }
+  
+  &_actions {
+    margin-top: 15px;
+    
+    button {
+      cursor: pointer;
+    }
+    
+    .wprt_remove_license_submit {
+      margin-right: 15px;
+    }
+  }
+  
+  &_values {
+    @include type(16, 30);
+    @include medium;
+    border: 1px solid #E9E9E9;
+    
+    
+    &_item {
+      margin: 4px 0 5px 0;
+      padding: 10px 25px;
+      border-top: 1px solid #E9E9E9;
+
+      &:first-child {
+        border-top: unset;
+      }
+    }
+  }
+}

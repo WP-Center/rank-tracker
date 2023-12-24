@@ -1,0 +1,37 @@
+.wprt_keyword_datepicker {
+  &_wrapper {
+    float:right;
+    margin-left: 20px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      background: url('../images/icons/calendar.svg');
+      width: 20px;
+      height: 20px;
+      margin: auto 0;
+      top: 0;
+      bottom: 0;
+      left: 15px;
+      z-index: 999;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include type(15, 20);
+  @include regular;
+  color: $title-light-color;
+  width: 250px;
+  border: 1px #E9E9E9 solid;
+  border-radius: 7px;
+  height: 40px;
+  text-align: center;
+  position: relative;
+  text-indent: 15px;
+  
+  @include hover-active-focus {
+    outline: unset;
+  }
+}

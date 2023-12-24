@@ -1,0 +1,61 @@
+.wprt_header {
+  display: flex;
+  background-color: $white-color;
+  border-bottom: 1px solid $border-gray;
+  padding: 15px 20px;
+  align-items: center;
+  margin-bottom: rem($md-padding*2);
+  justify-content: space-between;
+
+  &_right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_package {
+    margin-right: 20px;
+  }
+
+  &_logo {
+    position: relative;
+    padding-right: rem($md-padding);
+
+    svg {
+      width: rem(180px);
+    }
+  }
+
+  &_title {
+    @include h5;
+    color: $title-color;
+    margin-left: rem($md-padding);
+  }
+
+  &_add_keyword {
+    position: relative;
+    padding: rem(12px) rem(27px) rem(12px) rem(17px);
+
+    &:before {
+      position: absolute;
+      content: '';
+      background: url('../images/icons/plus.svg');
+      width: 15px;
+      height: 15px;
+      margin: auto 0;
+      top: 1px;
+      bottom: 0;
+      right: 8px;
+    }
+  }
+
+  &_go_back {
+    svg {
+      width: 20px;
+      height: 20px;
+      top: -1px;
+      position: relative;
+      margin-right: 5px;
+    }
+  }
+}

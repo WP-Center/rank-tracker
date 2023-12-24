@@ -1,0 +1,84 @@
+<?php
+
+namespace WPRankTracker;
+
+use Illuminate\Container\Container;
+use Illuminate\Contracts\Container\BindingResolutionException;
+use WPRankTracker\Helpers\DatabaseHelper;
+use WPRankTracker\Helpers\IconHelper;
+use WPRankTracker\Helpers\LicenseHelper;
+use WPRankTracker\Helpers\OptionsHelper as OptionsHelper;
+use WPRankTracker\Helpers\PageHelper;
+use WPRankTracker\Helpers\ResponseHelper;
+use WPRankTracker\Helpers\UserTimeZoneHelper;
+use WPRankTracker\Helpers\UserTypeHelper;
+use WPRankTracker\Helpers\KeywordHelper;
+use WPRankTracker\Modules\Admin\AssetsController;
+use WPRankTracker\Modules\Admin\DeleteExistingDataController;
+use WPRankTracker\Modules\Admin\LicenseActivationController;
+use WPRankTracker\Modules\Admin\LicenseRemoveController;
+use WPRankTracker\Modules\Admin\MenuController;
+use WPRankTracker\Modules\Admin\UserTimeZoneController;
+use WPRankTracker\Modules\Admin\UserTypeController;
+use WPRankTracker\Modules\Api\ApiController;
+use WPRankTracker\Modules\Cron\DailyRequestCronController;
+use WPRankTracker\Modules\Keywords\AddKeywordsController;
+use WPRankTracker\Modules\Keywords\KeywordDatabaseController;
+use WPRankTracker\Modules\Keywords\DeleteKeywordsController;
+use WPRankTracker\Modules\Keywords\GetKeywordsController;
+use WPRankTracker\Modules\License\LicenseExpiredController;
+use WPRankTracker\Modules\Ranks\RankController;
+use WPRankTracker\Modules\Ranks\RankDatabaseController;
+use WPRankTracker\Modules\System\Activation;
+use WPRankTracker\Modules\System\Deactivation;
+use WPRankTracker\Modules\Transient\ApiLimitTransient;
+use WPRankTracker\Modules\Transient\LicenseTransient;
+use WPRankTracker\Modules\Transient\TransientCheckController;
+
+class Plugin extends Container
+{
+    /**
+     * This method allows us to call classes.
+     *
+     * @throws BindingResolutionException Enlarge class addresses.
+     */
+    public function __construct()
+    {
+        $classes = [
+            'Activation' => Activation::class,
+            'Deactivation' => Deactivation::class,
+            'UserTypeController' => UserTypeController::class,
+            'MenuController' => MenuController::class,
+            'LicenseHelper' => LicenseHelper::class,
+            'UserTypeHelper' => UserTypeHelper::class,
+            'OptionsHelper' => OptionsHelper::class,
+            'KeywordHelper' => KeywordHelper::class,
+            'PageHelper' => PageHelper::class,
+            'AssetsController' => AssetsController::class,
+            'AddKeywordsController' => AddKeywordsController::class,
+            'DatabaseHelper' => DatabaseHelper::class,
+            'KeywordDatabaseController' => KeywordDatabaseController::class,
+            'RankDatabaseController' => RankDatabaseController::class,
+            'IconHelper' => IconHelper::class,
+            'GetKeywordsController' => GetKeywordsController::class,
+            'DeleteKeywordsController' => DeleteKeywordsController::class,
+            'ResponseHelper' => ResponseHelper::class,
+            'LicenseActivation' => LicenseActivationController::class,
+            'RankController' => RankController::class,
+            'ApiController' => ApiController::class,
+            'LicenseExpiredController' => LicenseExpiredController::class,
+            'LicenseTransient' => LicenseTransient::class,
+            'ApiLimitTransient' => ApiLimitTransient::class,
+            'TransientCheckController' => TransientCheckController::class,
+            'DailyRequestCronController' => DailyRequestCronController::class,
+            'LicenseRemoveController' => LicenseRemoveController::class,
+            'UserTimeZoneController' => UserTimeZoneController::class,
+            'UserTimeZoneHelper' => UserTimeZoneHelper::class,
+        ];
+
+        foreach ($classes as $alias => $abstract) {
+            $this->make($abstract);
+            $this->alias($abstract, $alias);
+        }
+    }
+}

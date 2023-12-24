@@ -1,0 +1,95 @@
+.wprt_keyword_list {
+  &_wrapper {
+    background: $white-color;
+    padding: 15px 20px;
+    
+    .wpc_rt_keywords_alert {
+      position: fixed;
+      top: 35%;
+      right: 35%;
+      padding: 20px 20px;
+      z-index: 50;
+      border: 2px solid $border-gray;
+      border-radius: 10px;
+      background-color: $white-color;
+      font-size: 16px;
+      color: $secondary-dark-color;
+    }
+  }
+  
+  &_country {
+    font-size: 30px !important;
+  }
+
+  &_chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom:10px;
+  }
+
+  &_footer {
+    background: $white-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+
+    &_buttons {
+      display: flex;
+
+      button {
+        color: $white-color;
+        background-color: $secondary-color;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 25px;
+        border: none;
+
+        @include hover-active-focus {
+          color: $white-color;
+          background-color: $secondary-dark-color;
+        }
+      }
+    }
+
+    &_updateBtn {
+      margin-right: 10px;
+    }
+  }
+  
+  &_detail {
+    &_wrapper {
+      display:flex;
+      margin-top: 15px;
+      grid-gap: 30px;
+      align-items: center;
+      
+      #wprt_rank_list_table_wrapper {
+        flex: 1;
+      }
+      
+      .wprt_keyword_list_chart {
+        width: calc(50% - 30px);
+      }
+      
+      .wprt_keyword_list_table {
+        margin-top: 15px;
+      }
+      
+      .dataTables_paginate {
+        float:unset;
+      }
+    }
+    
+    #wprt_keyword_list_detail_table_wrapper {
+      flex: 1;
+    }
+
+    .wprt_keyword_datepicker_wrapper {
+      margin-bottom:10px;
+      margin-left: 0;
+      display: block;
+      text-align: right;
+    }
+  }
+}

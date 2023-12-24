@@ -1,0 +1,218 @@
+.wprt_activation {
+  display: flex;
+  justify-content: space-between;
+  background: $white-color;
+  padding: 15px 20px;
+
+  &_license {
+    width: 100%;
+    padding: 10px 30px 20px 30px;
+    border: 2px solid #E9E9E9;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &_icon {
+      width: 150px;
+      margin-top: 10px;
+    }
+
+    &_title {
+      text-align: center;
+      @include type(16, 30);
+      @include regular;
+      margin-top: 15px;
+    }
+    
+    &_form {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      grid-gap: 15px;
+    }
+
+    &_input {
+      padding: 5px 20px;
+      border-radius: 7px;
+      outline: none;
+      border: 1px solid #E9E9E9;
+      margin: 0;
+      min-width: 350px;
+    }
+    
+    &_submit {
+      padding: 5px 20px;
+    }
+    
+    &_error {
+      display:flex;
+      background: #FD9898;
+      color: $white-color;
+      min-width: 80%;
+      margin: 0 auto;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 7px;
+      padding: 0;
+      margin-top: 15px;
+      transition: all 0.3s ease-in-out;
+      height: 0;
+      
+      &.active {
+        height: auto;
+        padding: 16px 0;
+      }
+      
+      &_title {
+        @include type(18, 30);
+        @include regular;
+      }
+      
+      &_description {
+        @include type(14, 30);
+        @include regular;
+      }
+    }
+    
+    &_support {
+      text-align: center;
+      @include type(14, 30);
+      @include regular;
+      margin-top: 25px;
+      padding: 0 60px;
+      
+      a {
+        color: $primary_color;
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  &_package {
+    &_wrapper {
+      position: relative;
+      
+      &:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #E9E9E9;
+        left: 50%;
+        transform: translate(-50%, 0);
+        top:0;
+      }
+      margin-top:40px;
+      padding-top: 5px;
+      margin-bottom:5px;
+      padding-bottom: 5px;
+    
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &_icon {
+      width: 150px;
+      margin-top: 10px;
+    }
+    
+    &_title {
+      @include type(30, 35);
+      @include medium;
+      margin-top: 5px;
+    }
+    
+    &_description {
+      @include type(14, 35);
+      @include regular;
+      color: $title-light-color;
+      margin-top: 10px;
+    }
+    
+    &_list {
+      display: flex;
+      grid-gap: 15px;
+      width: 100%;
+      margin-top: 30px;
+    }
+    
+    &_item {
+      padding: 30px 30px 10px 30px;
+      border: 1px solid #E9E9E9;
+      border-radius: 7px;
+      width: 33%;
+      position: relative;
+      
+      &_title {
+        @include type(15, 24);
+        @include regular;
+      }
+      
+      &_price {
+        margin-top: 10px;
+        @include type(40, 62);
+        @include medium;
+        
+        span {
+          @include type(15, 24);
+          @include regular;
+          color: $title-light-color;
+        }
+      }
+      
+      &_feature {
+        position: relative;
+        
+        &:before {
+          position: absolute;
+          content: '';
+          width: 80%;
+          height: 1px;
+          background: #E9E9E9;
+          left: 50%;
+          transform: translate(-50%, 0);
+          top:0;
+        }
+        margin-top:10px;
+        padding-top: 10px;
+        margin-bottom:5px;
+        padding-bottom: 5px;
+        
+        &_item {
+          @include type(15, 33);
+          @include light;
+          color: $title-light-color;
+        }
+      }
+      
+      &_badge {
+        position: absolute;
+        right: 30px;
+        background-color: $secondary-color;
+        color: $primary-color;
+        padding: 3px 6px;
+        border-radius: 10px;
+        font-weight: 400;
+        font-size: 0.7em;
+        z-index: 1;
+      }
+    }
+    
+    &_button {
+      width: 100%;
+      margin-top:5px;
+      display: inline-block;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+      margin-bottom:20px;
+    }
+  }
+  
+  &_symbol {
+    margin-top: 20px;
+  }
+}

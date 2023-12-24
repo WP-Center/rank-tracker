@@ -1,0 +1,459 @@
+.wprt_keyword_popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  border: 1px solid $border-gray;
+  border-radius: $md-padding;
+  background-color: $white-color;
+  z-index: 99999;
+  padding: $md-padding*7 $md-padding*4 $md-padding*6 $md-padding*4;
+  
+  &_wrapper {
+    position: absolute;
+    z-index: 99999;
+    display: none;
+    width: 100%;
+    height: 100vh;
+  }
+
+  @include media-breakpoint(xl) {
+    padding: $md-padding*5 $md-padding*3 $md-padding*3;
+    min-height: 320px;
+  }
+
+  @include media-breakpoint(md) {
+    padding: $md-padding*2.4;
+    width: calc(100% - 72px);
+    min-width: unset;
+  }
+
+  &_step {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+
+    &-keyword {
+      svg {
+        display: none;
+      }
+    }
+
+    .wprt_keyword_popup_step_border {
+      width: 60px;
+      height: 1px;
+      border-top: 1px solid $light-gray-color;
+      line-height: 0;
+      position: relative;
+      top: $md-padding*1.5;
+      margin: 0 $md-padding*1.5;
+
+      @include media-breakpoint(xl) {
+        margin: 0 $md-padding*1;
+        width: 45px;
+      }
+
+      @include media-breakpoint(md) {
+        display: none;
+      }
+    }
+
+    div {
+      color: $light-gray-text-color;
+      @include type(16, 16);
+      @include semi-bold;
+      display: flex;
+      align-items: center;
+      gap: $md-padding*1.2;
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $light-gray-text-color;
+        color: white;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+      }
+
+      .step_complete_icon {
+        display: none;
+      }
+    }
+
+    .step_active {
+      color: $purple-color;
+
+      span {
+        background-color: $purple-color;
+      }
+    }
+
+    .step_complete {
+      color: $black-color;
+
+      span {
+        display: none;
+      }
+
+      .step_complete_icon {
+        display: flex;
+        background-color: $yellow-color;
+
+        svg {
+          display: flex;
+        }
+      }
+
+    }
+  }
+
+  &_title {
+    display: flex;
+    color: $dark-gray-color;
+    padding: 0 0 $md-padding*3.5;
+    @include type(27, 27);
+    @include medium;
+
+    @include media-breakpoint(md) {
+      padding: $md-padding*2 0;
+    }
+  }
+
+  &_close {
+    &_icon {
+      position: absolute;
+      right: $md-padding*2;
+      top: $md-padding*1.5;
+
+      @include hover-active-focus {
+        border-color: $purple-color;
+      }
+    }
+
+    &_link {
+      display: flex;
+      text-decoration: none;
+      outline: none;
+      padding: $md-padding;
+      border: 1px solid $purple-color;
+      border-radius: 8px;
+      @include transition;
+
+      &:active {
+        outline: none;
+      }
+
+      svg {
+        width: $x-sm-padding*3;
+        height: $x-sm-padding*3;
+        fill: $purple-color;
+
+        path {
+          fill: $purple-color;
+        }
+      }
+      
+      @include hover-active-focus {
+        background-color: $purple-color;
+        
+        svg {
+          fill: $white-color;
+
+          path {
+            fill: $white-color
+          }
+        }
+      }
+    }
+  }
+
+  &_content {
+    input {
+      width: 100%;
+      @include type(15,20);
+      box-shadow: unset;
+
+      @include media-breakpoint(md) {
+        @include type(13,16);
+      }
+
+      &::placeholder {
+        color: $placeholder-color,;
+        @include type(15,20);
+
+        @include media-breakpoint(md) {
+          @include type(13,16);
+        }
+      }
+    }
+
+    &_keyword {
+      position: relative;
+
+      &_tags {
+        padding: 14px 0;
+        padding-inline-start: $md-padding*10;
+        border: 1px solid #d0d0d0 !important;
+        border-radius: 5px;
+
+        @include media-breakpoint(md) {
+          padding: $md-padding*1.2 0 !important;
+          min-height: 40px;
+          padding-inline-start: $md-padding*9 !important;
+        }
+      }
+    }
+  }
+
+  &_site {
+    margin: $md-padding 0;
+    border-radius: $x-sm-padding;
+  }
+
+  &_country {
+    margin-bottom: $md-padding*2;
+    position: relative;
+
+    &_select {
+      max-width: unset;
+      width: 100%;
+    }
+  }
+
+  &_submit {
+    display: flex;
+    justify-content: flex-end;
+
+    .wprt_keyword_popup_submit_btn {
+      @include button($white-color,$purple-color);
+      width: fit-content;
+      margin-top: 25px;
+    }
+
+    @include media-breakpoint(md) {
+      padding-top: $md-padding*3;
+    }
+  }
+
+  &_limit {
+    text-align: center;
+
+    p {
+      padding: $md-padding;
+      @include type(16, 23);
+    }
+
+    a {
+      border-radius: $x-sm-padding;
+      border-width: 1px;
+      border-color: $secondary-dark-color;
+      color: $white-color;
+      padding: $md-padding;
+      background-color: $secondary-dark-color;
+      width: 100%;
+
+      @include hover-active-focus {
+        border-color: $secondary-color;
+        background-color: $secondary-color;
+        color: $white-color;
+      }
+    }
+  }
+
+  .country-select-text,
+  .keyword-input-text {
+    position: absolute;
+    left: 20px;
+    z-index: 2;
+    @include type(15, 20);
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include media-breakpoint(md) {
+      @include type(13,16);
+    }
+  }
+
+  #tomselect-1-ts-control {
+    width: auto;
+  }
+
+  .ts-control {
+    border-radius: 5px;
+    padding: 14px 0 !important;
+    cursor: text !important;
+    @include type(15,20);
+    padding-inline-start: $md-padding*10 !important;
+    min-height: 40px;
+
+    @include media-breakpoint(md) {
+      @include type(16,16);
+
+      padding: $md-padding*1.2 0 !important;
+      min-height: 40px;
+      padding-inline-start: $md-padding*9 !important;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+    }
+
+    input {
+      &::placeholder {
+        @include type(15,20);
+
+        @include media-breakpoint(md) {
+          @include type(13,16);
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      display: none !important;
+    }
+  }
+
+  .ts-dropdown {
+    margin-top: 0;
+  }
+
+  .dropdown-active {
+    .ts-control,
+    input {
+      border-bottom: unset;
+      border-radius: 5px 5px 0 0;
+      cursor: text;
+    }
+
+    .item {
+      @include type(20,20);
+      color: $black-color;
+    }
+  }
+}
+
+.wprt_rank {
+   &_status {
+    display: none;
+
+    &_image {
+      display: flex;
+      justify-content: center;
+    }
+
+    &_title {
+      display: flex;
+      justify-content: center;
+      @include type(30,35);
+      color: $purple-color;
+      @include semi-bold;
+      padding-bottom: $md-padding*.8;
+    }
+
+    &_description {
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 15px;
+
+      p {
+        @include type(16,35);
+        color: $title-color;
+        @include regular;
+        margin: 0;
+      }
+    }
+  }
+
+  &_result {
+    display: none;
+
+    &_error,
+    &_success,
+    &_update {
+      display: none;
+      text-align: center;
+    }
+
+    &_error {
+      padding-top: $md-padding*4;
+
+      @include media-breakpoint(md) {
+        padding-top: $md-padding*2;
+      }
+    }
+
+    svg {
+      height: 100%;
+    }
+
+    &_title {
+      display: flex;
+      justify-content: center;
+      @include type(30,35);
+      color: $purple-color;
+      @include semi-bold;
+      padding-bottom: $md-padding*.8;
+    }
+    
+    &_description {
+      margin: 0 auto;
+      text-align: center;
+      @include type(16,35);
+      color: $title-color;
+      @include regular;
+      margin-top: 15px;
+    }
+  }
+  
+  &_delete {
+    display:none;
+    
+    &_icon {
+      text-align: center;
+      padding-bottom: $md-padding*4;
+    }
+    
+    &_buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+      grid-gap: 40px;
+      
+      input {
+        max-width: 180px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.show_rank {
+  &_status {
+    .wprt_rank_status {
+      display: block;
+    }
+
+    .wprt_keyword_popup_title {
+      display: none;
+    }
+  }
+
+  &_result {
+    .wprt_rank_result_image {
+      padding-top: $md-padding*2.5;
+    }
+
+    .wprt_rank_result {
+      display: block;
+    }
+
+    .wprt_keyword_popup_title {
+      display: none;
+    }
+  }
+}

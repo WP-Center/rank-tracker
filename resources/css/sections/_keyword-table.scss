@@ -1,0 +1,270 @@
+.wprt_keyword_list {
+  &_table {
+    margin-top: 60px;
+    margin-bottom: 10px;
+    border: 1px solid #E9E9E9 !important;
+    border-radius: 7px;
+
+    tbody {
+      tr {
+        @include hover-active-focus {
+          background: $third-light-color;
+        }
+        
+        &:last-child td {
+          border-bottom: none;
+        }
+      }
+    }
+
+    thead {
+      background: $third-light-color;
+
+      tr th {
+        @include type(15, 20);
+        @include semi-bold;
+        padding: 15px 10px;
+        text-align: left;
+        text-transform: unset;
+        color: $title-light-color;
+        border-bottom: unset;
+        
+        &:first-child {
+          padding-left: 30px;
+        }
+        
+        &:last-child {
+          text-align: center;
+        }
+      }
+    }
+
+    td {
+      @include type(14, 20);
+      @include semi-bold;
+      vertical-align: middle;
+      padding: 15px 10px;
+      border-bottom: 1px solid #E9E9E9;
+      
+      &:first-child {
+        padding-left: 30px;
+        min-width: 180px;
+      }
+      .fi {
+        @include type(20, 20);
+      }
+      
+      &:last-child {
+        text-align: center;
+        position: relative;
+      }
+    }
+
+    &_row {
+      &--none {
+        .wprt_keyword_list_table_arrow {
+          background-color: $third-dark-color;
+          border-left: 3px solid transparent;
+          border-right: 3px solid transparent;
+          height: 2px;
+        }
+      }
+
+      &--up {
+        .wprt_keyword_list_table_arrow {
+          border-bottom: 5px solid $secondary-light-color;
+        }
+      }
+
+      &--down {
+        .wprt_keyword_list_table_arrow {
+          border-top: 5px solid $error-color;
+        }
+      }
+    }
+    
+    &_status {
+      @include type(14, 20);
+      @include regular;
+      color: $title-light-color;
+      
+      &.up {
+        span {
+          color: $success-text-color;
+        }
+      }
+
+      &.down {
+        span {
+          color: $error-text-color;
+        }
+      }
+      
+      span {
+        @include semi-bold;
+      }
+      img {
+        width: 25px;
+      }
+    }
+    
+    &_last_check {
+      font-size: 13px !important;
+      font-weight: 400 !important;
+      color: $title-light-color;
+    }
+
+    &_buttons {
+      padding: 10px;
+      display: inline-block;
+      border-radius: 7px;
+      cursor: pointer;
+      text-align: center;
+      background: #F4F2F7;
+      
+      img {
+        width: 20px;
+      }
+
+      .dashicons {
+        color: $secondary-dark-color;
+      }
+
+      @include hover-active-focus {
+        border-color: $white-color;
+        background-color: $secondary-color;
+
+        .dashicons, path {
+          color: $white-color;
+          fill: $white-color;
+        } 
+      }
+    }
+    
+    &_submenu {
+      display: none;
+      position: absolute;
+      background: gray;
+      background: white;
+      z-index: 999;
+      left: -75px;
+      border-radius: 7px;
+      bottom: -140px;
+      border: 1px solid #E9E9E9;
+      
+      &.active {
+        display: block;  
+      }
+      
+      div, a {
+        text-align: center;
+        border-bottom: 1px solid #E9E9E9;
+        padding: 15px 35px;
+        display: block;
+        color: $title-color;
+        cursor: pointer;
+        
+        @include hover-active-focus {
+          text-decoration: none;
+          background: $secondary-color;
+        }
+      }
+    }
+    
+    .wprt_update_icon.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+        background-color: lightgray;
+    }
+  }
+
+  &_license {
+    display: inline-block;
+    color: $white-color;
+    background-color: $secondary-color;
+    border: 1px solid $secondary-color;
+    margin: 0 15px;
+    padding: $md-padding;
+    text-align: center;
+    @include small-medium;
+
+    @include hover-active-focus {
+      border: none !important;
+      text-shadow: none !important;
+      background: $secondary-dark-color !important;
+    }
+
+    p {
+      padding: $x-sm-padding;
+      @include small;
+      margin-bottom: 0;
+    }
+
+    a {
+      padding: $md-padding;
+      color: $white-color;
+
+      @include hover-active-focus {
+        text-decoration: none;
+        box-shadow: none;
+
+      }
+    }
+
+    div {
+      @include bold;
+      text-decoration: none;
+      border: none;
+      position: relative;
+    }
+  }
+
+  &_table {
+    &_title {
+      float: left;
+      @include type(22, 40);
+      @include semi-bold;
+    }
+  }
+}
+
+#wprt_keyword_list {
+  &_table {
+    &_wrapper {
+      padding: 20px 0px;
+      background: $white-color;
+    }
+
+    &_filter {
+      position: relative;
+      
+      input {
+        @include type(15, 20);
+        @include regular;
+        color: $title-light-color;
+        width: 180px;
+        border: 1px #E9E9E9 solid;
+        border-radius: 7px;
+        height: 40px;
+        text-align: left;
+        position: relative;
+        text-indent: 35px;
+      }
+
+      &:before {
+        position: absolute;
+        content: '';
+        background: url('../images/icons/magnifying-icon.svg');
+        width: 20px;
+        height: 20px;
+        margin: auto 0;
+        top: 0;
+        bottom: 0;
+        left: 15px;
+        z-index: 999;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

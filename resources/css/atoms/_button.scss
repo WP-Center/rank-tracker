@@ -1,0 +1,50 @@
+.wprt_button {
+  &_primary {
+    @include small;
+    margin-left: auto;
+    color: $dark-text-color;
+    background: $primary-color;
+    border-radius: 7px;
+    padding: rem(12px) rem(25px);
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+
+    @include hover-active-focus {
+      background: $primary-dark-color;
+    }
+  }
+  
+  &_secondary {
+    @include small;
+    margin-left: auto;
+    color: $light-text-color;
+    background: $secondary-color;
+    border-radius: 7px;
+    padding: rem(12px) rem(25px);
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+
+    @include hover-active-focus {
+      background: $secondary-dark-color;
+    }
+  }
+
+  &_third {
+    @include small;
+    margin-left: auto;
+    color: $dark-text-color;
+    background: $light-gray-text-color;
+    border-radius: 7px;
+    padding: rem(12px) rem(25px);
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    border: unset;
+
+    @include hover-active-focus {
+      background: $title-light-color;
+    }
+  }
+}

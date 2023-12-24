@@ -1,0 +1,104 @@
+.wprt_overview {
+  padding: 10px 30px 20px 30px;
+  border: 2px solid #E9E9E9;
+  border-radius: 7px;
+
+  &_container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  &_title {
+    @include type(20, 30);
+    @include semi-bold;
+    color: $title-color;
+  }
+  
+  &_boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 15px;
+    flex: 1;
+  }
+  
+  &_logo {
+    max-width: 180px;
+    margin-right: 20px;
+  }
+
+  &_detail {
+    clear: both;
+
+    .wprt_overview_title {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  &_right {
+    flex: 1;
+  }
+  
+  &_box {
+    background: linear-gradient(0deg, #F8F8F8 0%, #F8F8F8 100%), #F8F8F8;
+    border-radius: 7px;
+    padding:10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    grid-gap: 10px;
+    
+    &.rank {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    
+    &_icon {
+      width: 75px;
+    }
+    
+    &_title {
+      @include type(16, 20);
+      @include medium;
+      color: $title-light-color;
+    }
+    
+    &_count {
+      @include type(30, 35);
+      @include semi-bold;
+      color: $title-color;
+      
+      span {
+        @include type(16, 20);
+        @include medium;
+        color: $title-light-color;
+      }
+    }
+    
+    &_rank {
+      display:flex;
+      flex-direction: column;
+      margin-top: 10px;
+      grid-gap: 5px;
+      
+      &.reverse {
+        flex-direction: column-reverse;
+      }
+    }
+    
+    span.wprt_overview_box_keyword {
+      &_up {
+        @include type(13, 16);
+        @include semi-bold;
+        color: $success-text-color;
+      }
+      
+      &_down {
+        @include type(13, 16);
+        @include semi-bold;
+        color: $error-text-color;
+      }
+    }
+  }
+}

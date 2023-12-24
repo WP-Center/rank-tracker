@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ruleset name="WP-Rank-Tracker">
+    <description>A custom coding standard</description>
+
+    <file>./src</file>
+
+    <arg value="sp"/>
+    <arg name="colors"/>
+
+    <rule ref="Inpsyde">
+        <exclude name="WordPress.PHP.DiscouragedPHPFunctions.serialize_serialize" />
+        <exclude name="WordPress.WP.I18n.NonSingularStringLiteralDomain" />
+        <exclude name="WordPress.WP.I18n.NonSingularStringLiteralText" />
+        <exclude name="WordPress.DB.PreparedSQL.InterpolatedNotPrepared" />
+        <exclude name="Squiz.WhiteSpace.SuperfluousWhitespace" />
+    </rule>
+
+    <rule ref="Inpsyde.CodeQuality.Psr4">
+        <property name="psr4" type="array" value="WPRankTracker\=>src"/>
+    </rule>
+
+    <rule ref="Inpsyde.CodeQuality.ElementNameMinimalLength">
+        <properties>
+            <property name="additionalAllowedNames" type="array" value="c,me,my" />
+        </properties>
+    </rule>
+
+    <rule ref="WordPress.DB.PreparedSQL.NotPrepared">
+        <severity>0</severity>
+    </rule>
+</ruleset>

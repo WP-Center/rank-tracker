@@ -1,0 +1,21 @@
+@mixin hover-active-focus {
+  &:focus,
+  &:hover,
+  &:active,
+  &:focus-visible {
+    outline: none;
+    @content;
+  }
+}
+
+@mixin button ($text-color,$background-color) {
+  border: 1px solid $background-color;
+  background-color: $background-color;
+  color: $text-color;
+  padding: $md-padding*1.4 $md-padding*3.6;
+  border-radius: 10px;
+}
+
+@mixin transition() {
+  transition: all 0.3s ease-in-out;
+}

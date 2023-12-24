@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url("../fonts/Poppins-Light.ttf") format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url("../fonts/Poppins-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url("../fonts/Poppins-Medium.ttf") format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url("../fonts/Poppins-SemiBold.ttf") format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url("../fonts/Poppins-Bold.ttf") format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.wprt_premium_activated {
+  .toplevel_page_wp-rank-tracker {
+    .wp-submenu {
+      li:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+.toplevel_page_wp-rank-tracker #wpcontent, .wp-rank-tracker_page_wp-rank-tracker-settings #wpcontent, .wp-rank-tracker_page_wp-rank-tracker-premium #wpcontent {
+  padding-left: 0;
+}
+
+.toplevel_page_wp-rank-tracker .notice-error {
+  display:none;
+}
+
+.toplevel_page_wp-rank-tracker .daterangepicker td.in-range, .toplevel_page_wp-rank-tracker .daterangepicker td.in-range:hover {
+  background-color: #f5ecff;
+}
+
+.toplevel_page_wp-rank-tracker .daterangepicker td.active, .toplevel_page_wp-rank-tracker .daterangepicker td.active:hover {
+  background-color: #5603AD;
+}
+
+.wprt_keyword_disable_scroll {
+  overflow: hidden;
+}

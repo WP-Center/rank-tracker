@@ -1,0 +1,110 @@
+@mixin type($font-size, $line-height) {
+  font-family: 'Poppins', serif;
+  font-size: ($font-size * 1px);
+  line-height: ($line-height * 1px);
+}
+
+@mixin light {
+  font-weight: 300;
+}
+
+@mixin regular {
+  font-weight: 400;
+}
+
+@mixin medium {
+  font-weight: 500;
+}
+
+@mixin semi-bold {
+  font-weight: 600;
+}
+
+@mixin bold {
+  font-weight: 700;
+}
+
+@mixin h1 {
+  @include type(44, 48);
+  @include semi-bold;
+}
+
+@mixin h2 {
+  @include type(34,39);
+  @include semi-bold;
+}
+
+@mixin h3 {
+  @include type(28, 32);
+  @include semi-bold;
+}
+
+@mixin h4 {
+  @include type(24, 30);
+  @include semi-bold;
+}
+
+@mixin h5 {
+  @include type(17, 22);
+  @include bold;
+}
+
+@mixin lead {
+  @include type(20,28);
+  @include semi-bold;
+}
+
+@mixin lead-small {
+  @include type(17,26);
+  @include semi-bold;
+}
+
+@mixin normal {
+  @include type(17,27);
+  @include regular;
+}
+
+@mixin normal-bold {
+  @include type(17,27);
+  @include bold;
+}
+
+@mixin normal-semi-bold {
+  @include type(17,27);
+  @include semi-bold;
+}
+
+@mixin small {
+  @include type(14,18);
+  @include regular;
+}
+
+@mixin small-medium {
+  @include type(14,18);
+  @include medium;
+}
+
+@mixin small-bold {
+  @include type(14,18);
+  @include bold;
+}
+
+@mixin small-semi-bold {
+  @include type(14,18);
+  @include semi-bold;
+}
+
+@mixin base {
+  @include type(11, 14);
+  @include regular;
+}
+
+@mixin base-bold {
+  @include type(11, 14);
+  @include bold;
+}
+
+@mixin base-semi-bold {
+  @include type(11, 14);
+  @include semi-bold;
+}
