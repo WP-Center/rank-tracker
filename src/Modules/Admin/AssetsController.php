@@ -47,9 +47,9 @@ class AssetsController extends Container
     {
         wp_enqueue_style(
             'wprt_style',
-            WPRT_PLUGIN_URL . '/dist/css/app.min.css',
+            WPRT_PLUGIN_URL . 'dist/css/app.min.css',
             [],
-            filemtime(WPRT_PLUGIN_DIR_PATH . '/dist/css/app.min.css')
+            filemtime(WPRT_PLUGIN_DIR_PATH . 'dist/css/app.min.css')
         );
     }
 }
