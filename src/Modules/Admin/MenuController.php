@@ -14,7 +14,6 @@ class MenuController extends Container
         add_action('admin_menu', [$this, 'registerAdminMenu']);
         add_action('admin_head', [$this, 'hideNotices']);
         add_action('admin_init', [$this, 'handlePremiumRedirect']);
-        add_action('admin_init', [$this, 'handleSupportRedirect']);
         add_filter('admin_body_class', [$this, 'hidePremiumMenu']);
         add_filter('plugin_action_links_' . plugin_basename(WPRT_PLUGIN_FILE), [$this, 'addActionLinks']);
     }
