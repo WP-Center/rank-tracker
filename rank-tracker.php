@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Rank Tracker
  * Plugin URI: https://wpranktracker.com
- * Description: It is easy to track your position on Google now in WordPress Dashboard
+ * Description: Rank Tracker plugin will allow you to easily monitor your website’s position on Google directly from your WordPress dashboard.
  * Version: 1.0.0
  * Author: WPCenter
  * Author URI: https://wpcenter.io/
@@ -48,7 +48,7 @@ define(
     'WPRT_INVALID_LICENSE_KEY_MESSAGE',
     'The license key is not valid.',
 );
-define('WPRT_DAILY_USAGE_LIMIT_EXPIRED', 'Daily Usage Limit expired !');
+define('WPRT_DAILY_USAGE_LIMIT_EXPIRED', 'Daily Usage Limit expired!');
 define('ALTERNATE_WP_CRON', true);
 define('WPRT_LICENSE_ACTIVATION_LOCALHOST_ERROR_MESSAGE', 'Request cannot be made with localhost !');
 define('WPRT_RANK_LOCALHOST_ERROR_MESSAGE', 'Request cannot be made with localhost !');
