@@ -133,6 +133,7 @@ class DatabaseHelper extends Container
         }
 
         if ($limit) {
+            // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders.UnquotedComplexPlaceholder
             $query .= $wpdb->prepare(" LIMIT %1s", $limit);
         }
 

@@ -338,14 +338,17 @@ class RankController extends Container
             ['keyword_id' => $keywordId]
         );
 
-        $results = maybe_unserialize($results[0]->ranks) ?? [];
+        if (isset($results[0])) {
+            $results = maybe_unserialize($results[0]->ranks) ?? [];
 
-        // Remove older and newer data
-        $results = array_filter($results, function ($date) use ($dateFrom, $dateTo) {
-            return $date >= $dateFrom && $date <= $dateTo;
-        }, ARRAY_FILTER_USE_KEY);
+            // Remove older and newer data
+            $results = array_filter($results, function ($date) use ($dateFrom, $dateTo) {
+                return $date >= $dateFrom && $date <= $dateTo;
+            }, ARRAY_FILTER_USE_KEY);
 
-        ksort($results);
+            ksort($results);
+        }
+        
         
         return $keepKeys ? $results : array_values($results);
     }
