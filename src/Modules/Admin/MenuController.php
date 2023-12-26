@@ -70,18 +70,6 @@ class MenuController extends Container
 
         add_submenu_page(
             'wp-rank-tracker',
-            esc_html__('Support &#x2197;', WPRT_TRANSLATE),
-            esc_html__('Support &#x2197;', WPRT_TRANSLATE),
-            'manage_options',
-            'wp-rank-tracker-support',
-            [
-                $this,
-                'renderActivation',
-            ],
-        );
-
-        add_submenu_page(
-            'wp-rank-tracker',
             esc_html__('Get Premium', WPRT_TRANSLATE),
             esc_html__('Get Premium', WPRT_TRANSLATE),
             'manage_options',
@@ -133,26 +121,6 @@ class MenuController extends Container
     public function renderSettings(): void
     {
         include WPRT_PLUGIN_DIR_PATH . '/templates/settings.php';
-    }
-
-    /**
-     * This method redirects to the add keyword page if the license is premium
-     *
-     * @return void
-     */
-    public function handleSupportRedirect(): void
-    {
-        $userTypeHelper = wprtContainer('UserTypeHelper');
-        
-        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        $page = sanitize_text_field(wp_unslash($_GET['page'] ?? ''));
-        $rules = is_admin() && ( $page === 'wp-rank-tracker-support' ) && $userTypeHelper->isPremium();
-
-        if ($rules) {
-            $url = WPRT_SUPPORT_LINK;
-            wp_redirect($url);
-            exit();
-        }
     }
 
     /**
