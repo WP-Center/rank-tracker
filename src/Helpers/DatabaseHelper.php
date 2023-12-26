@@ -104,7 +104,7 @@ class DatabaseHelper extends Container
 
         global $wpdb;
 
-        if($tableName === 'keywords') {
+        if ($tableName === 'keywords') {
             $query = "SELECT * FROM {$wpdb->prefix}wprt_keywords";
         } else {
             $query = "SELECT * FROM {$wpdb->prefix}wprt_ranks";
@@ -113,14 +113,14 @@ class DatabaseHelper extends Container
         if ($parameters) {
             $counter = 0;
             foreach ($parameters as $key => $value) {
-                if($counter === 0) {
+                if ($counter === 0) {
                     // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders.UnquotedComplexPlaceholder
                     $query .= $wpdb->prepare(" WHERE `%1s` = %s", $key, $value);
                 } else {
                     // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders.UnquotedComplexPlaceholder
                     $query .= $wpdb->prepare(" AND `%1s` = %s", $key, $value);
                 }
-                
+
                 $counter++;
             }
         }
