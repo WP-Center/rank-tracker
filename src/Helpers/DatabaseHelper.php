@@ -111,9 +111,17 @@ class DatabaseHelper extends Container
         }
 
         if ($parameters) {
+            $counter = 0;
             foreach ($parameters as $key => $value) {
-                // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders.UnquotedComplexPlaceholder
-                $query .= $wpdb->prepare(" WHERE `%1s` = %s", $key, $value);
+                if($counter === 0) {
+                    // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders.UnquotedComplexPlaceholder
+                    $query .= $wpdb->prepare(" WHERE `%1s` = %s", $key, $value);
+                } else {
+                    // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders.UnquotedComplexPlaceholder
+                    $query .= $wpdb->prepare(" AND `%1s` = %s", $key, $value);
+                }
+                
+                $counter++;
             }
         }
 
@@ -125,7 +133,7 @@ class DatabaseHelper extends Container
         }
 
         if ($limit) {
-            $query .= $wpdb->prepare(" LIMIT %s", $limit);
+            $query .= $wpdb->prepare(" LIMIT %1s", $limit);
         }
 
         /**

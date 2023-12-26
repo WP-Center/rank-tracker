@@ -35,8 +35,8 @@ define('WPRT_PLUGIN_URL', rtrim(plugin_dir_url(__FILE__), '/') . '/');
 define('WPRT_PLUGIN_FILE', __FILE__);
 define('WPRT_PLUGIN_DIR_PATH', rtrim(plugin_dir_path(__FILE__), '/') . '/');
 define('WPRT_PREFIX', 'wprt_');
-define('WPRT_API_URL', 'https://api.wpcenter.io');
-define('WPRT_API_PRODUCT_ID', '557');
+define('WPRT_API_URL', 'https://wpranktracker.com');
+define('WPRT_API_PRODUCT_ID', '12');
 define(
     'WPRT_API_LICENSE_ACTIVATION_URL',
     WPRT_API_URL . '/?edd_action=activate_license&item_id=' . WPRT_API_PRODUCT_ID . '&license=%s&url=' . site_url()
