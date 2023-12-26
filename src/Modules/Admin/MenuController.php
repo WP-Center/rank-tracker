@@ -32,7 +32,7 @@ class MenuController extends Container
                 $this,
                 'renderKeywordsPage',
             ],
-            'dashicons-chart-area',
+            WPRT_PLUGIN_URL . 'dist/images/icons/menu-icon.svg',
             // Menu splash wp-menu-separator.
             99
         );
