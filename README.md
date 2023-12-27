@@ -17,8 +17,6 @@ There is an phpcs automation. When you send a commit it checks the php code styl
 You can run phpcs before commit manually with;
 
     composer run phpcs
+    
 
-### Config
-
-- define('WPRT_API_PRODUCT_ID', 'xxx');
-- define('WPRT_API_URL', 'xxx'');
+## This readme file will be improved for who wants to contribute
