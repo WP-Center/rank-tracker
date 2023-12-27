@@ -109,7 +109,7 @@ class RankController extends Container
         }
 
         if ($apiResponse['data']['message'] === 'localhost') {
-            $responseHelper->sendJsonError(WPRT_RANK_LOCALHOST_ERROR_MESSAGE);
+            $responseHelper->sendJsonError('Request cannot be made with localhost!');
         }
 
         return $responseHelper->sendJsonError($apiResponse['data']['message'] ?? 'Failed to get response from API.');

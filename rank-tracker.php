@@ -37,22 +37,13 @@ define('WPRT_PLUGIN_DIR_PATH', rtrim(plugin_dir_path(__FILE__), '/') . '/');
 define('WPRT_PREFIX', 'wprt_');
 define('WPRT_API_URL', 'https://wpranktracker.com');
 define('WPRT_API_PRODUCT_ID', '12');
-define(
-    'WPRT_API_LICENSE_ACTIVATION_URL',
-    WPRT_API_URL . '/?edd_action=activate_license&item_id=' . WPRT_API_PRODUCT_ID . '&license=%s&url=' . site_url()
-);
+define('WPRT_API_LICENSE_ACTIVATION_URL', WPRT_API_URL . '/?edd_action=activate_license&item_id=' . WPRT_API_PRODUCT_ID . '&license=%s&url=' . site_url());
 define('WPRT_API_LICENSE_LIMIT_URL', WPRT_API_URL . '/wp-json/wprta/v1/api/check-limit?licenseKey=%s&timeZone=%s');
 define('WPRT_API_RANK_URL', WPRT_API_URL . '/wp-json/wprta/v1/api/rank');
 define('WPRT_API_REMOVE_LICENSE_URL', WPRT_API_URL . '/wp-json/wprta/v1/api/remove-license?licenseKey=%s');
-define(
-    'WPRT_INVALID_LICENSE_KEY_MESSAGE',
-    'The license key is not valid.',
-);
+define('WPRT_INVALID_LICENSE_KEY_MESSAGE', 'The license key is not valid.');
 define('WPRT_DAILY_USAGE_LIMIT_EXPIRED', 'Daily Usage Limit expired!');
 define('ALTERNATE_WP_CRON', true);
-define('WPRT_LICENSE_ACTIVATION_LOCALHOST_ERROR_MESSAGE', 'Request cannot be made with localhost !');
-define('WPRT_RANK_LOCALHOST_ERROR_MESSAGE', 'Request cannot be made with localhost !');
-define('WPRT_RANK_FETCH_PENDING_MESSAGE', 'Fetching keyword rank information please wait...');
 define('WPRT_SUPPORT_LINK', 'https://wpranktracker.com/support');
 
 require_once __DIR__ . '/init.php';

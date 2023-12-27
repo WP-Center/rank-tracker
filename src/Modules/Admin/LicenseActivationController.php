@@ -78,7 +78,7 @@ class LicenseActivationController extends Container
         }
         
         if (($licenseApiResponse['success'] !== true) && isset($licenseApiResponse['data']) && ($licenseApiResponse['data']['message'] === 'localhost')) {
-            return $activationHelper->sendJsonError(WPRT_LICENSE_ACTIVATION_LOCALHOST_ERROR_MESSAGE, null, 'License Activation Failed');
+            return $activationHelper->sendJsonError('Request cannot be made with localhost!', null, 'License Activation Failed');
         }
 
         if (($licenseApiResponse['success'] !== true) || ($licenseApiResponse['license'] === 'invalid')) {
