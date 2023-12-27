@@ -33,18 +33,42 @@ Ideal for website owners, bloggers, and anyone interested in understanding their
 - **Stay Informed About Your Website:** Get daily updates about where your keywords rank on Google.
 - **No Complicated Tools Needed:** Everything you need is in your WordPress dashboard, no external tools required.
 
+= Contributing & Bug Report =
+
+Bug reports and pull requests are welcome on [Github](https://github.com/WP-Center/rank-tracker).
+
 === Understanding the Limitations: ===
 
 While Rank Tracker is free for monitoring up to 3 keywords, if you wish to track more keyword, please [**visit our website**](https://wpranktracker.com/) for additional plan options. Our flexible plans cater to different needs, ensuring you have the resources you need as your website grows.
 
 Start with Rank Tracker today and gain better insights into your website's performance on Google!
 
+== Privacy Policy and Third-Party Service Disclosure ==
+
+Our plugin, Rank Tracker, assists in monitoring keyword positions on Google by connecting to our API endpoint. This connection is vital for functionalities like daily keyword position updates and tracking keyword performance.
+
+In the process of tracking keywords, we perform queries against our API endpoint. These queries involve transmitting standard visitor information, including the requested keywords and IP addresses. This data is essential for providing accurate tracking services and ensuring that each website is eligible to use our plugin.
+
+We are committed to user privacy and data protection. As part of these processes, we ensure the careful handling and security of all collected information.
+
+For detailed insights into how data is handled by our service, and to understand the terms under which our plugin operates, please review the following:
+
+- [Privacy Policy](https://wpranktracker.com/privacy-policy/)
+- [Terms of Service](https://wpranktracker.com/terms-and-conditions/)
+
 == Installation ==
 
+= From within WordPress =
 1. **Navigate to Plugins:** In your WordPress dashboard, find the "Plugins" section on the left-hand menu and click on "Add New."
 1. **Search for Rank Tracker:** In the "Add Plugins" page, use the search bar to look for "Rank Tracker." Ensure you select the correct plugin by verifying the developer's name.
 1. **Install the Plugin:** Once you've found Rank Tracker, click on the "Install Now" button. The plugin will automatically download and install onto your WordPress site.
 1. **Activate Rank Tracker:** After installation, click the "Activate" button to start using the plugin. This action will integrate Rank Tracker into your WordPress dashboard.
+1. **Configure Your Settings:** Once activated, navigate to the Rank Tracker settings in your dashboard. Here, you can add the keywords you want to track. Remember, you can track up to 3 keywords for free.
+1. **Start Tracking:** After adding your keywords, Rank Tracker will begin monitoring their positions on Google. Check back regularly to see updates and track your progress.
+
+= Manually =
+1. Upload the `rank-tracker` directory to the `/wp-content/plugins/` directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
 1. **Configure Your Settings:** Once activated, navigate to the Rank Tracker settings in your dashboard. Here, you can add the keywords you want to track. Remember, you can track up to 3 keywords for free.
 1. **Start Tracking:** After adding your keywords, Rank Tracker will begin monitoring their positions on Google. Check back regularly to see updates and track your progress.
 
@@ -69,3 +93,8 @@ Yes, Rank Tracker supports tracking keywords across various languages and countr
 = Will Rank Tracker affect the speed of my website? =
 
 No, Rank Tracker operates within your WordPress dashboard and does not impact your website's loading speed or performance.
+
+== Changelog ==
+
+= 1.0 =
+- Initial release
