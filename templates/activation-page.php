@@ -54,7 +54,7 @@ $iconHelper = wprtContainer('IconHelper');
                             <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Email support service</div>
                             <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> User-friendly interface</div>
                         </div>
-                        <a href="javascript:void(0)" class="wprt_button_secondary wprt_activation_package_button">Choose Plan</a>
+                        <a href="https://wpranktracker.com/" target="_blank" class="wprt_button_secondary wprt_activation_package_button">Choose Plan</a>
                     </div>
                     <div class="wprt_activation_package_item">
                         <div class="wprt_activation_package_item_badge">Most Popular</div>
@@ -66,7 +66,7 @@ $iconHelper = wprtContainer('IconHelper');
                             <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Live chat support</div>
                             <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Customizable reporting options</div>
                         </div>
-                        <a href="javascript:void(0)" class="wprt_button_primary wprt_activation_package_button">Choose Plan</a>
+                        <a href="https://wpranktracker.com/" target="_blank" class="wprt_button_primary wprt_activation_package_button">Choose Plan</a>
                     </div>
                     <div class="wprt_activation_package_item">
                         <div class="wprt_activation_package_item_title">Basic</div>
@@ -77,7 +77,7 @@ $iconHelper = wprtContainer('IconHelper');
                             <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Dedicated customer service</div>
                             <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> In-depth data analysis</div>
                         </div>
-                        <a href="javascript:void(0)" class="wprt_button_secondary wprt_activation_package_button">Choose Plan</a>
+                        <a href="https://wpranktracker.com/" target="_blank" class="wprt_button_secondary wprt_activation_package_button">Choose Plan</a>
                     </div>
                 </div>
             </div>
