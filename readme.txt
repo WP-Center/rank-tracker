@@ -1,6 +1,6 @@
 === Rank Tracker ===
 Contributors: wpcenter, cagdasdag, damladag
-Plugin Name: Rank Tracker
+Plugin Name: Rank Tracker - Easy SEO Monitoring
 Tags: rank tracking, rank, tracker, seo
 Author URI: http://wpranktracker.com/
 Author: WP Rank Tracker
