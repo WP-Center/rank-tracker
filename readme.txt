@@ -1,4 +1,4 @@
-=== Rank Tracker ===
+=== Rank Tracker - Easy SEO Monitoring ===
 Contributors: wpcenter, cagdasdag, damladag
 Plugin Name: Rank Tracker - Easy SEO Monitoring
 Tags: rank tracking, rank, tracker, seo
