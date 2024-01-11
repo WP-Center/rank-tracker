@@ -94,10 +94,10 @@ class RankController extends Container
                     return $responseHelper->sendJsonError('Not Exist.');
                 }
 
-                return $responseHelper->sendJsonSuccess('Keyword position updated succesfully. <br> Check it out!. ', $apiResponse['data']['rank'], 'Keyword Updated Succesfully');
+                return $responseHelper->sendJsonSuccess('Keyword position updated succesfully. <br> Check it out!. ', $apiResponse['data']['rank'], 'Keyword Updated Successfully');
             }
 
-            return $responseHelper->sendJsonSuccess('Keyword added to your list with the correct ranking position. <br> Check it out!. ', $apiResponse['data']['rank'], 'Keyword Added Succesfully');
+            return $responseHelper->sendJsonSuccess('Keyword added to your list with the correct ranking position. <br> Check it out!. ', $apiResponse['data']['rank'], 'Keyword Added Successfully');
         }
 
         if ($apiResponse['data']['message'] === WPRT_INVALID_LICENSE_KEY_MESSAGE) {

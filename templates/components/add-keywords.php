@@ -296,10 +296,10 @@ $iconHelper = wprtContainer('IconHelper');
                         ?>
                     </div>
                     <div class="wprt_rank_status_title">
-                        <?php esc_html_e('Please bear with us!', WPRT_TRANSLATE); ?>
+                        <?php esc_html_e('Thank you for your patience!', WPRT_TRANSLATE); ?>
                     </div>
                     <div class="wprt_rank_status_description">
-                        <p><?php esc_html_e('I know you are excited to see results 🤗', WPRT_TRANSLATE); ?></p>
+                        <p><?php esc_html_e('We know you are excited to see results 🤗', WPRT_TRANSLATE); ?></p>
                         <p><?php esc_html_e('We are getting the latest results and will update you soon!', WPRT_TRANSLATE); ?></p>
                     </div>
                 </div>
@@ -343,11 +343,11 @@ $iconHelper = wprtContainer('IconHelper');
                         ?>
                     </div>
                     <div class="wprt_rank_result_title">
-                        <?php esc_html_e('Do you want to remove keyword?', WPRT_TRANSLATE) ?>
+                        <?php esc_html_e('Do you want to remove the keyword?', WPRT_TRANSLATE) ?>
                     </div>
                     <div class="wprt_rank_result_description">
                         <?php esc_html_e(
-                            'You are about the remove %keyword_name% keyword from your list. You will loose all the data for this keyword. Do you want to remove keyword permanently?',
+                            'You are about the remove %keyword_name% keyword from your list. You will loose all the data for this keyword. Do you want to remove it permanently? ',
                             WPRT_TRANSLATE
                         ); ?>
                     </div>
@@ -363,7 +363,7 @@ $iconHelper = wprtContainer('IconHelper');
                     </div>
                     <script id="wprt_delete_description_template" type="text/template">
                         <?php esc_html_e(
-                            'You are about the remove {{keywordName}} keyword from your list. You will loose all the data for this keyword. Do you want to remove keyword permanently?',
+                            'You are about the remove {{keywordName}} keyword from your list. You will loose all the data for this keyword. Do you want to remove it permanently?',
                             WPRT_TRANSLATE
                         ); ?>
                     </script>
