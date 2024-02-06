@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Transient;
 
-use Illuminate\Container\Container;
-
-class LicenseTransient extends Container
+class LicenseTransient
 {
     public function __construct()
     {

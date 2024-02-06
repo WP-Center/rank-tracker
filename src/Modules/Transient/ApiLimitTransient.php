@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Transient;
 
-use Illuminate\Container\Container;
-
-class ApiLimitTransient extends Container
+class ApiLimitTransient
 {
     public function __construct()
     {

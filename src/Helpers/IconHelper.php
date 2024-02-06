@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Helpers;
 
-use Illuminate\Container\Container;
-
-class IconHelper extends Container
+class IconHelper
 {
     /**
      * This method renders an icon from the images folder.

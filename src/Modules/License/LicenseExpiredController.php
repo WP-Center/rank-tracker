@@ -2,11 +2,7 @@
 
 namespace WPRankTracker\Modules\License;
 
-use DateTime;
-use DateTimeZone;
-use Illuminate\Container\Container;
-
-class LicenseExpiredController extends Container
+class LicenseExpiredController
 {
     public function __construct()
     {

@@ -2,11 +2,7 @@
 
 namespace WPRankTracker\Modules\Ranks;
 
-use DateTime;
-use DateTimeZone;
-use Illuminate\Container\Container;
-
-class RankController extends Container
+class RankController
 {
     /**
      * This method send registerEndpoint function.

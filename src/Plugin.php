@@ -2,8 +2,8 @@
 
 namespace WPRankTracker;
 
-use Illuminate\Container\Container;
-use Illuminate\Contracts\Container\BindingResolutionException;
+use DI\Container;
+use DI\ContainerBuilder;
 use WPRankTracker\Helpers\DatabaseHelper;
 use WPRankTracker\Helpers\IconHelper;
 use WPRankTracker\Helpers\LicenseHelper;
@@ -14,7 +14,6 @@ use WPRankTracker\Helpers\UserTimeZoneHelper;
 use WPRankTracker\Helpers\UserTypeHelper;
 use WPRankTracker\Helpers\KeywordHelper;
 use WPRankTracker\Modules\Admin\AssetsController;
-use WPRankTracker\Modules\Admin\DeleteExistingDataController;
 use WPRankTracker\Modules\Admin\LicenseActivationController;
 use WPRankTracker\Modules\Admin\LicenseRemoveController;
 use WPRankTracker\Modules\Admin\MenuController;
@@ -35,15 +34,26 @@ use WPRankTracker\Modules\Transient\ApiLimitTransient;
 use WPRankTracker\Modules\Transient\LicenseTransient;
 use WPRankTracker\Modules\Transient\TransientCheckController;
 
-class Plugin extends Container
+class Plugin
 {
     /**
+     * @var Container
+     */
+    protected Container $container;
+
+    /**
+     * @var Plugin
+     */
+    protected static $instance;
+
+    /**
      * This method allows us to call classes.
-     *
-     * @throws BindingResolutionException Enlarge class addresses.
      */
     public function __construct()
     {
+        $builder = new ContainerBuilder();
+        $container = $builder->build();
+
         $classes = [
             'Activation' => Activation::class,
             'Deactivation' => Deactivation::class,
@@ -77,8 +87,23 @@ class Plugin extends Container
         ];
 
         foreach ($classes as $alias => $abstract) {
-            $this->make($abstract);
-            $this->alias($abstract, $alias);
+            $container->set($alias, new $abstract());
         }
+
+        $this->container = $container;
+    }
+
+    public static function getInstance(): Plugin
+    {
+        if( null == static::$instance ){
+            static::$instance = new static();
+        }
+
+        return static::$instance;
+    }
+
+    public function getContainer(): Container
+    {
+        return $this->container;
     }
 }

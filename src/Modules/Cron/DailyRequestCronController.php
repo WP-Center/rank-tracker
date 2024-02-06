@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Cron;
 
-use Illuminate\Container\Container;
-
-class DailyRequestCronController extends Container
+class DailyRequestCronController
 {
     public function __construct()
     {

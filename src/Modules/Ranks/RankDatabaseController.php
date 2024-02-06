@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Ranks;
 
-use Illuminate\Container\Container;
-
-class RankDatabaseController extends Container
+class RankDatabaseController
 {
     /**
      * @var string Database table name.

@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Keywords;
 
-use Illuminate\Container\Container;
-
-class GetKeywordsController extends Container
+class GetKeywordsController
 {
     /**
      * Database table name.

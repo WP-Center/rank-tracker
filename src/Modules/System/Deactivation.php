@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\System;
 
-use Illuminate\Container\Container;
-
-class Deactivation extends Container
+class Deactivation
 {
     /**
      * This method admin panel or triggered when starting the script.

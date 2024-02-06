@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Admin;
 
-use Illuminate\Container\Container;
-
-class UserTypeController extends Container
+class UserTypeController
 {
     /**
      * This method plugin activated send function.

@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\System;
 
-use Illuminate\Container\Container;
-
-class Activation extends Container
+class Activation
 {
     /**
      * This method admin panel or trigger when start the script.

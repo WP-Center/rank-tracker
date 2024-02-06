@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Helpers;
 
-use Illuminate\Container\Container;
-
-class KeywordHelper extends Container
+class KeywordHelper
 {
     /**
      * Database table name.
