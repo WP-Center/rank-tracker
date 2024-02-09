@@ -95,7 +95,7 @@ class Plugin
 
     public static function getInstance(): Plugin
     {
-        if( null == static::$instance ){
+        if (null === static::$instance) {
             static::$instance = new static();
         }
 
