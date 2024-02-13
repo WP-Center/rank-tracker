@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Helpers;
 
-use Illuminate\Container\Container;
-
-class OptionsHelper extends Container
+class OptionsHelper
 {
     /**
      * This method get value from wp_options table.

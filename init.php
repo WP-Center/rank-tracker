@@ -1,20 +1,14 @@
 <?php
 
-use Illuminate\Container\Container;
+use WPRankTracker\Plugin;
 
 if (!function_exists('wprtContainer')) {
     /**
-     * @param $make
-     * @param array $parameters
-     *
+     * @param string $make
      * @return mixed
      */
-    function wprtContainer($make = null, array $parameters = [])
+    function wprtContainer(string $make)
     {
-        if (is_null($make)) {
-            return Container::getInstance();
-        }
-
-        return Container::getInstance()->make($make, $parameters);
+        return Plugin::getInstance()->getContainer()->get($make);
     }
 }

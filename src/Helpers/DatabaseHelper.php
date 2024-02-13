@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Helpers;
 
-use Illuminate\Container\Container;
-
-class DatabaseHelper extends Container
+class DatabaseHelper
 {
     /**
      * @return string

@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Admin;
 
-use Illuminate\Container\Container;
-
-class LicenseActivationController extends Container
+class LicenseActivationController
 {
     /**
      * This method prepare to serve a REST API request.

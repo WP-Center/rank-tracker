@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Keywords;
 
-use Illuminate\Container\Container;
-
-class DeleteKeywordsController extends Container
+class DeleteKeywordsController
 {
     /**
      * Database table name.

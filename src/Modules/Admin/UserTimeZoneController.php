@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Admin;
 
-use Illuminate\Container\Container;
-
-class UserTimeZoneController extends Container
+class UserTimeZoneController
 {
     /**
      * This method prepare to serve a REST API request.

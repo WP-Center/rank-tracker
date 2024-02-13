@@ -8,7 +8,7 @@
     }
   },
   "require": {
-      "illuminate/container": "^8.61"
+    "php-di/php-di": "^6.4"
   }, 
   "scripts": {
     "post-install-cmd": [

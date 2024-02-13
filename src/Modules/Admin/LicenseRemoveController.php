@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Admin;
 
-use Illuminate\Container\Container;
-
-class LicenseRemoveController extends Container
+class LicenseRemoveController
 {
     /**
      * This method prepare to serve a REST API request.

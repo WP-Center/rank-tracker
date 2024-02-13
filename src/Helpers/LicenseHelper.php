@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Helpers;
 
-use Illuminate\Container\Container;
-
-class LicenseHelper extends Container
+class LicenseHelper
 {
     /**
      * @var string

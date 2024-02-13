@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Admin;
 
-use Illuminate\Container\Container;
-
-class MenuController extends Container
+class MenuController
 {
     /**
      * This method send to function to add menus and menu options to admin panel

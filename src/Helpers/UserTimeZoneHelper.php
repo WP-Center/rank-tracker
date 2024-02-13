@@ -4,9 +4,8 @@ namespace WPRankTracker\Helpers;
 
 use DateTime;
 use DateTimeZone;
-use Illuminate\Container\Container;
 
-class UserTimeZoneHelper extends Container
+class UserTimeZoneHelper
 {
     /**
      * @var string

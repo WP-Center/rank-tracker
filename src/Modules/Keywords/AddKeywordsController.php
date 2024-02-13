@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Keywords;
 
-use Illuminate\Container\Container;
-
-class AddKeywordsController extends Container
+class AddKeywordsController
 {
     /**
      * This method prepare to serve a REST API request.

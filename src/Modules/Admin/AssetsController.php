@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Admin;
 
-use Illuminate\Container\Container;
-
-class AssetsController extends Container
+class AssetsController
 {
     /**
      * This method used to retrieve the patient list.

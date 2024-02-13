@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Api;
 
-use Illuminate\Container\Container;
-
-class ApiController extends Container
+class ApiController
 {
     /**
      * This method responsible to get rank from API.

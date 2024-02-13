@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Modules\Transient;
 
-use Illuminate\Container\Container;
-
-class TransientCheckController extends Container
+class TransientCheckController
 {
     public function __construct()
     {

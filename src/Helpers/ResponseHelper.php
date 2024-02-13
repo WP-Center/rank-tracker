@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Helpers;
 
-use Illuminate\Container\Container;
-
-class ResponseHelper extends Container
+class ResponseHelper
 {
     /**
      * This method return error message.

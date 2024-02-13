@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Helpers;
 
-use Illuminate\Container\Container;
-
-class PageHelper extends Container
+class PageHelper
 {
     public function isKeywordDetailPage()
     {

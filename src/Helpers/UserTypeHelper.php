@@ -2,9 +2,7 @@
 
 namespace WPRankTracker\Helpers;
 
-use Illuminate\Container\Container;
-
-class UserTypeHelper extends Container
+class UserTypeHelper
 {
     /**
      * @var string
