@@ -23,19 +23,19 @@ $iconHelper = wprtContainer('IconHelper');
             <?php $limitIsFull = true; ?>
             <div class="wprt_activation_symbol">
                 <p class="wprt_alert wprt_alert--warning">
-                    <?php esc_html_e('Daily Request Limit is over, please upgrade your package.', WPRT_TRANSLATE) ?>
+                    <?php esc_html_e('Daily Request Limit is over, please upgrade your package.', 'wp-rank-tracker') ?>
                 </p>
             </div>
         <?php endif ?>
         <table id="wprt_keyword_list_table" class="uk-table uk-table-hover wprt_keyword_list_table">
             <thead>
             <tr>
-                <th><?php esc_html_e('Keyword', WPRT_TRANSLATE); ?></th>
-                <th><?php esc_html_e('Location', WPRT_TRANSLATE); ?></th>
-                <th><?php esc_html_e('Position', WPRT_TRANSLATE); ?></th>
-                <th><?php esc_html_e('Status', WPRT_TRANSLATE); ?></th>
-                <th><?php esc_html_e('Last Check', WPRT_TRANSLATE); ?></th>
-                <th><?php esc_html_e('Actions', WPRT_TRANSLATE); ?></th>
+                <th><?php esc_html_e('Keyword', 'wp-rank-tracker'); ?></th>
+                <th><?php esc_html_e('Location', 'wp-rank-tracker'); ?></th>
+                <th><?php esc_html_e('Position', 'wp-rank-tracker'); ?></th>
+                <th><?php esc_html_e('Status', 'wp-rank-tracker'); ?></th>
+                <th><?php esc_html_e('Last Check', 'wp-rank-tracker'); ?></th>
+                <th><?php esc_html_e('Actions', 'wp-rank-tracker'); ?></th>
             </tr>
             </thead>
 
@@ -65,13 +65,13 @@ $iconHelper = wprtContainer('IconHelper');
                                 <div class="wprt_keyword_list_table_status up">
                                     <img src="<?php echo esc_url($iconHelper->getIconUrl('arrow-up.png')) ?>">
                                     <span><?php esc_html_e((int) $keyword->difference); ?></span>
-                                    <?php esc_html_e(sprintf(__("from %s", WPRT_TRANSLATE), ((int) $keyword->difference + (int) $keyword->rank))); ?>
+                                    <?php esc_html_e(sprintf(__("from %s", 'wp-rank-tracker'), ((int) $keyword->difference + (int) $keyword->rank))); ?>
                                 </div>
                             <?php elseif ($keyword->arrow === '--down') : ?>
                                 <div class="wprt_keyword_list_table_status down">
                                     <img src="<?php echo esc_url($iconHelper->getIconUrl('arrow-down.png')) ?>">
                                     <span><?php esc_html_e((int) $keyword->difference); ?></span>
-                                    <?php esc_html_e(sprintf(__("from %s", WPRT_TRANSLATE), ((int) $keyword->rank) - (int) $keyword->difference)); ?>
+                                    <?php esc_html_e(sprintf(__("from %s", 'wp-rank-tracker'), ((int) $keyword->rank) - (int) $keyword->difference)); ?>
                                 </div>
                             <?php else : ?>
                                 <div class="wprt_keyword_list_table_status">
@@ -89,13 +89,13 @@ $iconHelper = wprtContainer('IconHelper');
                             </div>
                             <div class="wprt_keyword_list_table_submenu">
                                 <div class="wprt_update_icon <?php echo $limitIsFull ? 'disabled' : '' ?>">
-                                    <?php esc_html_e('Update', WPRT_TRANSLATE) ?>
+                                    <?php esc_html_e('Update', 'wp-rank-tracker') ?>
                                 </div>
                                 <a href="<?php echo esc_url(admin_url('admin.php?page=wp-rank-tracker&id=' . $keyword->id)); ?>">
-                                    <?php esc_html_e('Check History', WPRT_TRANSLATE) ?>
+                                    <?php esc_html_e('Check History', 'wp-rank-tracker') ?>
                                 </a>
                                 <div class="wprt_keyword_list_table_delete_icon">
-                                    <?php esc_html_e('Delete', WPRT_TRANSLATE) ?>
+                                    <?php esc_html_e('Delete', 'wp-rank-tracker') ?>
                                 </div>
                             </div>
                         </td>

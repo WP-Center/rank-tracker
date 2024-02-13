@@ -41,9 +41,9 @@ $chartYData = rtrim($chartYData, ',');
             <table id="wprt_keyword_list_detail_table" class="uk-table uk-table-hover uk-table-striped wprt_keyword_list_table">
                 <thead>
                     <tr>
-                        <th><?php esc_html_e('Date', WPRT_TRANSLATE); ?></th>
-                        <th><?php esc_html_e('Position', WPRT_TRANSLATE); ?></th>
-                        <th><?php esc_html_e('Status', WPRT_TRANSLATE); ?></th>
+                        <th><?php esc_html_e('Date', 'wp-rank-tracker'); ?></th>
+                        <th><?php esc_html_e('Position', 'wp-rank-tracker'); ?></th>
+                        <th><?php esc_html_e('Status', 'wp-rank-tracker'); ?></th>
                     </tr>
                 </thead>
 
@@ -70,13 +70,13 @@ $chartYData = rtrim($chartYData, ',');
                                         <div class="wprt_keyword_list_table_status up">
                                             <img src="<?php echo esc_url($iconHelper->getIconUrl('arrow-up.png')) ?>">
                                             <span><?php esc_html_e((int) $rank->difference); ?></span>
-                                            <?php esc_html_e(sprintf(__("from %s", WPRT_TRANSLATE), ((int) $rank->difference + (int) $rank->ranks))); ?>
+                                            <?php esc_html_e(sprintf(__("from %s", 'wp-rank-tracker'), ((int) $rank->difference + (int) $rank->ranks))); ?>
                                         </div>
                                     <?php elseif ($rank->arrow === '--down') : ?>
                                         <div class="wprt_keyword_list_table_status down">
                                             <img src="<?php echo esc_url($iconHelper->getIconUrl('arrow-down.png')) ?>">
                                             <span><?php esc_html_e((int) $rank->difference); ?></span>
-                                            <?php esc_html_e(sprintf(__("from %s", WPRT_TRANSLATE), ((int) $rank->ranks) - (int) $rank->difference)); ?>
+                                            <?php esc_html_e(sprintf(__("from %s", 'wp-rank-tracker'), ((int) $rank->ranks) - (int) $rank->difference)); ?>
                                         </div>
                                     <?php else : ?>
                                         <div class="wprt_keyword_list_table_status">

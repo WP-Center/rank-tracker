@@ -24,10 +24,8 @@ if (defined('WP_INSTALLING') && WP_INSTALLING) {
     return;
 }
 
-define('WPRT_TRANSLATE', 'wp-rank-tracker');
-
 if (defined('WPRT_VERSION')) {
-    wp_die(esc_html__('Plugin conflict with Rank Tracker', WPRT_TRANSLATE));
+    wp_die(esc_html__('Plugin conflict with Rank Tracker', 'wp-rank-tracker'));
 }
 
 define('WPRT_VERSION', '1.0.0');

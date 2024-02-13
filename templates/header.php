@@ -18,16 +18,16 @@ $userTypeHelper = wprtContainer('UserTypeHelper');
     <?php if ($pageHelper->isKeywordPage()) : ?>
         <div class="wprt_header_left">
             <a class="wprt_header_package wprt_button_secondary" href="javascript:void(0)">
-                <?php esc_html_e(sprintf('Active Package: %s', $userTypeHelper->getUserType()), WPRT_TRANSLATE); ?>
+                <?php esc_html_e(sprintf('Active Package: %s', $userTypeHelper->getUserType()), 'wp-rank-tracker'); ?>
             </a>
             <?php if ($pageHelper->isKeywordDetailPage()) : ?>
                 <a class="wprt_header_go_back wprt_button_primary" href="<?php menu_page_url('wp-rank-tracker') ?>">
                     <?php $iconHelper->getIcon('go-back.svg') ?>
-                    <?php esc_html_e('Go Back', WPRT_TRANSLATE) ?>
+                    <?php esc_html_e('Go Back', 'wp-rank-tracker') ?>
                 </a>
             <?php else : ?>
                 <a class="wprt_header_add_keyword wprt_button_primary" href="javascript:void(0)">
-                    <?php esc_html_e('Add Keyword', WPRT_TRANSLATE) ?>
+                    <?php esc_html_e('Add Keyword', 'wp-rank-tracker') ?>
                 </a>
             <?php endif; ?>
         </div>

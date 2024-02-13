@@ -16,17 +16,17 @@ $licenseHelper = wprtContainer('LicenseHelper');
             <div class="wprt_settings_informations">
                 <div class="wprt_settings_labels">
                     <div class="wprt_settings_labels_item">
-                        <?php esc_html_e('License Type:', WPRT_TRANSLATE); ?>
+                        <?php esc_html_e('License Type:', 'wp-rank-tracker'); ?>
                     </div>
                     <div class="wprt_settings_labels_item">
-                        <?php esc_html_e('Daily Remaining Request:', WPRT_TRANSLATE); ?>
+                        <?php esc_html_e('Daily Remaining Request:', 'wp-rank-tracker'); ?>
                     </div>
                     <?php if ($userTypeHelper->isPremium() === true) : ?>
                         <div class="wprt_settings_labels_item">
-                            <?php esc_html_e('License Key:', WPRT_TRANSLATE); ?>
+                            <?php esc_html_e('License Key:', 'wp-rank-tracker'); ?>
                         </div>
                         <div class="wprt_settings_labels_item">
-                            <?php esc_html_e('License Remaining Day:', WPRT_TRANSLATE); ?>
+                            <?php esc_html_e('License Remaining Day:', 'wp-rank-tracker'); ?>
                         </div>                
                     <?php endif; ?>
                 </div>
@@ -55,7 +55,7 @@ $licenseHelper = wprtContainer('LicenseHelper');
             <div class="wprt_settings_actions">
                 <?php if ($userTypeHelper->isPremium() === true) : ?>
                     <button class="wprt_remove_license_submit wprt_button_secondary">
-                        <?php esc_html_e('Reset License', WPRT_TRANSLATE); ?>
+                        <?php esc_html_e('Reset License', 'wp-rank-tracker'); ?>
                     </button>
                 <?php endif ?>
             </div>
