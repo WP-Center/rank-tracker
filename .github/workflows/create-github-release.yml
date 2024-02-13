@@ -29,7 +29,7 @@ jobs:
 
       - name: Zip Folder
         run: |
-          zip -r rank-tracker.zip -x ".git/*" ".github/*"
+          zip -r rank-tracker.zip . -x ".git/*" ".github/*" "node_modules/*"
           
       - name: Release
         uses: softprops/action-gh-release@v1
