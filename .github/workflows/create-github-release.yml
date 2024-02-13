@@ -26,6 +26,10 @@ jobs:
         uses: php-actions/composer@v6
         with:
           dev: no
+
+      - name: Zip Folder
+        run: |
+          zip -r rank-tracker.zip -x ".git/*" ".github/*"
           
       - name: Release
         uses: softprops/action-gh-release@v1
