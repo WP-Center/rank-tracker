@@ -14,7 +14,7 @@
     "post-install-cmd": [
         "bash scripts/setup.sh"
     ],
-    "phpcs": "./vendor/bin/phpcs --standard=./phpcs.ruleset.xml --colors --encoding=utf-8 -n -p -s src/ templates/ wp-rank-tracker.php"
+    "phpcs": "./vendor/bin/phpcs --standard=./phpcs.ruleset.xml --colors --encoding=utf-8 -n -p -s src/ templates/ rank-tracker.php"
   },
   "require-dev": {
     "inpsyde/php-coding-standards": "^1.0",
