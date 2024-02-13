@@ -36,15 +36,19 @@ else
     RULESET="WordPress"
 fi
 
+echo "test"
+
+echo $RULESET
+
 echo "Checking Code Standard Compliance, using $RULESET as ruleset standard..."
 for FILE in $SFILES
 do
-    ./vendor/bin/phpcs --standard="$RULESET" --colors --encoding=utf-8 -n -p "$PROJECT/$FILE"
+    ./vendor/bin/phpcs --standard="$RULESET" --colors --encoding=utf-8 -n -p --colors --encoding=utf-8 -n -p -s src/ templates/ rank-tracker.php
     if [ $? != 0 ]
     then
         echo "Fix the error before commit."
         echo "Run"
-        echo "  ./vendor/bin/phpcbf --standard=\"$RULESET\" $FILES"
+        echo "  ./vendor/bin/phpcbf --standard=\"$RULESET\" --colors --encoding=utf-8 -n -p -s src/ templates/ rank-tracker.php"
         echo "for automatic fix or fix it manually."
         exit 1
     fi
