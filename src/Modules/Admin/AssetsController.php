@@ -22,9 +22,9 @@ class AssetsController
 
         wp_enqueue_script(
             'wprt_script',
-            WPRT_PLUGIN_URL . '/dist/js/app.min.js',
+            WPRT_PLUGIN_URL . 'dist/js/app.min.js',
             ['jquery'],
-            filemtime(WPRT_PLUGIN_DIR_PATH . '/dist/js/app.min.js')
+            WPRT_VERSION
         );
         wp_localize_script(
             'wprt_script',
@@ -47,7 +47,7 @@ class AssetsController
             'wprt_style',
             WPRT_PLUGIN_URL . 'dist/css/app.min.css',
             [],
-            filemtime(WPRT_PLUGIN_DIR_PATH . 'dist/css/app.min.css')
+            WPRT_VERSION
         );
     }
 }

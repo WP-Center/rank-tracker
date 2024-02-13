@@ -21,7 +21,7 @@ class UserTimeZoneHelper
 
         $timeZone = $optionsHelper->getOption($this->optionName);
 
-        if (empty($timeZone)) {
+        if (empty($timeZone) || $timeZone === '00:00') {
             return wp_timezone_string();
         }
 
