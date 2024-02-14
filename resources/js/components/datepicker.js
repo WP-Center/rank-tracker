@@ -4,7 +4,15 @@ import daterangepicker from 'daterangepicker';
 (
     function ($) {
         $(document).ready(function () {
-            const datePicker = $('.wprt_keyword_datepicker').daterangepicker({
+            const urlParams = new URLSearchParams(window.location.search);
+            let dateFrom = moment().add(-7, 'days');
+            let dateTo = moment();
+            if(urlParams.get('dateFrom') && urlParams.get('dateTo')) {
+                dateFrom = moment( urlParams.get('dateFrom'));
+                dateTo = moment( urlParams.get('dateTo'))._d;
+            }
+
+            const datePicker = new daterangepicker('.wprt_keyword_datepicker', {
                 "autoApply": true,
                 ranges: {
                     'Today': [moment(), moment()],
@@ -17,8 +25,8 @@ import daterangepicker from 'daterangepicker';
                 "linkedCalendars": false,
                 "showCustomRangeLabel": false,
                 "alwaysShowCalendars": true,
-                "startDate": moment().add(-7, 'days'),
-                "endDate": moment(),
+                "startDate": dateFrom,
+                "endDate": dateTo,
                 "maxDate": moment(),
                 "opens": "left",
                 "drops": "auto",
@@ -31,20 +39,8 @@ import daterangepicker from 'daterangepicker';
                 search_params.set('dateFrom', start.format('YYYY-MM-DD'));
                 search_params.set('dateTo', end.format('YYYY-MM-DD'));
                 url.search = search_params.toString();
-                const new_url = url.toString();
-                
-                window.location.href = new_url;
-            });
-
-
-            const urlParams = new URLSearchParams(window.location.search);
-            if(urlParams.get('dateFrom') && urlParams.get('dateTo')) {
-                const dateFrom = urlParams.get('dateFrom');
-                const dateTo = urlParams.get('dateTo');
-
-                datePicker.data('daterangepicker').setStartDate(moment( dateFrom, datePicker.data().daterangepicker.format )._d);
-                datePicker.data('daterangepicker').setEndDate(moment( dateTo, datePicker.data().daterangepicker.format )._d);
-            }
+                window.location.href = url.toString();
+            })
         });
     }
 )(jQuery);
