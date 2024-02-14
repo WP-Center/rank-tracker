@@ -1,5 +1,4 @@
 import DataTable from 'datatables.net-dt';
-import {wprtSendApiRequest} from "./api-helper";
 
 (function ($) {
     $(document).ready(function () {
