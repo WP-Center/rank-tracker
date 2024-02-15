@@ -126,7 +126,7 @@ class DatabaseHelper
         if ($orderBy) {
             foreach ($orderBy as $key => $value) {
                 // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders.UnquotedComplexPlaceholder
-                $query .= $wpdb->prepare(" ORDER BY `%1s` %s", $key, $value);
+                $query .= $wpdb->prepare(" ORDER BY `%1s` %1s", $key, $value);
             }
         }
 
