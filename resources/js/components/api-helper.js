@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import {showResultStep} from "./popup-helper";
 
 export function wprtSendApiRequest(apiEndpoint, params)
