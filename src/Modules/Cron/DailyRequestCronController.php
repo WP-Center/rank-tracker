@@ -16,14 +16,9 @@ class DailyRequestCronController
     public function dailyApiRequest(): void
     {
         $databaseHelper = wprtContainer('DatabaseHelper');
-        $userTypeHelper = wprtContainer('UserTypeHelper');
         $rankController = wprtContainer('RankController');
         $apiController = wprtContainer('ApiController');
         $optionsHelper = wprtContainer('OptionsHelper');
-
-        if (!$userTypeHelper->isPremium()) {
-            return ;
-        }
 
         $limit = intval($optionsHelper->getTransient('api_limit_check'));
 
