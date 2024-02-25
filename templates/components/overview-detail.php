@@ -17,7 +17,6 @@ $keywordHelper = wprtContainer('KeywordHelper');
 $pageHelper = wprtContainer('PageHelper');
 $keywordController = wprtContainer('GetKeywordsController');
 $queriedKeywordId = $pageHelper->getQueriedKeyword();
-
 $keyword = $keywordController->getKeywordById($queriedKeywordId);
 
 ?>
@@ -28,13 +27,13 @@ $keyword = $keywordController->getKeywordById($queriedKeywordId);
         </div>
         <div class="wprt_overview_right">
             <div class="wprt_overview_title">
-                <?php esc_html_e(sprintf('%s Analyze', $keyword->keyword), 'wp-rank-tracker'); ?>
+                <?php esc_html_e(sprintf('%s Analyze', $keyword->keyword), 'easy-rank-tracker'); ?>
             </div>
             <div class="wprt_overview_boxes">
                 <div class="wprt_overview_box rank">
                     <div>
                         <div class="wprt_overview_box_title">
-                            <?php esc_html_e('7 Days Average', 'wp-rank-tracker') ?>
+                            <?php esc_html_e('7 Days Average', 'easy-rank-tracker') ?>
                         </div>
                         <?php
                         $keywordStatus = $keywordHelper->getKeywordStatus("-7 days", $queriedKeywordId);
@@ -51,13 +50,13 @@ $keyword = $keywordController->getKeywordById($queriedKeywordId);
                         <div class="wprt_overview_box_count wprt_overview_box_rank <?php echo esc_attr($className) ?>">
                             <?php if ($keywordStatus['arrow'] === '--up') : ?>
                                 <div class="wprt_overview_box_count up">
-                                    <?php esc_html_e((int) $keywordStatus['difference']); ?>
-                                    <span><?php esc_html_e(sprintf(__("from %s", 'wp-rank-tracker'), ((int) $keywordStatus['difference'] + (int) $keywordStatus['rank']))); ?></span>
+                                    <?php echo esc_html((int) $keywordStatus['difference']); ?>
+                                    <span><?php echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $keywordStatus['difference'] + (int) $keywordStatus['rank']))); ?></span>
                                 </div>
                             <?php elseif ($keywordStatus['arrow'] === '--down') : ?>
                                 <div class="wprt_overview_box_count down">
-                                    <?php esc_html_e((int) $keywordStatus['difference']); ?>
-                                    <span><?php esc_html_e(sprintf(__("from %s", 'wp-rank-tracker'), ((int) $keywordStatus['rank']) - (int) $keywordStatus['difference'])); ?></span>
+                                    <?php echo esc_html((int) $keywordStatus['difference']); ?>
+                                    <span><?php echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $keywordStatus['rank']) - (int) $keywordStatus['difference'])); ?></span>
                                 </div>
                             <?php else : ?>
                                 <div class="wprt_overview_box_count">
@@ -73,7 +72,7 @@ $keyword = $keywordController->getKeywordById($queriedKeywordId);
                 <div class="wprt_overview_box rank">
                     <div>
                         <div class="wprt_overview_box_title">
-                            <?php esc_html_e('30 Days Average', 'wp-rank-tracker') ?>
+                            <?php esc_html_e('30 Days Average', 'easy-rank-tracker') ?>
                         </div>
                         <?php
                         $keywordStatus = $keywordHelper->getKeywordStatus("-30 days", $queriedKeywordId);
@@ -90,13 +89,13 @@ $keyword = $keywordController->getKeywordById($queriedKeywordId);
                         <div class="wprt_overview_box_count wprt_overview_box_rank <?php echo esc_attr($className) ?>">
                             <?php if ($keywordStatus['arrow'] === '--up') : ?>
                                 <div class="wprt_overview_box_count up">
-                                    <?php esc_html_e((int) $keywordStatus['difference']); ?>
-                                    <span><?php esc_html_e(sprintf(__("from %s", 'wp-rank-tracker'), ((int) $keywordStatus['difference'] + (int) $keywordStatus['rank']))); ?></span>
+                                    <?php echo esc_html((int) $keywordStatus['difference']); ?>
+                                    <span><?php echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $keywordStatus['difference'] + (int) $keywordStatus['rank']))); ?></span>
                                 </div>
                             <?php elseif ($keywordStatus['arrow'] === '--down') : ?>
                                 <div class="wprt_overview_box_count down">
-                                    <?php esc_html_e((int) $keywordStatus['difference']); ?>
-                                    <span><?php esc_html_e(sprintf(__("from %s", 'wp-rank-tracker'), ((int) $keywordStatus['rank']) - (int) $keywordStatus['difference'])); ?></span>
+                                    <?php echo esc_html((int) $keywordStatus['difference']); ?>
+                                    <span><?php echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $keywordStatus['rank']) - (int) $keywordStatus['difference'])); ?></span>
                                 </div>
                             <?php else : ?>
                                 <div class="wprt_overview_box_count">
@@ -111,7 +110,7 @@ $keyword = $keywordController->getKeywordById($queriedKeywordId);
                 </div>
                 <div class="wprt_overview_box">
                     <div class="wprt_overview_box_title">
-                        <?php esc_html_e('Last Keyword Check', 'wp-rank-tracker') ?>
+                        <?php esc_html_e('Last Keyword Check', 'easy-rank-tracker') ?>
                     </div>
                     <div class="wprt_overview_box_count">
                         <?php
@@ -123,7 +122,7 @@ $keyword = $keywordController->getKeywordById($queriedKeywordId);
                             </span>
                             <?php
                         } else {
-                            esc_html_e('Rank value not checked yet', 'wp-rank-tracker');
+                            esc_html_e('Rank value not checked yet', 'easy-rank-tracker');
                         }
                         ?>
                     </div>

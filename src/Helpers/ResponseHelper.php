@@ -16,8 +16,8 @@ class ResponseHelper
     {
         wp_send_json_error(
             [
-                'message' => sprintf(__($errorMessage, 'wp-rank-tracker'), $variable),
-                'title' => sprintf(__($errorTitle, 'wp-rank-tracker'), $variable),
+                'message' => sprintf(__($errorMessage, 'easy-rank-tracker'), $variable),
+                'title' => sprintf(__($errorTitle, 'easy-rank-tracker'), $variable),
             ]
         );
     }
@@ -34,8 +34,8 @@ class ResponseHelper
     {
         wp_send_json_success(
             [
-                'message' => sprintf(__($successMessage, 'wp-rank-tracker'), $variable),
-                'title' => sprintf(__($successTitle, 'wp-rank-tracker'), $variable),
+                'message' => sprintf(__($successMessage, 'easy-rank-tracker'), $variable),
+                'title' => sprintf(__($successTitle, 'easy-rank-tracker'), $variable),
             ]
         );
     }
@@ -51,7 +51,7 @@ class ResponseHelper
     {
         wp_send_json_success(
             [
-                'message' => __($successMessage, 'wp-rank-tracker'),
+                'message' => __($successMessage, 'easy-rank-tracker'),
                 'rank' => $rank,
             ]
         );
@@ -68,8 +68,8 @@ class ResponseHelper
     {
         wp_send_json_success(
             [
-                'message' => __($successMessage, 'wp-rank-tracker'),
-                'warning' => __($warningMessage, 'wp-rank-tracker'),
+                'message' => __($successMessage, 'easy-rank-tracker'),
+                'warning' => __($warningMessage, 'easy-rank-tracker'),
             ]
         );
     }

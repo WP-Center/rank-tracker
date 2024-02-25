@@ -33,6 +33,14 @@ Ideal for website owners, bloggers, and anyone interested in understanding their
 - **Stay Informed About Your Website:** Get daily updates about where your keywords rank on Google.
 - **No Complicated Tools Needed:** Everything you need is in your WordPress dashboard, no external tools required.
 
+== Usage of Rank Tracker API ==
+
+We are not doing the crawling sending requests from your server. Instead of that we are using https://wpranktracker.com/ API (our own API system) to get rank tracking data from Google. 
+
+This is much more healty way to get rank tracking so your IP not sending and fake request to Google. 
+
+We are sending the data from your website to our own API, collect data and return back the correct values to your website, and then you can easily see all the ranking values on your WP Admin Dashboard.
+
 = Contributing & Bug Report =
 
 Bug reports and pull requests are welcome on [Github](https://github.com/WP-Center/rank-tracker).

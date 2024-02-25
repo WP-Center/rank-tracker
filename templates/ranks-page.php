@@ -46,9 +46,9 @@ $chartYData = rtrim($chartYData, ',');
             <table id="wprt_keyword_list_detail_table" class="uk-table uk-table-hover uk-table-striped wprt_keyword_list_table">
                 <thead>
                     <tr>
-                        <th><?php esc_html_e('Date', 'wp-rank-tracker'); ?></th>
-                        <th><?php esc_html_e('Position', 'wp-rank-tracker'); ?></th>
-                        <th><?php esc_html_e('Status', 'wp-rank-tracker'); ?></th>
+                        <th><?php esc_html_e('Date', 'easy-rank-tracker'); ?></th>
+                        <th><?php esc_html_e('Position', 'easy-rank-tracker'); ?></th>
+                        <th><?php esc_html_e('Status', 'easy-rank-tracker'); ?></th>
                     </tr>
                 </thead>
 
@@ -60,12 +60,12 @@ $chartYData = rtrim($chartYData, ',');
                         <tr class="wprt_keyword_list_table_row wprt_keyword_list_table_row">
                             <td>
                                 <span class="wprt_keyword_list_table_keyword">
-                                    <?php esc_html_e(wp_date('d M Y', strtotime($rank->created_at), wp_timezone())); ?>
+                                    <?php echo esc_html(wp_date('d M Y', strtotime($rank->created_at), wp_timezone())); ?>
                                 </span>
                             </td>
                             <td>
                                 <span class="wprt_keyword_list_table_keyword">
-                                    <?php esc_html_e($rank->ranks); ?>
+                                    <?php echo esc_html($rank->ranks); ?>
                                 </span>
                             </td>
 
@@ -74,14 +74,14 @@ $chartYData = rtrim($chartYData, ',');
                                     <?php if ($rank->arrow === '--up') : ?>
                                         <div class="wprt_keyword_list_table_status up">
                                             <img src="<?php echo esc_url($iconHelper->getIconUrl('arrow-up.png')) ?>">
-                                            <span><?php esc_html_e((int) $rank->difference); ?></span>
-                                            <?php esc_html_e(sprintf(__("from %s", 'wp-rank-tracker'), ((int) $rank->difference + (int) $rank->ranks))); ?>
+                                            <span><?php echo esc_html((int) $rank->difference); ?></span>
+                                            <?php echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $rank->difference + (int) $rank->ranks))); ?>
                                         </div>
                                     <?php elseif ($rank->arrow === '--down') : ?>
                                         <div class="wprt_keyword_list_table_status down">
                                             <img src="<?php echo esc_url($iconHelper->getIconUrl('arrow-down.png')) ?>">
-                                            <span><?php esc_html_e((int) $rank->difference); ?></span>
-                                            <?php esc_html_e(sprintf(__("from %s", 'wp-rank-tracker'), ((int) $rank->ranks) - (int) $rank->difference)); ?>
+                                            <span><?php echo esc_html((int) $rank->difference); ?></span>
+                                            <?php echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $rank->ranks) - (int) $rank->difference)); ?>
                                         </div>
                                     <?php else : ?>
                                         <div class="wprt_keyword_list_table_status">

@@ -26,7 +26,7 @@ $iconHelper = wprtContainer('IconHelper');
                         </svg>
                     </span>
 
-                    <?php esc_html_e('Add Keyword', 'wp-rank-tracker'); ?>
+                    <?php esc_html_e('Add Keyword', 'easy-rank-tracker'); ?>
                 </div>
                 <div class="wprt_keyword_popup_step_border">
 
@@ -41,7 +41,7 @@ $iconHelper = wprtContainer('IconHelper');
                                 fill="black" />
                         </svg>
                     </span>
-                    <?php esc_html_e('Rank Status', 'wp-rank-tracker'); ?>
+                    <?php esc_html_e('Rank Status', 'easy-rank-tracker'); ?>
                 </div>
                 <div class="wprt_keyword_popup_step_border">
 
@@ -56,7 +56,7 @@ $iconHelper = wprtContainer('IconHelper');
                                 fill="black" />
                         </svg>
                     </span>
-                    <?php esc_html_e('Rank Result', 'wp-rank-tracker'); ?>
+                    <?php esc_html_e('Rank Result', 'easy-rank-tracker'); ?>
                 </div>
             </div>
             <div class="wprt_keyword_popup_content">
@@ -69,12 +69,12 @@ $iconHelper = wprtContainer('IconHelper');
                         </a>
                     </div>
                     <div class="wprt_keyword_popup_title">
-                        <?php esc_html_e('Keyword Details', 'wp-rank-tracker'); ?>
+                        <?php esc_html_e('Keyword Details', 'easy-rank-tracker'); ?>
                     </div>
                     <div class="wprt_keyword_popup_country">
                         <select class="wprt_keyword_popup_country_select"
                             required="required"
-                            placeholder="<?php esc_attr_e('Select a country...', 'wp-rank-tracker'); ?>"
+                            placeholder="<?php esc_attr_e('Select a country...', 'easy-rank-tracker'); ?>"
                             autocomplete="off"
                             name="country">
                             <option value=""></option>
@@ -273,20 +273,20 @@ $iconHelper = wprtContainer('IconHelper');
                             <option value="ZM">Zambia 🇿🇲</option>
                             <option value="ZW">Zimbabwe 🇿🇼</option>
                         </select>
-                        <span class="country-select-text"><?php esc_html_e('Location:', 'wp-rank-tracker'); ?></span>
+                        <span class="country-select-text"><?php esc_html_e('Location:', 'easy-rank-tracker'); ?></span>
                     </div>
                     <div class="wprt_keyword_popup_content_keyword">
-                        <span class="keyword-input-text"><?php esc_html_e('Keyword:', 'wp-rank-tracker'); ?></span>
+                        <span class="keyword-input-text"><?php esc_html_e('Keyword:', 'easy-rank-tracker'); ?></span>
                         <input class="wprt_keyword_popup_content_keyword_tags"
                             autocomplete="off"
                             type="text"
-                            placeholder="<?php esc_attr_e('Enter The Keyword', 'wp-rank-tracker'); ?>"
+                            placeholder="<?php esc_attr_e('Enter The Keyword', 'easy-rank-tracker'); ?>"
                             name="keywords"
                             required />
                     </div>
                     <div class="wprt_keyword_popup_submit">
                         <input class="wprt_keyword_popup_submit_btn" type="submit" name="submit"
-                            value="<?php esc_attr_e('Add Keywords', 'wp-rank-tracker'); ?>" />
+                            value="<?php esc_attr_e('Add Keywords', 'easy-rank-tracker'); ?>" />
                     </div>
                 </form>
                 <div class="wprt_rank_status">
@@ -301,11 +301,11 @@ $iconHelper = wprtContainer('IconHelper');
                         ?>
                     </div>
                     <div class="wprt_rank_status_title">
-                        <?php esc_html_e('Thank you for your patience!', 'wp-rank-tracker'); ?>
+                        <?php esc_html_e('Thank you for your patience!', 'easy-rank-tracker'); ?>
                     </div>
                     <div class="wprt_rank_status_description">
-                        <p><?php esc_html_e('We know you are excited to see results 🤗', 'wp-rank-tracker'); ?></p>
-                        <p><?php esc_html_e('We are getting the latest results and will update you soon!', 'wp-rank-tracker'); ?></p>
+                        <p><?php esc_html_e('We know you are excited to see results 🤗', 'easy-rank-tracker'); ?></p>
+                        <p><?php esc_html_e('We are getting the latest results and will update you soon!', 'easy-rank-tracker'); ?></p>
                     </div>
                 </div>
                 <div class="wprt_rank_result">
@@ -348,7 +348,7 @@ $iconHelper = wprtContainer('IconHelper');
                         ?>
                     </div>
                     <div class="wprt_rank_result_title">
-                        <?php esc_html_e('Do you want to remove the keyword?', 'wp-rank-tracker') ?>
+                        <?php esc_html_e('Do you want to remove the keyword?', 'easy-rank-tracker') ?>
                     </div>
                     <div class="wprt_rank_result_description">
                         <?php esc_html_e(
@@ -360,11 +360,11 @@ $iconHelper = wprtContainer('IconHelper');
                         <input class="wprt_button_third wprt_rank_delete_cancel"
                             type="submit"
                             name="submit"
-                            value="<?php esc_attr_e('Cancel', 'wp-rank-tracker'); ?>" />
+                            value="<?php esc_attr_e('Cancel', 'easy-rank-tracker'); ?>" />
                         <input class="wprt_button_primary wprt_rank_delete_submit"
                             type="submit"
                             name="submit"
-                            value="<?php esc_attr_e('Remove', 'wp-rank-tracker'); ?>" />
+                            value="<?php esc_attr_e('Remove', 'easy-rank-tracker'); ?>" />
                     </div>
                     <script id="wprt_delete_description_template" type="text/template">
                         <?php esc_html_e(

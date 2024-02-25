@@ -22,8 +22,8 @@ class MenuController
     public function registerAdminMenu(): void
     {
         add_menu_page(
-            esc_html__('Rank Tracker', 'wp-rank-tracker'),
-            esc_html__('Rank Tracker', 'wp-rank-tracker'),
+            esc_html__('Rank Tracker', 'easy-rank-tracker'),
+            esc_html__('Rank Tracker', 'easy-rank-tracker'),
             'manage_options',
             'wp-rank-tracker',
             [
@@ -47,16 +47,16 @@ class MenuController
     {
         add_submenu_page(
             'wp-rank-tracker',
-            esc_html__('Keywords', 'wp-rank-tracker'),
-            esc_html__('Keywords', 'wp-rank-tracker'),
+            esc_html__('Keywords', 'easy-rank-tracker'),
+            esc_html__('Keywords', 'easy-rank-tracker'),
             'manage_options',
             'wp-rank-tracker',
         );
 
         add_submenu_page(
             'wp-rank-tracker',
-            esc_html__('Settings', 'wp-rank-tracker'),
-            esc_html__('Settings', 'wp-rank-tracker'),
+            esc_html__('Settings', 'easy-rank-tracker'),
+            esc_html__('Settings', 'easy-rank-tracker'),
             'manage_options',
             'wp-rank-tracker-settings',
             [
@@ -67,8 +67,8 @@ class MenuController
 
         add_submenu_page(
             'wp-rank-tracker',
-            esc_html__('Get Premium', 'wp-rank-tracker'),
-            esc_html__('Get Premium', 'wp-rank-tracker'),
+            esc_html__('Get Premium', 'easy-rank-tracker'),
+            esc_html__('Get Premium', 'easy-rank-tracker'),
             'manage_options',
             'wp-rank-tracker-premium',
             [
@@ -170,12 +170,12 @@ class MenuController
             'keywords' => sprintf(
                 '<a href="%s">%s</a>',
                 admin_url('admin.php?page=wp-rank-tracker'),
-                __('Keywords', 'wp-rank-tracker')
+                __('Keywords', 'easy-rank-tracker')
             ),
             'support' => sprintf(
                 '<a href="%s" target="_blank">%s</a>',
                 WPRT_SUPPORT_LINK,
-                __('Support', 'wp-rank-tracker')
+                __('Support', 'easy-rank-tracker')
             ),
         ];
 

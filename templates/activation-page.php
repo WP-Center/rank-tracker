@@ -20,18 +20,18 @@ $iconHelper = wprtContainer('IconHelper');
                 <img src="<?php echo esc_url($iconHelper->getIconUrl('license-page-icon.png')) ?>">
             </div>
             <div class="wprt_activation_license_title">
-                <?php echo wp_kses(__('Enter your license key to activate <br> Rank Tracker Premium', 'wp-rank-tracker'), ['br' => []]); ?>
+                <?php echo wp_kses(__('Enter your license key to activate <br> Rank Tracker Premium', 'easy-rank-tracker'), ['br' => []]); ?>
             </div>
 
             <form class="wprt_activation_license_form" method="post">
-                <input required placeholder="<?php esc_attr_e('Your license key', 'wp-rank-tracker'); ?>" name="activationKey"
+                <input required placeholder="<?php esc_attr_e('Your license key', 'easy-rank-tracker'); ?>" name="activationKey"
                     type="text" class="wprt_activation_license_input">
                 <input type="submit" class="wprt_activation_license_submit wprt_button_primary"
-                    value="<?php esc_attr_e('Activate License', 'wp-rank-tracker'); ?>">
+                    value="<?php esc_attr_e('Activate License', 'easy-rank-tracker'); ?>">
             </form>
 
             <div class="wprt_activation_license_support">
-                <?php echo wp_kses(sprintf(__("If you don’t know your license key, you can get from %1\$s or contact with %2\$s.", 'wp-rank-tracker'), '<a href="https://wpranktracker.com" target="_blank">here</a>', '<a href="https://wpranktracker.com" target="_blank">support</a>'), ['a' => ['href' => [], 'target' => []]]); ?>
+                <?php echo wp_kses(sprintf(__("If you don’t know your license key, you can get from %1\$s or contact with %2\$s.", 'easy-rank-tracker'), '<a href="https://wpranktracker.com" target="_blank">here</a>', '<a href="https://wpranktracker.com" target="_blank">support</a>'), ['a' => ['href' => [], 'target' => []]]); ?>
             </div>
             
             <div class="wprt_activation_license_error">
@@ -44,10 +44,10 @@ $iconHelper = wprtContainer('IconHelper');
                     <img src="<?php echo esc_url($iconHelper->getIconUrl('license-page-packages-icon.png')) ?>">
                 </div>
                 <div class="wprt_activation_package_title">
-                    <?php esc_html_e('Simple transparent pricing', 'wp-rank-tracker'); ?>
+                    <?php esc_html_e('Simple transparent pricing', 'easy-rank-tracker'); ?>
                 </div>
                 <div class="wprt_activation_package_description">
-                    <?php esc_html_e('Choose the right pricing plan for your business', 'wp-rank-tracker');?>
+                    <?php esc_html_e('Choose the right pricing plan for your business', 'easy-rank-tracker');?>
                 </div>
                 <div class="wprt_activation_package_list">
                     <div class="wprt_activation_package_item">

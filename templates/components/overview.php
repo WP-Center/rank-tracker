@@ -18,7 +18,7 @@ $keywordHelper = wprtContainer('KeywordHelper');
 ?>
 <div class="wprt_overview">
     <div class="wprt_overview_title">
-        <?php esc_html_e('Overview', 'wp-rank-tracker') ?>
+        <?php esc_html_e('Overview', 'easy-rank-tracker') ?>
     </div>
     <div class="wprt_overview_container">
         <div class="wprt_overview_logo">
@@ -27,36 +27,36 @@ $keywordHelper = wprtContainer('KeywordHelper');
         <div class="wprt_overview_boxes">
             <div class="wprt_overview_box">
                 <div class="wprt_overview_box_title">
-                    <?php esc_html_e('Total Keyword Count', 'wp-rank-tracker') ?>
+                    <?php esc_html_e('Total Keyword Count', 'easy-rank-tracker') ?>
                 </div>
                 <div class="wprt_overview_box_count">
-                    <?php esc_html_e(count($databaseHelper->getRow('keywords'))) ?>
+                    <?php echo esc_html(count($databaseHelper->getRow('keywords'))) ?>
                 </div>
             </div>
             <div class="wprt_overview_box">
                 <div class="wprt_overview_box_title">
-                    <?php esc_html_e('Daily Request', 'wp-rank-tracker') ?>
+                    <?php esc_html_e('Daily Request', 'easy-rank-tracker') ?>
                 </div>
                 <div class="wprt_overview_box_count">
-                    <?php esc_html_e((in_array(get_transient('wprt_api_limit_check'), [false, '']) ? '0' : get_transient('wprt_api_limit_check'))) ?>
+                    <?php echo esc_html((in_array(get_transient('wprt_api_limit_check'), [false, '']) ? '0' : get_transient('wprt_api_limit_check'))) ?>
                     <span>
-                        <?php esc_html_e(sprintf('left/ %s total', in_array(get_transient('wprt_api_package_limit'), [false, '']) ? '0' : get_transient('wprt_api_package_limit')), 'wp-rank-tracker'); ?>
+                        <?php echo esc_html(sprintf('left/ %s total', in_array(get_transient('wprt_api_package_limit'), [false, '']) ? '0' : get_transient('wprt_api_package_limit')), 'easy-rank-tracker'); ?>
                     </span>
                 </div>
             </div>
             <div class="wprt_overview_box">
                 <div class="wprt_overview_box_title">
-                    <?php esc_html_e('License Remaining Day', 'wp-rank-tracker') ?>
+                    <?php esc_html_e('License Remaining Day', 'easy-rank-tracker') ?>
                 </div>
                 <div class="wprt_overview_box_count">
                     <?php
                     if ($userTypeHelper->isFree()) {
-                        esc_html_e('∞', 'wp-rank-tracker');
+                        esc_html_e('∞', 'easy-rank-tracker');
                     } else {
-                        esc_html_e($licenseHelper->getLicenseRemainingDay());
+                        echo esc_html($licenseHelper->getLicenseRemainingDay());
                         ?>
                         <span>
-                            <?php esc_html_e('days', 'wp-rank-tracker'); ?>
+                            <?php esc_html_e('days', 'easy-rank-tracker'); ?>
                         </span>
                         <?php
                     } 
@@ -66,7 +66,7 @@ $keywordHelper = wprtContainer('KeywordHelper');
             <div class="wprt_overview_box rank">
                 <div>
                     <div class="wprt_overview_box_title">
-                        <?php esc_html_e('7 Days Average', 'wp-rank-tracker') ?>
+                        <?php esc_html_e('7 Days Average', 'easy-rank-tracker') ?>
                     </div>
                     <?php
                     $keywordStatus = $keywordHelper->getTotalKeywordStasus("-7 days");
@@ -78,8 +78,8 @@ $keywordHelper = wprtContainer('KeywordHelper');
                     }
                     ?>
                     <div class="wprt_overview_box_count wprt_overview_box_rank <?php echo esc_attr($className) ?>">
-                        <span class="wprt_overview_box_keyword_up"><?php esc_html_e(sprintf('%s keywords going up', count($keywordStatus['upKeywords'])), 'wp-rank-tracker'); ?></span>
-                        <span class="wprt_overview_box_keyword_down"><?php esc_html_e(sprintf('%s keywords going down', count($keywordStatus['downKeywords'])), 'wp-rank-tracker'); ?></span>
+                        <span class="wprt_overview_box_keyword_up"><?php esc_html_e(sprintf('%s keywords going up', count($keywordStatus['upKeywords'])), 'easy-rank-tracker'); ?></span>
+                        <span class="wprt_overview_box_keyword_down"><?php esc_html_e(sprintf('%s keywords going down', count($keywordStatus['downKeywords'])), 'easy-rank-tracker'); ?></span>
                     </div>
                 </div>
                 <span class="wprt_overview_box_icon">
@@ -89,7 +89,7 @@ $keywordHelper = wprtContainer('KeywordHelper');
             <div class="wprt_overview_box rank">
                 <div>
                     <div class="wprt_overview_box_title">
-                        <?php esc_html_e('30 Days Average', 'wp-rank-tracker') ?>
+                        <?php esc_html_e('30 Days Average', 'easy-rank-tracker') ?>
                     </div>
                     <?php
                     $keywordStatus = $keywordHelper->getTotalKeywordStasus("-30 days");
@@ -101,8 +101,8 @@ $keywordHelper = wprtContainer('KeywordHelper');
                     }
                     ?>
                     <div class="wprt_overview_box_count wprt_overview_box_rank <?php echo esc_attr($className) ?>">
-                        <span class="wprt_overview_box_keyword_up"><?php esc_html_e(sprintf('%s keywords going up', count($keywordStatus['upKeywords'])), 'wp-rank-tracker'); ?></span>
-                        <span class="wprt_overview_box_keyword_down"><?php esc_html_e(sprintf('%s keywords going down', count($keywordStatus['downKeywords'])), 'wp-rank-tracker'); ?></span>
+                        <span class="wprt_overview_box_keyword_up"><?php esc_html_e(sprintf('%s keywords going up', count($keywordStatus['upKeywords'])), 'easy-rank-tracker'); ?></span>
+                        <span class="wprt_overview_box_keyword_down"><?php esc_html_e(sprintf('%s keywords going down', count($keywordStatus['downKeywords'])), 'easy-rank-tracker'); ?></span>
                     </div>
                 </div>
                 <span class="wprt_overview_box_icon">
@@ -111,7 +111,7 @@ $keywordHelper = wprtContainer('KeywordHelper');
             </div>
             <div class="wprt_overview_box">
                 <div class="wprt_overview_box_title">
-                    <?php esc_html_e('Last Keyword Check', 'wp-rank-tracker') ?>
+                    <?php esc_html_e('Last Keyword Check', 'easy-rank-tracker') ?>
                 </div>
                 <div class="wprt_overview_box_count">
                     <?php
@@ -125,7 +125,7 @@ $keywordHelper = wprtContainer('KeywordHelper');
                             </span>
                         <?php
                     } else {
-                        esc_html_e('No Keywords', 'wp-rank-tracker');
+                        esc_html_e('No Keywords', 'easy-rank-tracker');
                     }
                     ?>
                 </div>
