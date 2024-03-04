@@ -7,7 +7,7 @@
  * Version: 1.0.0
  * Author: WPCenter
  * Author URI: https://wpcenter.io/
- * License: MIT
+ * License: GPLv2 or later
  */
 
 declare(strict_types=1);
