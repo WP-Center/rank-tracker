@@ -70,13 +70,18 @@ $iconHelper = wprtContainer('IconHelper');
                                 <div class="wprt_keyword_list_table_status up">
                                     <img src="<?php echo esc_url($iconHelper->getIconUrl('arrow-up.png')) ?>">
                                     <span><?php echo esc_html((int) $keyword->difference); ?></span>
-                                    <?php echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $keyword->difference + (int) $keyword->rank))); ?>
+                                    <?php
+                                    /* translators: %s: Keyword Difference Count */
+                                    echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $keyword->difference + (int) $keyword->rank))); 
+                                    ?>
                                 </div>
                             <?php elseif ($keyword->arrow === '--down') : ?>
                                 <div class="wprt_keyword_list_table_status down">
                                     <img src="<?php echo esc_url($iconHelper->getIconUrl('arrow-down.png')) ?>">
                                     <span><?php echo esc_html((int) $keyword->difference); ?></span>
-                                    <?php echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $keyword->rank) - (int) $keyword->difference)); ?>
+                                    <?php
+                                    /* translators: %s: Keyword Difference Count */
+                                    echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $keyword->rank) - (int) $keyword->difference)); ?>
                                 </div>
                             <?php else : ?>
                                 <div class="wprt_keyword_list_table_status">

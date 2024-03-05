@@ -60,7 +60,7 @@ class RankController
         }
 
         if (!$keywordData) {
-            return $responseHelper->sendJsonError('Invalid request parameters.');
+            return $responseHelper->sendJsonError(__('Invalid request parameters.', 'easy-rank-tracker'));
         }
 
         $this->sendRequestToAPI($keywordData->keyword, $keywordData->country, 'update');
@@ -87,13 +87,13 @@ class RankController
 
             if ($action === 'update') {
                 if ($apiResponse['data']['rank'] === '-1') {
-                    return $responseHelper->sendJsonError('Not Exist.');
+                    return $responseHelper->sendJsonError(__('Not Exist.', 'easy-rank-tracker'));
                 }
 
-                return $responseHelper->sendJsonSuccess('Keyword position updated succesfully. <br> Check it out!. ', $apiResponse['data']['rank'], 'Keyword Updated Successfully');
+                return $responseHelper->sendJsonSuccess(__('Keyword position updated succesfully. <br> Check it out!. ', 'easy-rank-tracker'), __('Keyword Updated Successfully', 'easy-rank-tracker'));
             }
 
-            return $responseHelper->sendJsonSuccess('Keyword added to your list with the correct ranking position. <br> Check it out!. ', $apiResponse['data']['rank'], 'Keyword Added Successfully');
+            return $responseHelper->sendJsonSuccess(__('Keyword added to your list with the correct ranking position. <br> Check it out!. ', 'easy-rank-tracker'), __('Keyword Added Successfully', 'easy-rank-tracker'));
         }
 
         if ($apiResponse['data']['message'] === WPRT_INVALID_LICENSE_KEY_MESSAGE) {
@@ -105,10 +105,10 @@ class RankController
         }
 
         if ($apiResponse['data']['message'] === 'localhost') {
-            $responseHelper->sendJsonError('Request cannot be made with localhost!');
+            $responseHelper->sendJsonError(__('Request cannot be made with localhost!', 'easy-rank-tracker'));
         }
 
-        return $responseHelper->sendJsonError($apiResponse['data']['message'] ?? 'Failed to get response from API.');
+        return $responseHelper->sendJsonError($apiResponse['data']['message'] ?? __('Failed to get response from API.', 'easy-rank-tracker'));
     }
 
     /**

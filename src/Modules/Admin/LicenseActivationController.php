@@ -47,7 +47,7 @@ class LicenseActivationController
         $licenseKey = sanitize_text_field($request->license);
 
         if (is_null($licenseKey)) {
-            return $activationHelper->sendJsonError('Please enter a license key');
+            return $activationHelper->sendJsonError(__('Please enter a license key', 'easy-rank-tracker'));
         }
 
         $this->sendRequest($licenseKey);
@@ -68,25 +68,25 @@ class LicenseActivationController
         $licenseApiResponse = $apiController->licenseCheck($licenseKey);
         
         if ($licenseApiResponse === false) {
-            return $activationHelper->sendJsonError('Failed to connect with API please contact us', null, 'License Activation Failed');
+            return $activationHelper->sendJsonError(__('Failed to connect with API please contact us', 'easy-rank-tracker'), __('License Activation Failed', 'easy-rank-tracker'));
         }
 
         if (($licenseApiResponse['success'] !== true) && (isset($licenseApiResponse['error']) &&  ($licenseApiResponse['error'] === 'expired'))) {
-            return $activationHelper->sendJsonError('The license key that you have entered is expired.', $licenseKey, 'License Activation Failed');
+            return $activationHelper->sendJsonError(__('The license key that you have entered is expired.', 'easy-rank-tracker'), __('License Activation Failed', 'easy-rank-tracker'));
         }
         
         if (($licenseApiResponse['success'] !== true) && isset($licenseApiResponse['data']) && ($licenseApiResponse['data']['message'] === 'localhost')) {
-            return $activationHelper->sendJsonError('Request cannot be made with localhost!', null, 'License Activation Failed');
+            return $activationHelper->sendJsonError(__('Request cannot be made with localhost!', 'easy-rank-tracker'), __('License Activation Failed', 'easy-rank-tracker'));
         }
 
         if (($licenseApiResponse['success'] !== true) || ($licenseApiResponse['license'] === 'invalid')) {
-            return $activationHelper->sendJsonError('The license key that you have entered is invalid.', $licenseKey, 'License Activation Failed');
+            return $activationHelper->sendJsonError(__('The license key that you have entered is invalid.', 'easy-rank-tracker'), __('License Activation Failed', 'easy-rank-tracker'));
         }
 
         // Save DB
         $this->licenseKeySaveDatabase($licenseApiResponse);
 
-        return $activationHelper->sendJsonSuccess('The license key has been successfully added to the database.', null, 'License Activation Completed');
+        return $activationHelper->sendJsonSuccess(__('The license key has been successfully added to the database.', 'easy-rank-tracker'), __('License Activation Completed', 'easy-rank-tracker'));
     }
 
     /**

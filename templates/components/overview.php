@@ -78,8 +78,24 @@ $keywordHelper = wprtContainer('KeywordHelper');
                     }
                     ?>
                     <div class="wprt_overview_box_count wprt_overview_box_rank <?php echo esc_attr($className) ?>">
-                        <span class="wprt_overview_box_keyword_up"><?php esc_html_e(sprintf('%s keywords going up', count($keywordStatus['upKeywords'])), 'easy-rank-tracker'); ?></span>
-                        <span class="wprt_overview_box_keyword_down"><?php esc_html_e(sprintf('%s keywords going down', count($keywordStatus['downKeywords'])), 'easy-rank-tracker'); ?></span>
+                        <span class="wprt_overview_box_keyword_up">
+                            <?php
+                                printf(
+                                    /* translators: %s: Keyword Count */
+                                    esc_html__( '%s keywords going up', 'easy-rank-tracker' ),
+                                    esc_html( count($keywordStatus['upKeywords']))
+                                );
+                            ?>
+                        </span>
+                        <span class="wprt_overview_box_keyword_down">
+                            <?php
+                                printf(
+                                    /* translators: %s: Keyword Count */
+                                    esc_html__( '%s keywords going down', 'easy-rank-tracker' ),
+                                    esc_html( count($keywordStatus['downKeywords']))
+                                );
+                            ?>
+                        </span>
                     </div>
                 </div>
                 <span class="wprt_overview_box_icon">
@@ -101,8 +117,24 @@ $keywordHelper = wprtContainer('KeywordHelper');
                     }
                     ?>
                     <div class="wprt_overview_box_count wprt_overview_box_rank <?php echo esc_attr($className) ?>">
-                        <span class="wprt_overview_box_keyword_up"><?php esc_html_e(sprintf('%s keywords going up', count($keywordStatus['upKeywords'])), 'easy-rank-tracker'); ?></span>
-                        <span class="wprt_overview_box_keyword_down"><?php esc_html_e(sprintf('%s keywords going down', count($keywordStatus['downKeywords'])), 'easy-rank-tracker'); ?></span>
+                        <span class="wprt_overview_box_keyword_up">
+                        
+                        <?php
+                            printf(
+                            /* translators: %s: Keyword Count */
+                                esc_html__( '%s keywords going up', 'easy-rank-tracker' ),
+                                esc_html( count($keywordStatus['upKeywords']))
+                            );
+                        ?>
+                        <span class="wprt_overview_box_keyword_down">
+                        <?php
+                            printf(
+                                /* translators: %s: Keyword Count */
+                                esc_html__( '%s keywords going down', 'easy-rank-tracker' ),
+                                esc_html( count($keywordStatus['downKeywords']))
+                            );
+                        ?>
+                        </span>
                     </div>
                 </div>
                 <span class="wprt_overview_box_icon">

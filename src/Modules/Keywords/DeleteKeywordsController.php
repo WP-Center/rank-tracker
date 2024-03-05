@@ -66,9 +66,9 @@ class DeleteKeywordsController
         $databaseHelper->deleteData($this->rankTable, ['keyword_id' => $keywordId]);
 
         if ($wpdb->last_error) {
-            return $responseHelper->sendJsonError('Something went wrong during the process.');
+            return $responseHelper->sendJsonError(__('Something went wrong during the process.', 'easy-rank-tracker'));
         }
 
-        return $responseHelper->sendJsonSuccess('Keyword and Rank successfully deleted.');
+        return $responseHelper->sendJsonSuccess(__('Keyword and Rank successfully deleted.', 'easy-rank-tracker'));
     }
 }

@@ -27,7 +27,13 @@ $keyword = $keywordController->getKeywordById($queriedKeywordId);
         </div>
         <div class="wprt_overview_right">
             <div class="wprt_overview_title">
-                <?php esc_html_e(sprintf('%s Analyze', $keyword->keyword), 'easy-rank-tracker'); ?>
+                <?php
+                printf(
+                    /* translators: %s: Keyword of the shown details */
+                    esc_html__( '%s Analyze', 'easy-rank-tracker' ),
+                    esc_html($keyword->keyword)
+                );
+                ?>
             </div>
             <div class="wprt_overview_boxes">
                 <div class="wprt_overview_box rank">

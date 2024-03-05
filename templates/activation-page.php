@@ -31,7 +31,12 @@ $iconHelper = wprtContainer('IconHelper');
             </form>
 
             <div class="wprt_activation_license_support">
-                <?php echo wp_kses(sprintf(__("If you don’t know your license key, you can get from %1\$s or contact with %2\$s.", 'easy-rank-tracker'), '<a href="https://wpranktracker.com" target="_blank">here</a>', '<a href="https://wpranktracker.com" target="_blank">support</a>'), ['a' => ['href' => [], 'target' => []]]); ?>
+                <?php
+                /* translators: %1\$s: Website link */
+                /* translators: %2\$s: Support link */
+                echo wp_kses(sprintf(__("If you don’t know your license key, you can get from %1\$s or contact with %2\$s.", 'easy-rank-tracker'), '<a href="https://wpranktracker.com" target="_blank">here</a>', '<a href="https://wpranktracker.com" target="_blank">support</a>'), ['a' => ['href' => [], 'target' => []]]); 
+                
+                ?>
             </div>
             
             <div class="wprt_activation_license_error">

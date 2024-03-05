@@ -49,23 +49,31 @@ class LicenseRemoveController
         $licenseKey = $licenseHelper->getLicense();
 
         if ($licenseKey === 'free') {
-            return $responseHelper->sendJsonError('License Free !');
+            return $responseHelper->sendJsonError(__('License Free !', 'easy-rank-tracker'));
         }
 
         $removeLicenseApiResponse = $apiController->removeLicenseFromDomain($licenseKey);
 
 
         if ($removeLicenseApiResponse === false) {
-            return $responseHelper->sendJsonError('Failed to connect with API please contact us');
+            return $responseHelper->sendJsonError(__('Failed to connect with API please contact us', 'easy-rank-tracker'));
         }
 
         if ($removeLicenseApiResponse['success'] !== true) {
-            return $responseHelper->sendJsonError($removeLicenseApiResponse['data']['message']);
+            return $responseHelper->sendJsonError(printf(
+
+                /* translators: %s: Data message that comes from api */
+
+                esc_html__( '%s', 'easy-rank-tracker' ),
+
+                esc_html( $removeLicenseApiResponse['data']['message'] )
+
+            ));
         }
 
         // Remove Plugin License
         $licenseExpiredController->expiredRemoveLicense();
 
-        return $responseHelper->sendJsonSuccess('License Removed');
+        return $responseHelper->sendJsonSuccess(__('License Removed', 'easy-rank-tracker'));
     }
 }

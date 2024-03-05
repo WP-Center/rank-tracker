@@ -48,14 +48,17 @@ class AddKeywordsController
         $country = sanitize_text_field($request->country);
 
         if (empty($keyword)) {
-            return $responseHelper->sendJsonError('Please add keywords.');
+            return $responseHelper->sendJsonError(__('Please add keywords.', 'easy-rank-tracker'));
         }
 
         if ($this->isKeywordExist(['keyword' => $keyword, 'country' => $country])) {
             return $responseHelper->sendJsonError(
-                'We couldn’t add the keyword to your list. "%s" keyword already exist. Please try another keyword.',
-                $keyword,
-                'Error With Adding Keyword'
+                printf(
+                    /* translators: %s: Keyword */
+                    esc_html__( 'We couldn’t add the keyword to your list. "%s" keyword already exist. Please try another keyword.', 'easy-rank-tracker' ),
+                    esc_html( $keyword )
+                ),
+                __('Error With Adding Keyword', 'easy-rank-tracker')
             );
         }
 

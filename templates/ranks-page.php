@@ -75,13 +75,17 @@ $chartYData = rtrim($chartYData, ',');
                                         <div class="wprt_keyword_list_table_status up">
                                             <img src="<?php echo esc_url($iconHelper->getIconUrl('arrow-up.png')) ?>">
                                             <span><?php echo esc_html((int) $rank->difference); ?></span>
-                                            <?php echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $rank->difference + (int) $rank->ranks))); ?>
+                                            <?php
+                                            /* translators: %s: Keyword Difference Count */
+                                            echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $rank->difference + (int) $rank->ranks))); ?>
                                         </div>
                                     <?php elseif ($rank->arrow === '--down') : ?>
                                         <div class="wprt_keyword_list_table_status down">
                                             <img src="<?php echo esc_url($iconHelper->getIconUrl('arrow-down.png')) ?>">
                                             <span><?php echo esc_html((int) $rank->difference); ?></span>
-                                            <?php echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $rank->ranks) - (int) $rank->difference)); ?>
+                                            <?php
+                                            /* translators: %s: Keyword Difference Count */
+                                            echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $rank->ranks) - (int) $rank->difference)); ?>
                                         </div>
                                     <?php else : ?>
                                         <div class="wprt_keyword_list_table_status">
@@ -102,8 +106,8 @@ $chartYData = rtrim($chartYData, ',');
             <?php if (!empty($chartYData)) : ?>
                 <div class="wprt_keyword_list_chart">
                     <canvas id="rankChart"
-                        data-rank-x-value="<?php esc_attr_e($chartXData); ?>"
-                        data-rank-y-value="<?php esc_attr_e($chartYData); ?>"
+                        data-rank-x-value="<?php echo esc_attr($chartXData); ?>"
+                        data-rank-y-value="<?php echo esc_attr($chartYData); ?>"
                     ></canvas>
                 </div>
             <?php endif ?>
