@@ -23,7 +23,13 @@ $userTypeHelper = wprtContainer('UserTypeHelper');
     <?php if ($pageHelper->isKeywordPage()) : ?>
         <div class="wprt_header_left">
             <a class="wprt_header_package wprt_button_secondary" href="javascript:void(0)">
-                <?php esc_html_e(sprintf('Active Package: %s', $userTypeHelper->getUserType()), 'easy-rank-tracker'); ?>
+                <?php
+                    printf(
+                        /* translators: %s: Package name free or premium */
+                        esc_html__( 'Active Package: %s', 'easy-rank-tracker' ),
+                        esc_html($userTypeHelper->getUserType())
+                    );
+                ?>
             </a>
             <?php if ($pageHelper->isKeywordDetailPage()) : ?>
                 <a class="wprt_header_go_back wprt_button_primary" href="<?php menu_page_url('wp-rank-tracker') ?>">
