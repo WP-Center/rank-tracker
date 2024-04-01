@@ -46,6 +46,12 @@ class ApiController
         
         if ($response['success'] !== true && isset($response['data']) && $response['data']['message'] === 'not-valid-license') {
             $licenseExpiredController->expiredRemoveLicense();
+            return [
+                'success' => false,
+                'data' => [
+                    'message' => 'Your license key is invalid.',
+                ],
+            ];
         }
 
         return $response;
