@@ -1,4 +1,4 @@
-=== Rank Tracker - Easy SEO Monitoring ===
+=== Rank Tracker - SEO Monitoring, Google Rank Tracking, Best Rank Tracker WordPress Plugin ===
 Contributors: wpcenter, cagdasdag, damladag
 Plugin Name: Rank Tracker - Easy SEO Monitoring
 Tags: rank tracking, rank, tracker, seo
@@ -19,6 +19,8 @@ Rank Tracker plugin will allow you to easily monitor your website’s position o
 Rank Tracker is a simple yet effective WordPress plugin that helps you keep an eye on your website's keyword positions on Google. 
 
 Ideal for website owners, bloggers, and anyone interested in understanding their Google search performance, this plugin is user-friendly and integrates directly into your WordPress site.
+
+[youtube https://youtu.be/rrJR2TPN0GY]  
 
 === Key Features ===
 

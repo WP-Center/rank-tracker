@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Rank Tracker - Easy SEO Monitoring
+ * Plugin Name: Rank Tracker - SEO Monitoring, Google Rank Tracking, Best Rank Tracker WordPress Plugin
  * Plugin URI: https://wpranktracker.com
  * Description: Rank Tracker plugin will allow you to easily monitor your website’s position on Google directly from your WordPress dashboard.
  * Version: 1.0.0
