@@ -28,7 +28,7 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     options: {
-                        presets: ['babel-preset-env']
+                        presets: ['@babel/preset-env']
                     }
                 }
             },
@@ -43,6 +43,7 @@ module.exports = {
                         options: {
                             sourceMap: true,
                             url: false,
+                            importLoaders: true
                         }
                     }, 
                     'sass-loader'

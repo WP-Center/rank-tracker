@@ -8,7 +8,8 @@ if (!defined('ABSPATH')) {
 /**
  * Overview
  */
- 
+
+$userTimeZoneHelper = wprtContainer('UserTimeZoneHelper');
 $iconHelper = wprtContainer('IconHelper');
 $licenseHelper = wprtContainer('LicenseHelper');
 $userTypeHelper = wprtContainer('UserTypeHelper');
@@ -150,11 +151,11 @@ $keywordHelper = wprtContainer('KeywordHelper');
                     $keywordsAll = $keywordHelper->getKeywordsLastCheck();
                     if (isset($keywordsAll[0])) {
                         $lastCheck = $keywordsAll[0]['last_update_date'];
-                        echo esc_html(wp_date("d M Y", $lastCheck, wp_timezone()));
+                        echo esc_html($userTimeZoneHelper->getUserDate($lastCheck, true, 'd M Y'));
                         ?>
                         <span>
-                                <?php echo esc_html(wp_date('g:i:a', $lastCheck, wp_timezone())); ?>
-                            </span>
+                                <?php echo esc_html($userTimeZoneHelper->getUserDate($lastCheck, true, 'H:i:s')); ?>
+                        </span>
                         <?php
                     } else {
                         esc_html_e('No Keywords', 'easy-rank-tracker');

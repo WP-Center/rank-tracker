@@ -27,8 +27,11 @@ $iconHelper = wprtContainer('IconHelper');
         <?php if (get_transient('wprt_api_limit_check') === '0') : ?>
             <?php $limitIsFull = true; ?>
             <div class="wprt_activation_symbol">
-                <p class="wprt_alert wprt_alert--warning">
-                    <?php esc_html_e('Daily Request Limit is over, please upgrade your package.', 'easy-rank-tracker') ?>
+                <p class="wprt_alert wprt_alert--error">
+                    <?php
+                    /* translators: 1: Login URL */
+                    printf( __( 'Daily Request Limit is over, please <a href="%1$s">upgrade</a> your package.', 'easy-rank-tracker' ), esc_url_raw( admin_url( 'admin.php?page=wp-rank-tracker-premium' ) ) );
+                    ?>
                 </p>
             </div>
         <?php endif ?>

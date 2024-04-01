@@ -24,7 +24,7 @@
       background: inherit;
       top: 50%;
       left: 50%;
-      margin: -$md-padding*.7 0 0 -$md-padding*.7;
+      margin: (-$md-padding*.7) 0 0 (-$md-padding*.7);
       box-shadow: inherit;
     }
     &:before {

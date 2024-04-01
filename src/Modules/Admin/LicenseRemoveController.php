@@ -49,7 +49,7 @@ class LicenseRemoveController
         $licenseKey = $licenseHelper->getLicense();
 
         if ($licenseKey === 'free') {
-            return $responseHelper->sendJsonError(__('License Free !', 'easy-rank-tracker'));
+            return $responseHelper->sendJsonError(__('License is free!', 'easy-rank-tracker'));
         }
 
         $removeLicenseApiResponse = $apiController->removeLicenseFromDomain($licenseKey);

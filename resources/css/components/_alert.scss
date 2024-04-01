@@ -1,5 +1,4 @@
 .wprt_alert {
-  display: flex;
   align-items: center;
   padding: $x-sm-padding*3;
   border-radius: 5px;
@@ -9,6 +8,8 @@
   box-sizing: border-box;
   grid-gap: $md-padding;
   position: relative;
+  font-size: 14px;
+  font-weight: 500;
 
   &_container {
     display: grid;

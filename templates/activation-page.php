@@ -57,37 +57,40 @@ $iconHelper = wprtContainer('IconHelper');
                 <div class="wprt_activation_package_list">
                     <div class="wprt_activation_package_item">
                         <div class="wprt_activation_package_item_title">Basic</div>
-                        <div class="wprt_activation_package_item_price"><sup class="currency-symbol">$</sup>9<span>/month</span></div>
+                        <div class="wprt_activation_package_item_price"><sup class="currency-symbol">$</sup>6.99<span>/month</span></div>
                         <div class="wprt_activation_package_item_feature">
-                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Track up to 5 keywords daily</div>
-                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Weekly ranking updates</div>
-                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Email support service</div>
-                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> User-friendly interface</div>
+                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Track up to <strong>10</strong> keywords daily</div>
+                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Unlimited website usage</div>
+                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Save reports in PDF or CSV formats</div>
+                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Detailed Ranking History</div>
+                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Customizable reporting options</div>
                         </div>
-                        <a href="https://wpranktracker.com/" target="_blank" class="wprt_button_secondary wprt_activation_package_button">Choose Plan</a>
+                        <a href="https://wpranktracker.com/pricing/" target="_blank" class="wprt_button_secondary wprt_activation_package_button">Choose Plan</a>
                     </div>
                     <div class="wprt_activation_package_item">
                         <div class="wprt_activation_package_item_badge">Most Popular</div>
                         <div class="wprt_activation_package_item_title">Standard</div>
-                        <div class="wprt_activation_package_item_price"><sup class="currency-symbol">$</sup>12<span>/month</span></div>
+                        <div class="wprt_activation_package_item_price"><sup class="currency-symbol">$</sup>29.99<span>/month</span></div>
                         <div class="wprt_activation_package_item_feature">
-                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Track up to 20 keywords daily</div>
-                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Daily ranking updates</div>
-                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Live chat support</div>
+                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Track up to <strong>50</strong> keywords daily</div>
+                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Unlimited website usage</div>
+                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Save reports in PDF or CSV formats</div>
+                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Detailed Ranking History</div>
                             <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Customizable reporting options</div>
                         </div>
-                        <a href="https://wpranktracker.com/" target="_blank" class="wprt_button_primary wprt_activation_package_button">Choose Plan</a>
+                        <a href="https://wpranktracker.com/pricing/" target="_blank" class="wprt_button_primary wprt_activation_package_button">Choose Plan</a>
                     </div>
                     <div class="wprt_activation_package_item">
                         <div class="wprt_activation_package_item_title">Basic</div>
-                        <div class="wprt_activation_package_item_price"><sup class="currency-symbol">$</sup>28<span>/month</span></div>
+                        <div class="wprt_activation_package_item_price"><sup class="currency-symbol">$</sup>119.99<span>/month</span></div>
                         <div class="wprt_activation_package_item_feature">
-                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Unlimited keyword tracking</div>
-                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Real-time ranking updates</div>
-                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Dedicated customer service</div>
-                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> In-depth data analysis</div>
+                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Track up to <strong>200</strong> keywords daily</div>
+                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Unlimited website usage</div>
+                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Save reports in PDF or CSV formats</div>
+                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Detailed Ranking History</div>
+                            <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Customizable reporting options</div>
                         </div>
-                        <a href="https://wpranktracker.com/" target="_blank" class="wprt_button_secondary wprt_activation_package_button">Choose Plan</a>
+                        <a href="https://wpranktracker.com/pricing/" target="_blank" class="wprt_button_secondary wprt_activation_package_button">Choose Plan</a>
                     </div>
                 </div>
             </div>

@@ -40,7 +40,7 @@ define('WPRT_API_LICENSE_LIMIT_URL', WPRT_API_URL . '/wp-json/wprta/v1/api/check
 define('WPRT_API_RANK_URL', WPRT_API_URL . '/wp-json/wprta/v1/api/rank');
 define('WPRT_API_REMOVE_LICENSE_URL', WPRT_API_URL . '/wp-json/wprta/v1/api/remove-license?licenseKey=%s');
 define('WPRT_INVALID_LICENSE_KEY_MESSAGE', 'The license key is not valid.');
-define('WPRT_DAILY_USAGE_LIMIT_EXPIRED', 'Daily Usage Limit expired!');
+define('WPRT_DAILY_USAGE_LIMIT_EXPIRED', 'Daily Usage Limit Expired!');
 define('WPRT_SUPPORT_LINK', 'https://wpranktracker.com/support');
 
 require_once __DIR__ . '/init.php';

@@ -39,7 +39,7 @@ class UserTimeZoneHelper
         return $optionsHelper->setOption($this->optionName, $timeZone);
     }
 
-    public function getUserDate($timestamp = null, bool $isFull = true): ?string
+    public function getUserDate($timestamp = null, bool $isFull = true, $dateFormat = 'd M Y H:i:s'): ?string
     {
         $timeZone = $this->getUserTimeZone();
 
@@ -55,6 +55,6 @@ class UserTimeZoneHelper
             return $dateTimeObj->format('Y-m-d');
         }
 
-        return $dateTimeObj->format('d M Y H:i:s');
+        return $dateTimeObj->format($dateFormat);
     }
 }
