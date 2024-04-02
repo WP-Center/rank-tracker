@@ -7,7 +7,7 @@ Author: WP Rank Tracker
 Requires at least: 5.6
 Tested up to: 6.5
 Requires PHP: 7.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Version: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,13 +20,17 @@ Rank Tracker is a simple yet effective WordPress plugin that helps you keep an e
 
 Ideal for website owners, bloggers, and anyone interested in understanding their Google search performance, this plugin is user-friendly and integrates directly into your WordPress site.
 
+⭐ [WP Rank Tracker Premium](https://wpranktracker.com/pricing/?utm_source=wporg&utm_medium=rank-tracker&utm_campaign=landing-page)  
+⭐ [Documentation](https://docs.wpranktracker.com/?utm_source=wporg&utm_medium=rank-tracker&utm_campaign=documentaion)  
+
+
 [youtube https://youtu.be/rrJR2TPN0GY]  
 
 === Key Features ===
 
 - **Daily Updates on Keyword Positions:** Track how your chosen keywords rank on Google every day.
 - **Simple WordPress Integration:** Easily add Rank Tracker to your WordPress site and start using it right away.
-- **Free for Up to 3 Keywords:** Monitor three keywords on Google without any cost.
+- **Free for Up to 2 Keywords:** Monitor three keywords on Google without any cost. If you need more keywords to track you can check our [Premium Packages](https://wpranktracker.com/pricing/?utm_source=wporg&utm_medium=rank-tracker&utm_campaign=landing-page). 
 - **Clear Data Visualization:** See how your keywords perform over time with easy-to-understand charts and graphs.
 
 === Why Choose Rank Tracker? ===
@@ -37,7 +41,7 @@ Ideal for website owners, bloggers, and anyone interested in understanding their
 
 == Usage of Rank Tracker API ==
 
-We are not doing the crawling sending requests from your server. Instead of that we are using https://wpranktracker.com/ API (our own API system) to get rank tracking data from Google. 
+We are not doing the crawling sending requests from your server. Instead of that we are using [WP Rank Tracker](https://wpranktracker.com/?utm_source=wporg&utm_medium=rank-tracker&utm_campaign=landing-page) API (our own API system) to get rank tracking data from Google. 
 
 This is much more healty way to get rank tracking so your IP not sending and fake request to Google. 
 
@@ -105,6 +109,11 @@ Yes, Rank Tracker supports tracking keywords across various languages and countr
 No, Rank Tracker operates within your WordPress dashboard and does not impact your website's loading speed or performance.
 
 == Changelog ==
+
+= 1.0.2 =
+* Enhancements: Add daily cron for all user types
+* Enhancements: Premium links added to readme
+* Fix: Visual bugs for overview section
 
 = 1.0.1 =
 - Fixes for initial problems

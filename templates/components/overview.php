@@ -119,14 +119,14 @@ $keywordHelper = wprtContainer('KeywordHelper');
                     ?>
                     <div class="wprt_overview_box_count wprt_overview_box_rank <?php echo esc_attr($className) ?>">
                         <span class="wprt_overview_box_keyword_up">
-                        
-                        <?php
-                            printf(
-                            /* translators: %s: Keyword Count */
-                                esc_html__( '%s keywords going up', 'easy-rank-tracker' ),
-                                esc_html( count($keywordStatus['upKeywords']))
-                            );
-                        ?>
+                            <?php
+                                printf(
+                                /* translators: %s: Keyword Count */
+                                    esc_html__( '%s keywords going up', 'easy-rank-tracker' ),
+                                    esc_html( count($keywordStatus['upKeywords']))
+                                );
+                            ?>
+                        </span>
                         <span class="wprt_overview_box_keyword_down">
                         <?php
                             printf(
