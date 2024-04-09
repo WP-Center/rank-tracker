@@ -18,8 +18,16 @@ class ApiLimitTransient
 
         $license = $licenseHelper->getLicense();
 
-        if (($optionsHelper->getTransient('wprt_api_limit_check') === false)) {
+        
+        if (($optionsHelper->getTransient('api_limit_check') === false)) {
             $apiResponse = $apiController->getLicenseLimit($license);
+
+            if (isset($apiResponse['message']) && $apiResponse['message'] === 'localhost') {
+                $optionsHelper->setTransient('api_limit_check', 0, DAY_IN_SECONDS);
+                $optionsHelper->setTransient('api_package_limit', 0, DAY_IN_SECONDS);
+
+                return;
+            }
 
             if (isset($apiResponse['success']) && $apiResponse['success'] === true) {
                 $limit = strval($apiResponse['data']['message']);
