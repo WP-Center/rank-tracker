@@ -28,7 +28,7 @@ class ApiController
 
         $arguments = [
             'method' => 'GET',
-            'timeout' => 10000,
+            'timeout' => 30,
         ];
 
         $response = wp_remote_get($apiUrl, $arguments);
@@ -61,7 +61,7 @@ class ApiController
     {
         $arguments = [
             'method' => 'GET',
-            'timeout' => 10000,
+            'timeout' => 30,
         ];
 
         $apiUrl = sprintf(WPRT_API_LICENSE_ACTIVATION_URL, $licenseKey);
@@ -83,7 +83,7 @@ class ApiController
 
         $arguments = [
             'method' => 'GET',
-            'timeout' => 10000,
+            'timeout' => 30,
         ];
 
         $timeZone = $userTimeZoneHelper->getUserTimeZone();
@@ -105,7 +105,7 @@ class ApiController
     {
         $arguments = [
             'method' => 'GET',
-            'timeout' => 10000,
+            'timeout' => 30,
         ];
 
         $apiUrl = sprintf(WPRT_API_REMOVE_LICENSE_URL, $licenseKey);
