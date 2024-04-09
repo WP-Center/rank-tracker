@@ -4,7 +4,7 @@
  * Plugin Name: Rank Tracker - SEO Monitoring, Google Rank Tracking, Best Rank Tracker WordPress Plugin
  * Plugin URI: https://wpranktracker.com
  * Description: Rank Tracker plugin will allow you to easily monitor your website’s position on Google directly from your WordPress dashboard.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: WPCenter
  * Author URI: https://wpcenter.io/
  * License: GPLv2 or later
@@ -28,7 +28,7 @@ if (defined('WPRT_VERSION')) {
     wp_die(esc_html__('Plugin conflict with Rank Tracker', 'easy-rank-tracker'));
 }
 
-define('WPRT_VERSION', '1.0.0');
+define('WPRT_VERSION', '1.0.4');
 define('WPRT_PLUGIN_URL', rtrim(plugin_dir_url(__FILE__), '/') . '/');
 define('WPRT_PLUGIN_FILE', __FILE__);
 define('WPRT_PLUGIN_DIR_PATH', rtrim(plugin_dir_path(__FILE__), '/') . '/');
