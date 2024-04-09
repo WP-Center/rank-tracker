@@ -1,18 +1,17 @@
 === Rank Tracker - SEO Monitoring, Google Rank Tracking, Best Rank Tracker WordPress Plugin ===
 Contributors: wpcenter, cagdasdag, damladag
 Plugin Name: Rank Tracker - Easy SEO Monitoring
-Tags: rank tracking, rank, tracker, seo
+Tags: rank tracking, rank, tracker, seo, rank tracker
 Author URI: http://wpranktracker.com/
 Author: WP Rank Tracker
 Requires at least: 5.6
 Tested up to: 6.5
 Requires PHP: 7.2
 Stable tag: 1.0.4
-Version: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Rank Tracker plugin will allow you to easily monitor your website’s position on Google directly from your WordPress dashboard.
+Rank Tracker is a WordPress plugin that allows you to easily monitor your website’s position for different keywords on Google directly from your WordPress dashboard.
 
 == Description ==
 
@@ -30,7 +29,7 @@ Ideal for website owners, bloggers, and anyone interested in understanding their
 
 - **Daily Updates on Keyword Positions:** Track how your chosen keywords rank on Google every day.
 - **Simple WordPress Integration:** Easily add Rank Tracker to your WordPress site and start using it right away.
-- **Free for Up to 2 Keywords:** Monitor three keywords on Google without any cost. If you need more keywords to track you can check our [Premium Packages](https://wpranktracker.com/pricing/?utm_source=wporg&utm_medium=rank-tracker&utm_campaign=landing-page). 
+- **Free for up to 2 Keywords:** Monitor 2 keywords on Google without any cost. If you need more keywords to track you can check our [Premium Packages](https://wpranktracker.com/pricing/?utm_source=wporg&utm_medium=rank-tracker&utm_campaign=landing-page). 
 - **Clear Data Visualization:** See how your keywords perform over time with easy-to-understand charts and graphs.
 
 === Why Choose Rank Tracker? ===
