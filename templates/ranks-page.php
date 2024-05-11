@@ -12,9 +12,11 @@ if (!defined('ABSPATH')) {
 $rankController = wprtContainer('RankController');
 $pageHelper = wprtContainer('PageHelper');
 $iconHelper = wprtContainer('IconHelper');
+$keywordController = wprtContainer('GetKeywordsController');
 
 $queriedKeywordId = $pageHelper->getQueriedKeyword();
 $keywords = $rankController->getDifferenceRowsFromKeyword($queriedKeywordId);
+$keyword = $keywordController->getKeywordById($queriedKeywordId);
 $totalRanks = count($keywords);
 
 $chartXData = '';
@@ -38,9 +40,21 @@ $chartYData = rtrim($chartYData, ',');
 <div class="wprt_keyword">
     <?php require 'header.php'; ?>
     <div class="wprt_keyword_list_wrapper wprt_keyword_list_detail">
-        <div class="wprt_keyword_datepicker_wrapper">
-            <input class="wprt_keyword_datepicker">
+        <div class="wprt_keyword_datepicker_wrapper_detail">
+	        <div class="wprt_overview_title">
+		        <?php
+		        printf(
+		        /* translators: %s: Keyword of the shown details */
+			        esc_html__( '"%s" Keyword History', 'easy-rank-tracker' ),
+			        esc_html($keyword->keyword)
+		        );
+		        ?>
+	        </div>
+	        <div class="wprt_keyword_datepicker_wrapper">
+		        <input class="wprt_keyword_datepicker">
+	        </div>
         </div>
+        
         <?php require 'components/overview-detail.php'; ?>
         <div class="wprt_keyword_list_detail_wrapper">
             <table id="wprt_keyword_list_detail_table" class="uk-table uk-table-hover uk-table-striped wprt_keyword_list_table">
@@ -48,7 +62,6 @@ $chartYData = rtrim($chartYData, ',');
                     <tr>
                         <th><?php esc_html_e('Date', 'easy-rank-tracker'); ?></th>
                         <th><?php esc_html_e('Position', 'easy-rank-tracker'); ?></th>
-                        <th><?php esc_html_e('Status', 'easy-rank-tracker'); ?></th>
                     </tr>
                 </thead>
 
@@ -64,36 +77,24 @@ $chartYData = rtrim($chartYData, ',');
                                 </span>
                             </td>
                             <td>
-                                <span class="wprt_keyword_list_table_keyword">
-                                    <?php echo esc_html($rank->ranks); ?>
-                                </span>
-                            </td>
-
-                            <td class="wprt_keyword_list_table_row<?php echo esc_html($rank->arrow); ?>">
-                                <div class="wprt_keyword_list_table_position_diff<?php echo esc_html($rank->arrow); ?>">
-                                    <?php if ($rank->arrow === '--up') : ?>
-                                        <div class="wprt_keyword_list_table_status up">
-                                            <img src="<?php echo esc_url($iconHelper->getIconUrl('arrow-up.png')) ?>">
-                                            <span><?php echo esc_html((int) $rank->difference); ?></span>
-                                            <?php
-                                            /* translators: %s: Keyword Difference Count */
-                                            echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $rank->difference + (int) $rank->ranks))); ?>
-                                        </div>
-                                    <?php elseif ($rank->arrow === '--down') : ?>
-                                        <div class="wprt_keyword_list_table_status down">
-                                            <img src="<?php echo esc_url($iconHelper->getIconUrl('arrow-down.png')) ?>">
-                                            <span><?php echo esc_html((int) $rank->difference); ?></span>
-                                            <?php
-                                            /* translators: %s: Keyword Difference Count */
-                                            echo esc_html(sprintf(__("from %s", 'easy-rank-tracker'), ((int) $rank->ranks) - (int) $rank->difference)); ?>
-                                        </div>
-                                    <?php else : ?>
-                                        <div class="wprt_keyword_list_table_status">
-                                            <img src="<?php echo esc_url($iconHelper->getIconUrl('arrow-no-change.png')) ?>">
-                                            -
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
+	                            <div class="wprt_keyword_list_table_position_current">
+		                            <?php echo esc_html($rank->ranks); ?>
+		                            <?php if ($rank->arrow === '--up') : ?>
+			                            <div class="wprt_keyword_list_table_position_diff up">
+					                    <span>
+						                    <svg class="position-up" height="5px" width="8px" viewBox="0 0 8 5"><path d="M0 0H8L4 5L0 0Z"></path></svg>
+						                    <?php echo esc_html((int) $rank->difference); ?>
+					                    </span>
+			                            </div>
+		                            <?php elseif ($rank->arrow === '--down') : ?>
+			                            <div class="wprt_keyword_list_table_position_diff down">
+					                    <span>
+						                    <svg class="position-down" height="5px" width="8px" viewBox="0 0 8 5"><path d="M0 0H8L4 5L0 0Z"></path></svg>
+						                    <?php echo esc_html((int) $rank->difference); ?>
+					                    </span>
+			                            </div>
+		                            <?php endif; ?>
+	                            </div>
                             </td>
                         </tr>
                         <?php

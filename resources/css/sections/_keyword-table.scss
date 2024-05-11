@@ -21,13 +21,15 @@
       background: $third-light-color;
 
       tr th {
-        @include type(15, 20);
+        @include type(13, 20);
         @include semi-bold;
-        padding: 15px 10px;
-        text-align: left;
-        text-transform: unset;
-        color: $title-light-color;
-        border-bottom: unset;
+        background-color: #f9fbfd;
+        text-transform: uppercase;
+        font-size: .8125rem;
+        font-weight: 600;
+        letter-spacing: .08em;
+        color: #95aac9;
+        border-bottom: none !important;
         
         &:first-child {
           padding-left: 30px;
@@ -40,10 +42,10 @@
     }
 
     td {
-      @include type(14, 20);
-      @include semi-bold;
+      @include type(13, 20);
+      @include regular;
       vertical-align: middle;
-      padding: 15px 10px;
+      padding: 14px 10px;
       border-bottom: 1px solid #E9E9E9;
       
       &:first-child {
@@ -82,6 +84,49 @@
         }
       }
     }
+
+    &_position {
+      color: $title-light-color;
+
+      &_current {
+        @include type(13, 20);
+        @include medium;
+        display: flex;
+        gap: 5px;
+      }
+
+      &_diff {
+        display: inline-block;
+        padding: 0.33em 0.5em;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 13px;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.375rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+        &.up {
+          color: #00d97e;
+          background-color: #ccf7e5;
+
+          svg {
+            fill: #00d97e;
+            transform: rotate(180deg);
+          }
+        }
+
+        &.down {
+          color: #e63757;
+          background-color: #fad7dd;
+
+          svg {
+            fill: #e63757;
+          }
+        }
+      }
+    }
     
     &_status {
       @include type(14, 20);
@@ -112,6 +157,15 @@
       font-size: 13px !important;
       font-weight: 400 !important;
       color: $title-light-color;
+    }
+    
+    &_keyword {
+      color: #2c7be5;
+      
+      @include hover-active-focus {
+        border: 0;
+        box-shadow: none;
+      }
     }
 
     &_buttons {
