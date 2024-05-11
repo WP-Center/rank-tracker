@@ -54,5 +54,25 @@
         border-top: unset;
       }
     }
+
+    &_mail {
+      margin-top: 15px;
+      display: inline-flex;
+      justify-content: space-between;
+      grid-gap: 15px;
+
+      &_input {
+        padding: 5px 20px;
+        border-radius: 7px;
+        outline: none;
+        border: 1px solid #E9E9E9;
+        margin: 0;
+        min-width: 280px;
+      }
+
+      &_submit {
+        padding: 5px 20px;
+      }
+    }
   }
 }

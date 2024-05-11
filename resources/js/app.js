@@ -3,6 +3,7 @@ import './components/table.js';
 import './components/rank-table.js';
 import './components/activation.js';
 import './components/reset-license.js';
+import './components/save-email.js';
 import './components/add-keyword.js';
 import './components/delete-keyword.js';
 import './components/rank-update.js';

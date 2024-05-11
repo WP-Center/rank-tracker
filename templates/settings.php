@@ -64,6 +64,13 @@ $licenseHelper = wprtContainer('LicenseHelper');
                     </button>
                 <?php endif ?>
             </div>
+
+            <form class="wprt_settings_mail" method="post">
+                <input required placeholder="<?php esc_attr_e('Email', 'easy-rank-tracker'); ?>" name="saveEmail"
+                       type="text" class="wprt_settings_mail_input">
+                <input type="submit" class="wprt_settings_mail_submit wprt_button_primary"
+                       value="<?php esc_attr_e('Save Email', 'easy-rank-tracker'); ?>">
+            </form>
         </div>
     </div>
 </div>

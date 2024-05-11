@@ -125,6 +125,7 @@ class RankController
         $databaseHelper = wprtContainer('DatabaseHelper');
         $userTimeZoneHelper = wprtContainer('UserTimeZoneHelper');
         $optionsHelper = wprtContainer('OptionsHelper');
+        $notificationController = wprtContainer('NotificationController');
 
         $newRank = $apiResponse['data']['rank'];
 
@@ -137,6 +138,14 @@ class RankController
         $getRankData = $getRankData[0] ?? null;
 
         $unSerializeRankData = $getRankData ? maybe_unserialize($getRankData->ranks) : [];
+
+        $rankKeys = array_keys($unSerializeRankData);
+        $lastRankKey = end($rankKeys);
+        $currentRank = $unSerializeRankData[$lastRankKey] ?? null;
+
+        if ($newRank != $currentRank) {
+            $notificationController->sendRankChangeEmail($keywordId, $currentRank, $newRank);
+        }
 
         $nowDate = $userTimeZoneHelper->getUserDate(null, false);
 
@@ -200,13 +209,13 @@ class RankController
         $differenceRankRows = [];
         $previousRank = null;
         $keyCount = 0;
-        
+
         foreach ($rankRows as $dateTime => $currentRankValue) {
             $currentRank = new \stdClass();
 
             $currentRank->ranks = $currentRankValue;
             $currentRank->created_at = $userTimeZoneHelper->getUserDate($dateTime, false);
-            
+
             if ($keyCount !== 0 && $previousRank === null) {
                 $previousRank = $rankRows[array_key_first($rankRows)];
             }
@@ -237,7 +246,7 @@ class RankController
 
             $keyCount++;
         }
-        
+
         unset($differenceRankRows[0]);
 
         return $differenceRankRows;
@@ -257,7 +266,7 @@ class RankController
         // @codingStandardsIgnoreStart
         if ($dateFrom && $dateTo) {
             $rankHistory = $this->getKeywordToRanksColumn($keywordId, $dateFrom, $dateTo);
-        } elseif (isset($_GET['dateFrom']) && isset($_GET['dateTo'])) { 
+        } elseif (isset($_GET['dateFrom']) && isset($_GET['dateTo'])) {
             $rankHistory = $this->getKeywordToRanksColumn($keywordId, sanitize_text_field($_GET['dateFrom']), sanitize_text_field($_GET['dateTo']));
         } else {
             $rankHistory = $this->getKeywordToRanksColumn($keywordId);
@@ -326,7 +335,7 @@ class RankController
         } else {
             $dateTo = (int) gmdate("U", strtotime("+1 day", strtotime($dateTo)));
         }
-        
+
         $databaseHelper = wprtContainer('DatabaseHelper');
 
         $results = $databaseHelper->getRow(
@@ -344,8 +353,8 @@ class RankController
 
             ksort($results);
         }
-        
-        
+
+
         return $keepKeys ? $results : array_values($results);
     }
 }

@@ -17,6 +17,7 @@ use WPRankTracker\Modules\Admin\AssetsController;
 use WPRankTracker\Modules\Admin\LicenseActivationController;
 use WPRankTracker\Modules\Admin\LicenseRemoveController;
 use WPRankTracker\Modules\Admin\MenuController;
+use WPRankTracker\Modules\Admin\NotificationController;
 use WPRankTracker\Modules\Admin\UserTimeZoneController;
 use WPRankTracker\Modules\Admin\UserTypeController;
 use WPRankTracker\Modules\Api\ApiController;
@@ -84,6 +85,7 @@ class Plugin
             'LicenseRemoveController' => LicenseRemoveController::class,
             'UserTimeZoneController' => UserTimeZoneController::class,
             'UserTimeZoneHelper' => UserTimeZoneHelper::class,
+            'NotificationController' => NotificationController::class,
         ];
 
         foreach ($classes as $alias => $abstract) {
