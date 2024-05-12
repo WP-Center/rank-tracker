@@ -7,7 +7,7 @@ Author: WP Rank Tracker
 Requires at least: 5.6
 Tested up to: 6.5
 Requires PHP: 7.2
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,9 @@ Yes, Rank Tracker supports tracking keywords across various languages and countr
 No, Rank Tracker operates within your WordPress dashboard and does not impact your website's loading speed or performance.
 
 == Changelog ==
+= 1.0.5 =
+* Enhancements: Keyword and overview redesign completed
+
 = 1.0.4 =
 * Fix: Transient wrong name
 
