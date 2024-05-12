@@ -200,6 +200,7 @@ class RankController
         $differenceRankRows = [];
         $previousRank = null;
         $keyCount = 0;
+	    krsort($rankRows);
         
         foreach ($rankRows as $dateTime => $currentRankValue) {
             $currentRank = new \stdClass();

@@ -1,6 +1,12 @@
 @import "vendors/daterangepicker.scss";
 
 .wprt_keyword {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f9fbfd;
+  
   &.wprt_show_popup {
     &:after {
       content: '';

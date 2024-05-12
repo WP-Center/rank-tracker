@@ -6,7 +6,7 @@ import Chart from 'chart.js/auto';
 
         new DataTable('#wprt_keyword_list_detail_table', {
             dom: 'rtBip',
-            order: [[0, 'desc']],
+            order: [],
             buttons: [
                 {
                     extend: 'pdfHtml5',

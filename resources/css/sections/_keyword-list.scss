@@ -1,7 +1,21 @@
 .wprt_keyword_list {
   &_wrapper {
     background: $white-color;
-    padding: 15px 20px;
+    max-width: 1440px;
+    width: 100%;
+    border: 1px solid #edf2f9;
+    border-radius: .5rem;
+    margin-bottom: 1.5rem;
+    border-color: #edf2f9;
+    box-shadow: 0 .75rem 1.5rem rgba(18, 38, 63, .03);
+    padding: 20px 40px;
+    
+    @include media-breakpoint(xl-m) {
+      padding: 20px 20px;
+      margin: 0 20px;
+      max-width: unset !important;
+      width: calc(100% - 80px);
+    }
     
     .wpc_rt_keywords_alert {
       position: fixed;
@@ -18,7 +32,7 @@
   }
   
   &_country {
-    font-size: 30px !important;
+    font-size: 25px !important;
   }
 
   &_chart {
@@ -90,6 +104,16 @@
       margin-left: 0;
       display: block;
       text-align: right;
+      
+      &_detail {
+        .wprt_overview_title {
+          flex: 1;
+        }
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
   }
 }
