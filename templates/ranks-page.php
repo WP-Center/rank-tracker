@@ -22,7 +22,8 @@ $totalRanks = count($keywords);
 $chartXData = '';
 $chartYData = '';
 
-foreach ($keywords as $index => $rank) {
+$chardData = array_reverse($keywords);
+foreach ($chardData as $index => $rank) {
     if ($rank->ranks === 'Not Exist') {
         continue;
     }
@@ -103,8 +104,9 @@ $chartYData = rtrim($chartYData, ',');
                 ?>
                 </tbody>
             </table>
+            
 
-            <?php if (!empty($chartYData)) : ?>
+            <?php if (!empty($chartYData)) :?>
                 <div class="wprt_keyword_list_chart">
                     <canvas id="rankChart"
                         data-rank-x-value="<?php echo esc_attr($chartXData); ?>"

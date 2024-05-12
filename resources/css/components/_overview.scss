@@ -13,11 +13,15 @@
   }
   
   &_boxes {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 15px;
-    flex-wrap: wrap;
-    justify-content: space-between;
     margin-top: 30px;
+    width: 100%;
+    
+    &_third {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
   
   &_logo {
@@ -49,8 +53,7 @@
     border-radius: .5rem;
     border-color: #edf2f9;
     box-shadow: 0 .75rem 1.5rem rgba(18, 38, 63, .03);
-    max-width: 260px;
-    flex: 1 1 auto;
+    flex: 1;
     min-height: 1px;
     padding: 1.5rem;
     flex-wrap: wrap;
@@ -65,6 +68,7 @@
     
     &_icon {
       text-align: end;
+      flex: none !important;
     }
     
     &_title {
