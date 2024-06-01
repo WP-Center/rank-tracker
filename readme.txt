@@ -1,13 +1,13 @@
-=== Rank Tracker - SEO Monitoring, Google Rank Tracking, Best Rank Tracker WordPress Plugin ===
+=== Rank Tracker - SEO Monitoring, Google Rank Tracking, Easy SEO Tracker, Keyword Rank Tracking ===
 Contributors: wpcenter, cagdasdag, damladag
 Plugin Name: Rank Tracker - Easy SEO Monitoring
-Tags: rank tracking, rank, tracker, seo, rank tracker, google
+Tags: rank tracking, rank, google, seo, rank tracker
 Author URI: http://wpranktracker.com/
 Author: WP Rank Tracker
 Requires at least: 5.6
 Tested up to: 6.5
 Requires PHP: 7.2
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
