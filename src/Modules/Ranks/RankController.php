@@ -87,7 +87,7 @@ class RankController
 
             if ($action === 'update') {
                 if ($apiResponse['data']['rank'] === '-1') {
-                    return $responseHelper->sendJsonError(__('> 100', 'easy-rank-tracker'));
+                    return $responseHelper->sendJsonError(__('The keyword is not in the first 100 search results and may not exist in the search results at all.', 'easy-rank-tracker'));
                 }
 
                 return $responseHelper->sendJsonSuccess(__('Keyword position updated succesfully. <br> Check it out!. ', 'easy-rank-tracker'), __('Keyword Updated Successfully', 'easy-rank-tracker'));
