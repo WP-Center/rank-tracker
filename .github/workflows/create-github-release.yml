@@ -29,7 +29,7 @@ jobs:
 
       - name: Zip Folder
         run: |
-          zip -r rank-tracker.zip . -x ".git/*" ".github/*" "node_modules/*" ".editorconfig" ".gitignore" "DOCKER_ENV" "docker_tag" "Dockerfile-php-build" "gulpfile.js" "openapi.json" "output.log" "package-lock.json" "package.json" "README.md" "scripts" "scripts/*" "phpcs.ruleset.xml" "webpack.config.js" "vendor/php-di/phpdoc-reader/.github" "./vendor/php-di/phpdoc-reader/.github" "./resources/css/*"
+          zip -r rank-tracker.zip . -x ".git/*" ".github/*" "node_modules/*" ".editorconfig" ".gitignore" "DOCKER_ENV" "docker_tag" "Dockerfile-php-build" "gulpfile.js" "openapi.json" "output.log" "package-lock.json" "package.json" "README.md" "scripts" "scripts/*" "phpcs.ruleset.xml" "webpack.config.js" "vendor/php-di/phpdoc-reader/.github" "./vendor/php-di/phpdoc-reader/.github" "./resources/*" "composer.json" "composer.lock"
       
       - name: Release
         uses: softprops/action-gh-release@v1

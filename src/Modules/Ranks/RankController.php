@@ -87,7 +87,7 @@ class RankController
 
             if ($action === 'update') {
                 if ($apiResponse['data']['rank'] === '-1') {
-                    return $responseHelper->sendJsonError(__('Not Exist.', 'easy-rank-tracker'));
+                    return $responseHelper->sendJsonError(__('> 100', 'easy-rank-tracker'));
                 }
 
                 return $responseHelper->sendJsonSuccess(__('Keyword position updated succesfully. <br> Check it out!. ', 'easy-rank-tracker'), __('Keyword Updated Successfully', 'easy-rank-tracker'));
@@ -213,7 +213,7 @@ class RankController
             }
 
             $notExist = false;
-            if ($previousRank === '-1' || $previousRank === 'Not Exist') {
+            if ($previousRank === '-1' || $previousRank === '> 100') {
                 $previousRank = '0';
                 $notExist = true;
             }
@@ -225,7 +225,7 @@ class RankController
             $currentRank->difference = $notExist ? $currentRankValue : (($difference !== null) ? abs($difference) : '-');
 
             if ($currentRankValue === '-1') {
-                $currentRank->ranks = 'Not Exist';
+                $currentRank->ranks = '> 100';
                 $currentRank->arrow = '--none';
                 $currentRank->difference = '-';
             }
@@ -287,13 +287,13 @@ class RankController
                 'arrow' => $arrow,
                 'difference' => abs($difference),
             ] : [
-                'rank' => 'Not Exist',
+                'rank' => '> 100',
                 'arrow' => '--none',
                 'difference' => '-',
             ];
         } elseif (count($rankHistory) === 1) {
             $firstRankValue = $rankHistory[count($rankHistory) - 1];
-            $firstRankText = $firstRankValue === '-1' ? 'Not Exist' : $firstRankValue;
+            $firstRankText = $firstRankValue === '-1' ? '> 100' : $firstRankValue;
         } else {
             $firstRankText = '';
         }

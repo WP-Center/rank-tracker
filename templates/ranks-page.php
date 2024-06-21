@@ -24,7 +24,7 @@ $chartYData = '';
 
 $chardData = array_reverse($keywords);
 foreach ($chardData as $index => $rank) {
-    if ($rank->ranks === 'Not Exist') {
+    if ($rank->ranks === '> 100') {
         continue;
     }
 
