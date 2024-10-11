@@ -60,15 +60,7 @@ class LicenseRemoveController
         }
 
         if ($removeLicenseApiResponse['success'] !== true) {
-            return $responseHelper->sendJsonError(printf(
-
-                /* translators: %s: Data message that comes from api */
-
-                esc_html__( '%s', 'easy-rank-tracker' ),
-
-                esc_html( $removeLicenseApiResponse['data']['message'] )
-
-            ));
+            return $responseHelper->sendJsonError(esc_html( $removeLicenseApiResponse['data']['message']));
         }
 
         // Remove Plugin License

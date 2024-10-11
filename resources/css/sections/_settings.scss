@@ -1,34 +1,61 @@
-.wprt_settings {
-  &_page {
-    padding: 20px;
-    border: 2px solid #E9E9E9;
-    border-radius: 7px;
-  }
+.wprt_settings{
   
-  &_informations {
+  *{
+    box-sizing: border-box;
+  }
+
+  &{
+    width: calc(100% - 40px);
+    padding: 0px 20px 20px 20px;
+    @include container;
+  }
+
+  &_panel{
     display: flex;
-  }
-  
-  &_labels {
-    @include type(18, 30);
-    @include semi-bold;
-    color: $title-color;
-    background: #F8F8F8;
-    border-radius: 7px 0 0 7px;
+    gap: 15px;  
+    flex-flow: column;
+    max-width: unset !important;
+    width: 100%;
+    background: $white-color;
+    border: 1px solid $border-light-gray;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
     
-    &_item {
-      margin: 5px 0;
-      padding: 10px 25px;
-      border-top: 1px solid #E9E9E9;
-      
-      &:first-child {
-        border-top: unset;
+    &_heading{
+      padding: 20px;
+      border-bottom: 1px solid $border-light-gray;
+
+      h5{
+        margin-bottom: 0;
+      }
+
+      p{
+        margin-top: 10px;
+        margin-bottom: 0;
       }
     }
+
+    &_body{
+      cursor: default;
+      padding: 20px;
+    }
   }
-  
+
+  &_left{
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    width: 70%;
+  }
+
+  &_right{
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    width: 30%;
+  }
+
   &_actions {
-    margin-top: 15px;
     
     button {
       cursor: pointer;
@@ -36,23 +63,69 @@
     
     .wprt_remove_license_submit {
       margin-right: 15px;
+      border: none;
+      outline: none;
     }
   }
-  
-  &_values {
-    @include type(16, 30);
-    @include medium;
-    border: 1px solid #E9E9E9;
-    
-    
-    &_item {
-      margin: 4px 0 5px 0;
-      padding: 10px 25px;
-      border-top: 1px solid #E9E9E9;
 
-      &:first-child {
-        border-top: unset;
+  &_form {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+  
+    label {
+      display: block;
+      text-align: left;
+      font-weight: 600;
+    }
+  
+    &_fields_wrapper{
+      display: flex;
+      flex-flow: column;
+      gap: 20px;
+    }
+  
+    &_input_col{
+      display: flex;
+      gap: 20px;
+    }
+  
+    &_input_wrapper{
+      display: flex;
+      flex-flow: column;
+      gap: 5px;
+      width: 100%;
+    }
+  
+    [type="text"],
+    [type="email"],
+    select {
+      width: 100%;
+      padding: 8px 16px;
+      border-radius: 8px;
+      outline: none;
+      transition: .3s all linear;
+      box-shadow: none;
+      border: 1px solid $border-input;
+  
+      &:focus{
+        border-color: $primary-color;
       }
+    }
+  
+    &_table{
+      width: 100%;
+  
+      td:first-child{
+          max-width: 25px;
+      }
+    }
+  
+    &_submit, [type="submit"]{
+      border: none;
+      outline: none;
+      width: 100%;
+      text-transform: uppercase;
     }
   }
 }

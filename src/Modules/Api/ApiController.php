@@ -4,6 +4,23 @@ namespace WPRankTracker\Modules\Api;
 
 class ApiController
 {
+    function __construct()
+    {
+        add_filter('wprt_localize_script', [$this, 'addApiNonces']);
+    }
+
+    /**
+     * Localizes nonce for API authentication
+     *
+     * @param array $vars
+     * @return array
+     */
+    public function addApiNonces(array $vars) : array 
+    {
+        $vars['apiNonce'] = wp_create_nonce('wp_rest');
+        return $vars;
+    }
+
     /**
      * This method responsible to get rank from API.
      *

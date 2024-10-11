@@ -14,13 +14,16 @@ use WPRankTracker\Helpers\UserTimeZoneHelper;
 use WPRankTracker\Helpers\UserTypeHelper;
 use WPRankTracker\Helpers\KeywordHelper;
 use WPRankTracker\Modules\Admin\AssetsController;
+use WPRankTracker\Modules\Admin\FrontendLocalizeController;
 use WPRankTracker\Modules\Admin\LicenseActivationController;
 use WPRankTracker\Modules\Admin\LicenseRemoveController;
 use WPRankTracker\Modules\Admin\MenuController;
+use WPRankTracker\Modules\Admin\SettingsController;
 use WPRankTracker\Modules\Admin\UserTimeZoneController;
 use WPRankTracker\Modules\Admin\UserTypeController;
 use WPRankTracker\Modules\Api\ApiController;
 use WPRankTracker\Modules\Cron\DailyRequestCronController;
+use WPRankTracker\Modules\Cron\ReportSenderCronController;
 use WPRankTracker\Modules\Keywords\AddKeywordsController;
 use WPRankTracker\Modules\Keywords\KeywordDatabaseController;
 use WPRankTracker\Modules\Keywords\DeleteKeywordsController;
@@ -28,6 +31,7 @@ use WPRankTracker\Modules\Keywords\GetKeywordsController;
 use WPRankTracker\Modules\License\LicenseExpiredController;
 use WPRankTracker\Modules\Ranks\RankController;
 use WPRankTracker\Modules\Ranks\RankDatabaseController;
+use WPRankTracker\Modules\Report\ReportController;
 use WPRankTracker\Modules\System\Activation;
 use WPRankTracker\Modules\System\Deactivation;
 use WPRankTracker\Modules\Transient\ApiLimitTransient;
@@ -81,9 +85,12 @@ class Plugin
             'ApiLimitTransient' => ApiLimitTransient::class,
             'TransientCheckController' => TransientCheckController::class,
             'DailyRequestCronController' => DailyRequestCronController::class,
+            'ReportSenderCronController' => ReportSenderCronController::class,
             'LicenseRemoveController' => LicenseRemoveController::class,
             'UserTimeZoneController' => UserTimeZoneController::class,
             'UserTimeZoneHelper' => UserTimeZoneHelper::class,
+            'SettingsController' => SettingsController::class,
+            'FrontendLocalizeController' => FrontendLocalizeController::class
         ];
 
         foreach ($classes as $alias => $abstract) {

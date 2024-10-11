@@ -138,6 +138,10 @@ class RankController
 
         $unSerializeRankData = $getRankData ? maybe_unserialize($getRankData->ranks) : [];
 
+        $rankKeys = array_keys($unSerializeRankData);
+        $lastRankKey = end($rankKeys);
+        $currentRank = $unSerializeRankData[$lastRankKey] ?? null;
+
         $nowDate = $userTimeZoneHelper->getUserDate(null, false);
 
         $timeZoneUnSerializeRankData = [];
@@ -198,48 +202,30 @@ class RankController
         }
 
         $differenceRankRows = [];
-        $previousRank = null;
-        $keyCount = 0;
+        $nextRank = null;
 	    krsort($rankRows);
-        
+
         foreach ($rankRows as $dateTime => $currentRankValue) {
             $currentRank = new \stdClass();
 
             $currentRank->ranks = $currentRankValue;
             $currentRank->created_at = $userTimeZoneHelper->getUserDate($dateTime, false);
-            
-            if ($keyCount !== 0 && $previousRank === null) {
-                $previousRank = $rankRows[array_key_first($rankRows)];
-            }
+            $nextRank = next($rankRows);
 
-            $notExist = false;
-            if ($previousRank === '-1' || $previousRank === '> 100') {
-                $previousRank = '0';
-                $notExist = true;
-            }
-
-            $difference = ($previousRank !== null) ? $currentRankValue - $previousRank : null;
-            $arrow = ($difference > 0) ? '--down' : (($difference === 0) ? '--none' : '--up');
-
-            $currentRank->arrow = $notExist ? '--up' : $arrow;
-            $currentRank->difference = $notExist ? $currentRankValue : (($difference !== null) ? abs($difference) : '-');
-
-            if ($currentRankValue === '-1') {
-                $currentRank->ranks = '> 100';
-                $currentRank->arrow = '--none';
+            if($currentRankValue > $nextRank && $nextRank !== false){
+                $currentRank->difference = $currentRankValue - $nextRank;
+                $currentRank->arrow = '--down';
+            }elseif($currentRankValue < $nextRank && $nextRank !== false){
+                $currentRank->difference = $nextRank - $currentRankValue;
+                $currentRank->arrow = '--up';
+            }else{
                 $currentRank->difference = '-';
+                $currentRank->arrow = '--none';
             }
 
+            $nextRank = $currentRankValue;
             $differenceRankRows[] = $currentRank;
-
-            if ($keyCount !== 0) {
-                $previousRank = $currentRankValue;
-            }
-
-            $keyCount++;
         }
-        
-        unset($differenceRankRows[0]);
 
         return $differenceRankRows;
     }
@@ -319,7 +305,7 @@ class RankController
         if (!$dateFrom) {
             $dateFrom = $keepKeys ? (int) gmdate("U", strtotime("-8 days 00:00:00")) : (int) gmdate("U", strtotime("-7 days 00:00:00"));
         } else {
-            $dateFrom = $keepKeys ? (int) gmdate("U", strtotime("-1 day", strtotime($dateFrom))) : (int) gmdate("U", strtotime($dateFrom));
+            $dateFrom = (int) gmdate("U", strtotime($dateFrom));
         }
 
         if (!$dateTo) {

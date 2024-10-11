@@ -1,7 +1,8 @@
 import $ from 'jquery';
 import {showResultStep} from "./popup-helper";
+import Swal from 'sweetalert2';
 
-export function wprtSendApiRequest(apiEndpoint, params)
+export function wprtSendApiRequest(apiEndpoint, params, headers = {})
 {
     const originalEndpoint = apiEndpoint;
 
@@ -9,7 +10,8 @@ export function wprtSendApiRequest(apiEndpoint, params)
 
     const options = {
         method: 'POST',
-        body: JSON.stringify(params)
+        body: JSON.stringify(params),
+        headers
     };
 
     fetch(endpoint, options)
@@ -52,6 +54,19 @@ function handleSuccessResponse(data, originalEndpoint, params) {
 
     if (originalEndpoint === 'delete' || originalEndpoint === 'remove-license' || originalEndpoint === 'delete-existing-data' || originalEndpoint === 'activation') {
         location.reload();
+    }
+
+    if(originalEndpoint === 'save-settings' ){
+        setTimeout(() => {
+            Swal.fire(
+                {
+                    title,
+                    text: message,
+                    icon: 'success',
+                    heightAuto: false
+                }
+            )
+        }, 1000);
     }
 }
 

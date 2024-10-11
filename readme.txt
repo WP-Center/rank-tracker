@@ -5,9 +5,9 @@ Tags: rank tracking, rank, google, seo, rank tracker
 Author URI: http://wpranktracker.com/
 Author: WP Rank Tracker
 Requires at least: 5.6
-Tested up to: 6.5
+Tested up to: 6.6.1
 Requires PHP: 7.2
-Stable tag: 1.0.8
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,10 +27,15 @@ Ideal for website owners, bloggers, and anyone interested in understanding their
 
 === Key Features ===
 
-- **Daily Updates on Keyword Positions:** Track how your chosen keywords rank on Google every day.
-- **Simple WordPress Integration:** Easily add Rank Tracker to your WordPress site and start using it right away.
-- **Free for up to 2 Keywords:** Monitor 2 keywords on Google without any cost. If you need more keywords to track you can check our [Premium Packages](https://wpranktracker.com/pricing/?utm_source=wporg&utm_medium=rank-tracker&utm_campaign=landing-page). 
-- **Clear Data Visualization:** See how your keywords perform over time with easy-to-understand charts and graphs.
+- **Daily Updates on Keyword Positions:** Rank Tracker provides daily updates on your keyword positions, helping you stay on top of your SEO performance.
+- **Automated Email Reports:** Receive detailed reports directly to your inbox, showing which keywords are moving up or down. Customize the frequency to daily, weekly, or monthly, based on your needs.
+- **No Complex SEO Tool Dashboard:**  Forget about complicated SEO tools. Install and manage Rank Tracker directly from your familiar WordPress dashboard, making keyword monitoring simple and intuitive. 
+- **Free Tracking for Up to 2 Keywords:** Start tracking with Rank Tracker at no cost. If you need more keywords to track you can check our [Premium Packages](https://wpranktracker.com/pricing/?utm_source=wporg&utm_medium=rank-tracker&utm_campaign=landing-page). 
+- **Visual Insights:** Get clear charts and graphs that show your keyword performance over time.
+- **Global and Local Keyword Tracking:** Track keywords in various languages and regions, allowing you to optimize for both global and local search engines..
+- **No Impact on Website Speed:** Rank Tracker is optimized to run smoothly within your WordPress dashboard without affecting your site's performance.
+- **Unlimited Site Activation:** Experience complete flexibility with your license—activate and use Rank Tracker on as many sites as you need, with no activation limits..
+- **Save Reports in PDF or CSV Formats:** Easily export your keyword performance reports in PDF or CSV formats for detailed analysis and record-keeping.
 
 === Why Choose Rank Tracker? ===
 
@@ -108,6 +113,9 @@ Yes, Rank Tracker supports tracking keywords across various languages and countr
 No, Rank Tracker operates within your WordPress dashboard and does not impact your website's loading speed or performance.
 
 == Changelog ==
+= 1.1.0 =
+* New: Mail reports added
+
 = 1.0.5 =
 * Enhancements: Keyword and overview redesign completed
 

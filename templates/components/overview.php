@@ -33,7 +33,7 @@ $keywordHelper = wprtContainer('KeywordHelper');
 		            </div>
 	            </div>
 	            <div class="wprt_overview_box_icon">
-		            <?php echo esc_url($iconHelper->getIcon('total-keyword-count.svg')) ?>
+		            <?php echo esc_html($iconHelper->getIcon('total-keyword-count.svg')) ?>
 	            </div>
             </div>
             <div class="wprt_overview_box">
@@ -49,7 +49,7 @@ $keywordHelper = wprtContainer('KeywordHelper');
 		            </div>
 	            </div>
 	            <div class="wprt_overview_box_icon">
-		            <?php echo esc_url($iconHelper->getIcon('daily-request.svg')) ?>
+		            <?php echo esc_html($iconHelper->getIcon('daily-request.svg')) ?>
 	            </div>
             </div>
             <div class="wprt_overview_box">
@@ -73,7 +73,7 @@ $keywordHelper = wprtContainer('KeywordHelper');
 		            </div>
 	            </div>
 	            <div class="wprt_overview_box_icon">
-		            <?php echo esc_url($iconHelper->getIcon('update-with-clock.svg')) ?>
+		            <?php echo esc_html($iconHelper->getIcon('update-with-clock.svg')) ?>
 	            </div>
             </div>
             <div class="wprt_overview_box rank">
@@ -110,10 +110,30 @@ $keywordHelper = wprtContainer('KeywordHelper');
                                 );
                             ?>
                         </span>
+                        <br>
+                        <span class="wprt_overview_box_keyword_unchanged">
+	                        <?php
+	                            printf(
+	                                /* translators: %s: Keyword Count */
+	                                esc_html__( '%s keywords unchanged', 'easy-rank-tracker' ),
+	                                esc_html( count($keywordStatus['unchangedKeywords']))
+	                            );
+	                        ?>
+                        </span>
+                        <br>
+                        <span class="wprt_overview_box_keyword_unranked">
+	                        <?php
+	                            printf(
+	                                /* translators: %s: Keyword Count */
+	                                esc_html__( '%s keywords > 100', 'easy-rank-tracker' ),
+	                                esc_html( count($keywordStatus['unrankedKeywords']))
+	                            );
+	                        ?>
+                        </span>
                     </div>
                 </div>
 	            <div class="wprt_overview_box_icon">
-		            <?php echo esc_url($iconHelper->getIcon('7-days.svg')) ?>
+		            <?php echo esc_html($iconHelper->getIcon('7-days.svg')) ?>
 	            </div>
             </div>
             <div class="wprt_overview_box rank">
@@ -150,10 +170,30 @@ $keywordHelper = wprtContainer('KeywordHelper');
 	                            );
 	                        ?>
                         </span>
+                        <br>
+                        <span class="wprt_overview_box_keyword_unchanged">
+	                        <?php
+	                            printf(
+	                                /* translators: %s: Keyword Count */
+	                                esc_html__( '%s keywords unchanged', 'easy-rank-tracker' ),
+	                                esc_html( count($keywordStatus['unchangedKeywords']))
+	                            );
+	                        ?>
+                        </span>
+                        <br>
+                        <span class="wprt_overview_box_keyword_unranked">
+	                        <?php
+	                            printf(
+	                                /* translators: %s: Keyword Count */
+	                                esc_html__( '%s keywords > 100', 'easy-rank-tracker' ),
+	                                esc_html( count($keywordStatus['unrankedKeywords']))
+	                            );
+	                        ?>
+                        </span>
                     </div>
                 </div>
 	            <div class="wprt_overview_box_icon">
-		            <?php echo esc_url($iconHelper->getIcon('30-days.svg')) ?>
+		            <?php echo esc_html($iconHelper->getIcon('30-days.svg')) ?>
 	            </div>
             </div>
 	        <div class="wprt_overview_box">
@@ -176,7 +216,7 @@ $keywordHelper = wprtContainer('KeywordHelper');
 			        </div>
 		        </div>
 		        <div class="wprt_overview_box_icon">
-			        <?php echo esc_url($iconHelper->getIcon('update-with-clock.svg')) ?>
+			        <?php echo esc_html($iconHelper->getIcon('update-with-clock.svg')) ?>
 		        </div>
 	        </div>
         </div>

@@ -115,6 +115,18 @@
         @include semi-bold;
         color: $error-text-color;
       }
+      
+      &_unchanged{
+        @include type(13, 16);
+        @include semi-bold;
+        color: $primary-blue-color;
+      }
+
+      &_unranked{
+        @include type(13, 16);
+        @include semi-bold;
+        color: $primary-blue-color;
+      }
     }
   }
 }

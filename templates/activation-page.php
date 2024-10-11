@@ -81,7 +81,7 @@ $iconHelper = wprtContainer('IconHelper');
                         <a href="https://wpranktracker.com/pricing/" target="_blank" class="wprt_button_primary wprt_activation_package_button">Choose Plan</a>
                     </div>
                     <div class="wprt_activation_package_item">
-                        <div class="wprt_activation_package_item_title">Basic</div>
+                        <div class="wprt_activation_package_item_title">Premium</div>
                         <div class="wprt_activation_package_item_price"><sup class="currency-symbol">$</sup>119.99<span>/month</span></div>
                         <div class="wprt_activation_package_item_feature">
                             <div class="wprt_activation_package_item_feature_item"><img src="<?php echo esc_url($iconHelper->getIconUrl('list-icon.png')) ?>"> Track up to <strong>200</strong> keywords daily</div>

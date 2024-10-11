@@ -29,12 +29,12 @@ class AssetsController
         wp_localize_script(
             'wprt_script',
             'wprtObject',
-            [
+            apply_filters('wprt_localize_script', [
                 'wprtRestUrl' => home_url('/wp-json/wprt/v1/api/'),
                 'wprtInvalidTokenMessage' => WPRT_INVALID_LICENSE_KEY_MESSAGE,
                 'wprtDailyUsageLimitExpired' => WPRT_DAILY_USAGE_LIMIT_EXPIRED,
                 'wprtUserFree' => strval($userTypeHelper->isFree()),
-            ]
+            ])
         );
     }
 

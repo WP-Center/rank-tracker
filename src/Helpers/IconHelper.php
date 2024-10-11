@@ -30,15 +30,8 @@ class IconHelper
 
     public function getFlagByCountry($country = '')
     {
-        if ($country) {
-            $countryList = $this->getCountryListWithFlags();
-            foreach ($countryList as $countryCode => $flag) {
-                if ($countryCode === $country) {
-                    return $flag;
-                }
-            }
-        }
+        $countryList = $this->getCountryListWithFlags();
 
-        return $country;
+        return $countryList[$country] ?? $country;
     }
 }

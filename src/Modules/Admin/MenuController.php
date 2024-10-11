@@ -117,6 +117,29 @@ class MenuController
      */
     public function renderSettings(): void
     {
+        $userTypeHelper = wprtContainer('UserTypeHelper');
+        $licenseHelper = wprtContainer('LicenseHelper');
+        $optionsHelper  = wprtContainer( 'OptionsHelper' );
+
+        $frequencies = [
+            'never'   => __('Never', 'easy-rank-tracker'),
+            'daily'   => __( 'Daily', 'easy-rank-tracker' ),
+            'weekly'  => __( 'Weekly', 'easy-rank-tracker' ),
+            'monthly' => __( 'Monthly', 'easy-rank-tracker' )
+        ];
+
+        $licenseType = $userTypeHelper->isFree() === true ? 'Free' : 'Premium';
+        $dailyRequest = (in_array($optionsHelper->getTransient('api_limit_check'), [false, '']) ? '0' : $optionsHelper->getTransient('api_limit_check'));
+        $licenseKey = $licenseHelper->getLicense();
+        $licenseKey = substr($licenseKey, 0, 3) . "************************" . substr($licenseKey, (strlen($licenseKey)) - 3, 3);
+        $licenseExpiry = $licenseHelper->getLicenseRemainingDay();
+
+        $adminEmail = get_option('admin_email');
+        $notificationEmail = $optionsHelper->getOption( 'notification_email' );
+        $notificationEmail = $notificationEmail ? $notificationEmail : $adminEmail;
+        $notificationFrequency = $optionsHelper->getOption( 'notification_frequency' );
+
+
         include WPRT_PLUGIN_DIR_PATH . '/templates/settings.php';
     }
 

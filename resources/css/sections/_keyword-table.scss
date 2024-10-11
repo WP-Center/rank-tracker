@@ -13,6 +13,14 @@
         
         &:last-child td {
           border-bottom: none;
+
+          &:first-child{
+            border-bottom-left-radius: 7px;
+          }
+
+          &:last-child{
+            border-bottom-right-radius: 7px;
+          }
         }
       }
     }
@@ -33,10 +41,12 @@
         
         &:first-child {
           padding-left: 30px;
+          border-top-left-radius: 7px;
         }
         
         &:last-child {
           text-align: center;
+          border-top-right-radius: 7px;
         }
       }
     }
@@ -126,6 +136,10 @@
           }
         }
       }
+    }
+    
+    &_no_data{
+      color: $error-text-color;
     }
     
     &_status {

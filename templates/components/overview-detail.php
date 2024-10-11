@@ -63,7 +63,7 @@ $keywords = $rankController->getDifferenceRowsFromKeyword($queriedKeywordId);
 			            </div>
 		            </div>
 		            <div class="wprt_overview_box_icon">
-			            <?php echo esc_url($iconHelper->getIcon('7-days.svg')) ?>
+			            <?php echo esc_html($iconHelper->getIcon('7-days.svg')) ?>
                     </div>
 	            </div>
 	            <div class="wprt_overview_box rank">
@@ -103,7 +103,7 @@ $keywords = $rankController->getDifferenceRowsFromKeyword($queriedKeywordId);
 			            </div>
 		            </div>
 		            <div class="wprt_overview_box_icon">
-			            <?php echo esc_url($iconHelper->getIcon('30-days.svg')) ?>
+			            <?php echo esc_html($iconHelper->getIcon('30-days.svg')) ?>
 		            </div>
 	            </div>
 	            <div class="wprt_overview_box">
@@ -124,7 +124,7 @@ $keywords = $rankController->getDifferenceRowsFromKeyword($queriedKeywordId);
 			            </div>
 		            </div>
 		            <div class="wprt_overview_box_icon">
-			            <?php echo esc_url($iconHelper->getIcon('update-with-clock.svg')) ?>
+			            <?php echo esc_html($iconHelper->getIcon('update-with-clock.svg')) ?>
 		            </div>
 	            </div>
 	            <div class="wprt_overview_box rank">
@@ -137,7 +137,7 @@ $keywords = $rankController->getDifferenceRowsFromKeyword($queriedKeywordId);
 			            </div>
 		            </div>
 		            <div class="wprt_overview_box_icon">
-			            <?php echo esc_url($iconHelper->getIcon('trend-up.svg')) ?>
+			            <?php echo esc_html($iconHelper->getIcon('trend-up.svg')) ?>
 		            </div>
 	            </div>
             </div>

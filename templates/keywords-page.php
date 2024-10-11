@@ -30,7 +30,7 @@ $iconHelper = wprtContainer('IconHelper');
                 <p class="wprt_alert wprt_alert--error">
                     <?php
                     /* translators: 1: Login URL */
-                    printf( __( 'Daily Request Limit is over, please <a href="%1$s">upgrade</a> your package.', 'easy-rank-tracker' ), esc_url_raw( admin_url( 'admin.php?page=wp-rank-tracker-premium' ) ) );
+                    printf( __( 'You have reached your daily keywords limit. Please consider <a href="%1$s">upgrading</a> your package.', 'easy-rank-tracker' ), esc_url_raw( admin_url( 'admin.php?page=wp-rank-tracker-premium' ) ) );
                     ?>
                 </p>
             </div>
@@ -61,7 +61,7 @@ $iconHelper = wprtContainer('IconHelper');
                         </td>
 	                    <td>
 		                    <div class="wprt_keyword_list_table_position_current">
-			                    <?php echo esc_html($keyword->rank); ?>
+                                <?php echo esc_html($keyword->rank); ?>
 			                    <?php if ($keyword->arrow === '--up') : ?>
 				                    <div class="wprt_keyword_list_table_position_diff up">
 					                    <span>
