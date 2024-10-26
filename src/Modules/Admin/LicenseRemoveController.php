@@ -27,6 +27,9 @@ class LicenseRemoveController
                         $this,
                         'removeLicense',
                     ],
+	                'permission_callback' => function () {
+		                return current_user_can( 'manage_options' );
+	                },
                 ],
             ]
         );

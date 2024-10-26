@@ -25,7 +25,7 @@
                    esc_url(site_url()),
                    esc_html(site_url())
                 ),
-                $frequencyTitle[ $frequency ] 
+	            (isset($frequencyTitle[ $frequency ]) && !empty($frequencyTitle[ $frequency ] )) ? $frequencyTitle[ $frequency ] : 'since last time' 
             )?>
             <br><br>
             <strong><?php esc_html_e( sprintf( '%s Report: %s', ucfirst( $frequency ), $dateTitle ), 'easy-rank-tracker' )?></strong>

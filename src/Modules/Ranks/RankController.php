@@ -27,6 +27,9 @@ class RankController
                         $this,
                         'rankUpdateRest',
                     ],
+	                'permission_callback' => function () {
+		                return current_user_can( 'manage_options' );
+	                },
                 ],
             ]
         );

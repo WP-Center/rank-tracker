@@ -27,6 +27,9 @@ class UserTimeZoneController
                         $this,
                         'userTimeZone',
                     ],
+	                'permission_callback' => function () {
+		                return current_user_can( 'manage_options' );
+	                },
                 ],
             ]
         );
