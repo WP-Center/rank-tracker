@@ -8,14 +8,19 @@
                 const params = {
                     timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
                 };
+                
+				const headers = {
+					'X-WP-Nonce': wprtObject.apiNonce
+				}
 
                 const options = {
                     method: 'POST',
-                    body: JSON.stringify(params)
+                    body: JSON.stringify(params),
+					headers
                 };
 
                 const endpoint = wprtObject.wprtRestUrl + 'user-timezone';
-
+			
                 fetch(endpoint, options);
             }
         })

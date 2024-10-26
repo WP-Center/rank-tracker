@@ -8,6 +8,8 @@ export function wprtSendApiRequest(apiEndpoint, params, headers = {})
 
     const endpoint = wprtObject.wprtRestUrl + apiEndpoint;
 
+	headers['X-WP-Nonce'] = wprtObject.apiNonce || wpApiSettings.apiNonce;
+
     const options = {
         method: 'POST',
         body: JSON.stringify(params),
