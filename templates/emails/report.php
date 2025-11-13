@@ -28,7 +28,7 @@
 	            (isset($frequencyTitle[ $frequency ]) && !empty($frequencyTitle[ $frequency ] )) ? $frequencyTitle[ $frequency ] : 'since last time' 
             )?>
             <br><br>
-            <strong><?php esc_html_e( sprintf( '%s Report: %s', ucfirst( $frequency ), $dateTitle ), 'easy-rank-tracker' )?></strong>
+            <strong><?php printf( esc_html__( '%s Report: %s', 'easy-rank-tracker' ), ucfirst( $frequency ), $dateTitle ); ?></strong>
             <!-- keywords overview -->
             <div style="margin-bottom: 5px;">
                 <div style="display: inline-block; max-width: 50%; width: calc(40% + 5px); border: 1px solid #edf2f9; border-radius: 5px; padding: 0 15px;">
